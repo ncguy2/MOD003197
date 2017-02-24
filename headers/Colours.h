@@ -1,5 +1,5 @@
 //
-// Created by 354584 on 22/02/2017.
+// Created by Guy on 22/02/2017.
 //
 
 #ifndef FIRESIM_COLOURS_H

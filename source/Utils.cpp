@@ -5,6 +5,8 @@
 #include <Utils.h>
 #include <string>
 #include <conio.h>
+#include <cmath>
+#include <sstream>
 
 void utils::outputEmptyLine() {
     std::cout << std::endl;
@@ -147,8 +149,31 @@ float utils::distanceTo(utils::Point a, utils::Point b) {
     return distanceTo(a.x, a.y, b.x, b.y);
 }
 
+float utils::distanceTo(utils::Point a, int bx, int by) {
+    return distanceTo(a.x, a.y, bx, by);
+}
+
+float utils::distanceTo(int ax, int ay, utils::Point b) {
+    return distanceTo(ax, ay, b.x, b.y);
+}
+
 float utils::distanceTo(int ax, int ay, int bx, int by) {
     float dx = std::abs(ax - bx);
     float dy = std::abs(ay - by);
     return std::sqrt((dx*dx) + (dy*dy));
+}
+
+
+utils::Angle utils::angle(int ax, int ay, int bx, int by) {
+    int dx = bx - ax;
+    int dy = by - ay;
+    double angRad = std::atan2(dy, dx) - std::atan2(1, 0);
+    double angDeg = angRad * (180/M_PI);
+    return Angle{angDeg, angRad};
+}
+
+std::string utils::itos(int i) {
+    std::stringstream ss;
+    ss << i;
+    return ss.str();
 }

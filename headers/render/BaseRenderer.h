@@ -12,7 +12,7 @@ template <class T>
 class EntityRenderer {
 public:
     virtual T RenderCell(Cell cell)= 0;
-    virtual T RenderTree(Tree* tree)= 0;
+    virtual T RenderTree(Cell cell, Tree* tree)= 0;
 };
 
 template <class T>

@@ -31,11 +31,18 @@ namespace utils {
     struct Point {
         int x, y;
     };
+    struct Angle {
+        double degrees;
+        double radians;
+    };
 
     static ConsoleRef console;
 
     float distanceTo(utils::Point a, utils::Point b);
+    float distanceTo(utils::Point a, int bx, int by);
+    float distanceTo(int ax, int ay, utils::Point b);
     float distanceTo(int ax, int ay, int bx, int by);
+    Angle angle(int ax, int ay, int bx, int by);
     void outputEmptyLine();
     void outputEmptyLines(int lines);
 
@@ -49,6 +56,8 @@ namespace utils {
 
     void cls(HANDLE handle);
     void clsAlt(HANDLE handle);
+
+    std::string itos(int i);
 
     /**
      * Clamp "polyfill" to remove c++17 dependency

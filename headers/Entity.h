@@ -27,16 +27,24 @@ public:
 
     void Grow();
 
+    void Extinguish();
+
 protected:
     bool burning;
     bool ignited;
     int currentLife;
 };
 
+struct CellStates {
+    bool damp = false;
+    bool dry = false;
+    bool wall = false;
+};
+
 struct Cell {
     Tree* tree;
     utils::Point point;
-    bool damp;
+    CellStates* states;
 };
 
 #endif //FIRESIM_CELL_H

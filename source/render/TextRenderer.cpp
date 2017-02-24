@@ -4,6 +4,7 @@
 
 #include <render/TextRenderer.h>
 #include <Utils.h>
+#include <Config.h>
 
 TextRenderer::TextRenderer() : BaseRenderer("Console Renderer", new EntityTextRenderer()) {
     cHandle = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -19,7 +20,11 @@ void TextRenderer::Render(Forest *forest) {
         for(int y = 0; y < WORLD_SIZE_X; y++) {
             Cell cell = forest->GetCell(y, x);
 #if USE_COLOURS && IS_WINDOWS
-            int attr = utils::setConsoleColour(GetCellForeground(cell), GetCellBackground(cell));
+            int attr = 0;
+            if(Configuration::Instance().UseBlockRenderer())
+                attr = utils::setConsoleColour(GetCellBackground(cell), GetCellForeground(cell));
+            else attr = utils::setConsoleColour(GetCellForeground(cell), GetCellBackground(cell));
+
             if(currentCol != attr) {
                 std::cout << str;
                 currentCol = attr;
@@ -36,7 +41,7 @@ void TextRenderer::Render(Forest *forest) {
     std::cout << str << std::endl;
 
 
-#ifdef RENDER_DEBUG
+#if RENDER_DEBUG
     RenderDebug(forest);
 #endif
 
@@ -45,8 +50,18 @@ void TextRenderer::Render(Forest *forest) {
 }
 
 int TextRenderer::GetCellForeground(Cell cell) {
-#if USE_COLOURS
     Tree* t = cell.tree;
+#if USE_COLOURS
+    if(!t->IsAlive()) {
+        if(Configuration::Instance().UseBlockRenderer()) {
+            if(cell.states->wall)
+                return WALL_COLOUR;
+            return DEFAULT_BACKGROUND;
+        }
+    }
+    if(cell.states->wall)
+        return WALL_COLOUR;
+
     if(t->IsIgnited() && !t->IsBurning())
         return IGNITED_TREE_COLOUR;
     if(t->IsBurning())
@@ -54,33 +69,59 @@ int TextRenderer::GetCellForeground(Cell cell) {
     if(t->IsAlive())
         return LIVING_TREE_COLOUR;
 #endif
+
+    if(Configuration::Instance().UseBlockRenderer()) {
+        return DEFAULT_BACKGROUND;
+    }
     return DEFAULT_TEXT_COLOUR;
 }
 
+int TextRenderer::GetCellBackground(Cell cell) {
+#if USE_COLOURS
+    if(cell.states->damp)
+        return DAMP_GROUND_COLOUR;
+    if(cell.states->dry)
+        return DRY_GROUND_COLOUR;
+    if(cell.states->wall)
+        return WALL_COLOUR;
+#endif
+    if(Configuration::Instance().UseBlockRenderer())
+        return DEFAULT_TEXT_COLOUR;
+    return DEFAULT_BACKGROUND;
+}
+
 void TextRenderer::RenderDebug(Forest *forest) {
-    std::cout << " Living trees: " << forest->LivingTrees() << std::endl;
-    std::cout << " Ignited trees: " << forest->IgnitedTrees() << std::endl;
-    std::cout << " Burning trees: " << forest->BurningTrees() << std::endl;
-    std::cout << " Dead trees: " << forest->DeadTrees() << std::endl;
+    for (std::string line : GetDebugLines(forest))
+        std::cout << line << std::endl;
 }
 
 void TextRenderer::Dispose() {}
 
-int TextRenderer::GetCellBackground(Cell cell) {
-#if USE_COLOURS
-    if(cell.damp)
-        return DAMP_GROUND_COLOUR;
-#endif
-    return DEFAULT_TEXT_COLOUR;
+std::vector<std::string> TextRenderer::GetDebugLines(Forest *forest) {
+    std::vector<std::string> lines = {
+            std::string("Living Trees: " + utils::itos(forest->LivingTrees())),
+            std::string("Ignited Trees: " + utils::itos(forest->IgnitedTrees())),
+            std::string("Burning Trees: " + utils::itos(forest->BurningTrees())),
+            std::string("Dead Trees: " + utils::itos(forest->DeadTrees())),
+            std::string("Damp Cells: " + utils::itos(forest->DampCells())),
+            std::string("Wind Direction: " + forest->GetWindManager().GetDirectionString()),
+            std::string("Wind Speed: " + forest->GetWindManager().GetSpeedString()),
+    };
+    return lines;
 }
 
 std::string EntityTextRenderer::RenderCell(Cell cell) {
     if(cell.tree != nullptr)
-        return RenderTree(cell.tree);
+        return RenderTree(cell, cell.tree);
     return TREE_DEAD;
 }
 
-std::string EntityTextRenderer::RenderTree(Tree *tree) {
+std::string EntityTextRenderer::RenderTree(Cell cell, Tree *tree) {
+    if(Configuration::Instance().UseBlockRenderer()) {
+        if(cell.states->damp || cell.states->dry)
+            return CELL_DAMP;
+        return TREE_DEAD;
+    }
     if(!tree->IsAlive()) return TREE_DEAD;
     if(tree->IsBurning()) return TREE_BURNING;
     if(tree->IsIgnited()) return TREE_IGNITED;

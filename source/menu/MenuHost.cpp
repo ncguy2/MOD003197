@@ -5,6 +5,7 @@
 #include <menu/MenuHost.h>
 #include <iostream>
 #include <Utils.h>
+#include <Config.h>
 
 MenuHost::MenuHost(Forest* forest) : forest(forest), alive(true) {}
 
@@ -33,22 +34,29 @@ void MenuHost::DrawMenu() {
 
 void MenuHost::ProcessInput() {
     int key = utils::processInput();
+    bool suppressMsg = false;
     switch(key) {
-        case 0x31: case VK_NUMPAD1: if(ProcessItem(0)) return; break;
-        case 0x32: case VK_NUMPAD2: if(ProcessItem(1)) return; break;
-        case 0x33: case VK_NUMPAD3: if(ProcessItem(2)) return; break;
-        case 0x34: case VK_NUMPAD4: if(ProcessItem(3)) return; break;
-        case 0x35: case VK_NUMPAD5: if(ProcessItem(4)) return; break;
-        case 0x36: case VK_NUMPAD6: if(ProcessItem(5)) return; break;
-        case 0x37: case VK_NUMPAD7: if(ProcessItem(6)) return; break;
-        case 0x38: case VK_NUMPAD8: if(ProcessItem(7)) return; break;
-        case 0x39: case VK_NUMPAD9: if(ProcessItem(8)) return; break;
+        case 0x31: if(ProcessItem(0)) return; break;
+        case 0x32: if(ProcessItem(1)) return; break;
+        case 0x33: if(ProcessItem(2)) return; break;
+        case 0x34: if(ProcessItem(3)) return; break;
+        case 0x35: if(ProcessItem(4)) return; break;
+        case 0x36: if(ProcessItem(5)) return; break;
+        case 0x37: if(ProcessItem(6)) return; break;
+        case 0x38: if(ProcessItem(7)) return; break;
+        case 0x39: if(ProcessItem(8)) return; break;
         case VK_ESCAPE: alive = false; return;
-        case 0x52: return;
+        case 0x42: // B key
+            std::cout << "Block renderer "
+                      << (Configuration::Instance().ToggleUseBlockRenderer() ? "enabled" : "disabled")
+                      << std::endl;
+            suppressMsg = true;
+            break;
+        case 0x52: return; // R key
         default:break;
     }
-
-    std::cout << "Invalid key detected, please select a valid numerical key" << std::endl;
+    if(!suppressMsg)
+        std::cout << "Invalid key detected, please select a valid numerical key" << std::endl;
     ProcessInput();
 }
 

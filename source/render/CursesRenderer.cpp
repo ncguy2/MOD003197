@@ -42,18 +42,9 @@ void CursesRenderer::Render(Forest *forest) {
 }
 
 void CursesRenderer::RenderDebug(Forest *forest) {
-
-    int originY = (WORLD_SIZE_Y * 24) + 10;
-
-    mvaddstr(1, originY++,"Living trees: " + forest->LivingTrees());
-    mvaddstr(1, originY++,"Ignited trees: " + forest->IgnitedTrees());
-    mvaddstr(1, originY++,"Burning trees: " + forest->BurningTrees());
-    mvaddstr(1, originY,  "Dead trees: " + forest->DeadTrees());
-
-//    std::cout << " Living trees: " << forest->LivingTrees() << std::endl;
-//    std::cout << " Ignited trees: " << forest->IgnitedTrees() << std::endl;
-//    std::cout << " Burning trees: " << forest->BurningTrees() << std::endl;
-//    std::cout << " Dead trees: " << forest->DeadTrees() << std::endl;
+    int originY = (WORLD_SIZE_Y) + 10;
+    for(std::string line : GetDebugLines(forest))
+        mvaddstr(1, originY++, line.c_str());
 }
 
 void CursesRenderer::Dispose() {

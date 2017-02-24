@@ -10,10 +10,11 @@
 #include <rules/RuleSet.h>
 #include "Defines.h"
 #include "Utils.h"
+#include "WindManager.h"
 
 class Forest {
 public:
-    Forest();
+    Forest(WindManager manager);
     void Update();
     void UpdateCell(Cell cell);
     Neighbours GetNeighbours(Cell cell);
@@ -35,6 +36,8 @@ public:
     int IgnitedTrees();
     int BurningTrees();
     int DeadTrees();
+    int DampCells();
+
 
     template <typename Func>
     void ForEachCell(Func callback);
@@ -49,6 +52,8 @@ public:
 
     void Reset();
 
+    WindManager GetWindManager();
+
 protected:
     void Populate();
 
@@ -57,6 +62,7 @@ protected:
     RuleSet ruleSet;
     RuleSet genRuleSet;
     Cell cells[WORLD_SIZE_X][WORLD_SIZE_Y];
+    WindManager windManager;
 
     void StartFire();
 

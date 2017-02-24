@@ -46,3 +46,8 @@ void Tree::Grow() {
     burning = false;
     ignited = false;
 }
+
+void Tree::Extinguish() {
+    burning = false;
+    ignited = false;
+}

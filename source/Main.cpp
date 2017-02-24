@@ -52,18 +52,8 @@ MenuHost createMenu(Forest* forest) {
 }
 
 int main() {
-    Forest forest = Forest().RegisterDefaultRules();
+    WindManager manager;
+    Forest forest = Forest(manager).RegisterDefaultRules();
     createMenu(&forest).Process();
-//    CursesRenderer renderer;
-//    try{
-//        do {
-//            forest.Update();
-//            renderer.Render(&forest);
-//            int cmd = utils::processInput();
-//            forest.processCommand(cmd);
-//        }while(forest.CanContinue());
-//    }catch(LPSTR win_error) {
-//        std::cout << win_error << std::endl;
-//    }
     return 0;
 }

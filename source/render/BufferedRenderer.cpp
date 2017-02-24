@@ -5,6 +5,11 @@
 #include <Forest.h>
 #include <render/TextRenderer.h>
 #include <render/BufferedRenderer.h>
+#include <Config.h>
+
+
+#include <iostream>
+#include <string>
 
 #if IS_WINDOWS
 
@@ -36,7 +41,10 @@ void BufferedRenderer::Render(Forest *forest) {
         strBlock.clear();
         for (int y = 0; y < WORLD_SIZE_X; y++) {
             Cell cell = forest->GetCell(y, x);
-            int attr = utils::setConsoleColour(GetCellForeground(cell), GetCellBackground(cell));
+            int attr = 0;
+            if(Configuration::Instance().UseBlockRenderer())
+                attr = utils::setConsoleColour(GetCellBackground(cell), GetCellForeground(cell));
+            else attr = utils::setConsoleColour(GetCellForeground(cell), GetCellBackground(cell));
             if(currentCol != attr) {
                 WriteConsole(isAActive ? bufferA : bufferB, strBlock.c_str(), strBlock.length(), NULL, NULL);
                 currentCol = attr;
@@ -56,10 +64,18 @@ void BufferedRenderer::Render(Forest *forest) {
                        0, (LPSTR) &messageBuffer, 0, NULL);
         throw messageBuffer;
     }
+    SetConsoleTextAttribute(isAActive ? bufferA : bufferB, utils::setConsoleColour(WHITE, BLACK));
+#if RENDER_DEBUG
+    RenderDebug(forest);
+#endif
+
 }
 
 void BufferedRenderer::RenderDebug(Forest *forest) {
-
+    for(std::string line : GetDebugLines(forest)) {
+        WriteConsole(isAActive ? bufferA : bufferB, line.c_str(), line.length(), NULL, NULL);
+        WriteConsole(isAActive ? bufferA : bufferB, newLineStr.c_str(), newLineStr.length(), NULL, NULL);
+    }
 }
 
 void BufferedRenderer::Dispose() {

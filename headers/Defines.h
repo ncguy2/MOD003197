@@ -2,30 +2,46 @@
 // Created by Guy on 21/02/2017.
 //
 
-#define WORLD_SIZE_X 101                               // World size, including single-width border
-#define WORLD_SIZE_Y 51                             // World size, including single-width border
+#define _USE_MATH_DEFINES true
+#define _POSIX_C_SOURCE true
+
+#define WORLD_SIZE_X 71                               // World size, including single-width border
+#define WORLD_SIZE_Y 31                             // World size, including single-width border
 #define TREE_ALIVE "8"                              // Character to use for living, non-burning trees
 #define TREE_IGNITED "&"                            // Character to use for ignited trees
 #define TREE_BURNING "x"                            // Character to use for burning trees
 #define TREE_DEAD " "                               // Character to use for dead trees/empty cells
-#define MAX_TREE_LIFE 5                             // Amount of updated a burning tree should remain
+#define CELL_DAMP "I"                               // Character to use for damp cells, only used with the block renderer
+#define MAX_TREE_LIFE 2                             // Amount of updated a burning tree should remain
 #define TREE_BASE_GROWTH_CHANCE 0.01f               // The base chance for a tree to regrow on an empty cell
 #define TREE_GROWTH_EFFECT 1.f                      // The amount a living tree affects the regrowth chance in adjacent cells
 #define MAX_TREE_GROWTH 3                           // The maximum amount of trees that can regrow in a single update
-#define RULES_USE_STACK false                       // Whether the simulation rules should be stored on the stack.
+#define GENERATION_RULES_USE_STACK false                       // Whether the simulation rules should be stored on the stack.
+#define RULES_USE_STACK false                        // Whether the simulation rules should be stored on the stack.
 #define CLEAR_SAFELY                                // Whether the console should be cleared using "safer" methods of clearing the console. If undefined, system calls are used
-#define RENDER_DEBUG                                // Whether the forest stats should be displayed underneath the forest render
+#define RENDER_DEBUG true                                // Whether the forest stats should be displayed underneath the forest render
 #define RANDOM_STARTPOS true                        // Whether the start position should be randomised each iteration
-#define BASE_IGNITE_CHANCE 45                       // The base ignition chance of an adjacent tree
-#define BURNING_IGNITE_MODIFIER 5                   // The amount of influence a burning tree has on igniting adjacent trees
-#define USE_COLOURS true                            // Whether the console should display in different colours, tested in windows only (uses the termcolour header library)
+#define BASE_IGNITE_CHANCE 30                       // The base ignition chance of an adjacent tree
+#define BURNING_IGNITE_MODIFIER 2                   // The amount of influence a burning tree has on igniting adjacent trees
+#define USE_COLOURS true                            // Whether the console should display in different colours, tested in windows only
 #define INITIAL_FIRE_POINTS 3
 #define NEIGHBOUR_DETECTION_MODE 1
 #define INITIAL_TREE_GENERATION_CHANCE 35
-#define INITIAL_MOISTURE_GENERATION_CHANCE 35
+#define INITIAL_MOISTURE_GENERATION_CHANCE 100
+#define MOISTURE_GENERATION_RADIUS (std::min(WORLD_SIZE_X, WORLD_SIZE_Y)*0.6f)
+#define MOISTURE_GENERATION_MIN_SPAWN_RANGE MOISTURE_GENERATION_RADIUS * 0.9f
+#define MOISTURE_GENERATION_MAX_SPAWNS 5
+#define MOISTURE_GENERATION_SPAWN_CHANCE 1
 #define ALLOW_TREE_ISLANDS true
 #define TREE_GENERATION_ITERATIONS 3
-#define MOISTURE_GENERATION_ITERATIONS 3
+#define MOISTURE_GENERATION_ITERATIONS 20
+#define IGNITION_MAX_ATTEMPTS 5
+#define MOISTURE_IGNITION_MITIGATION_FACTOR 0.5f
+#define DRY_IGNITION_AGGRAVATION_FACTOR 1.5f
+#define WIND_FIRE_JUMP_CHANCE 1
+#define DRY_COMBUST_CHANCE 1
+#define ENABLE_WIND true
+#define DAMP_EXTINGUISH_CHANCE 1
 
 // CONSOLE COLOUR DEFINITIONS
 
@@ -34,7 +50,9 @@
 #define LIVING_TREE_COLOUR GREEN
 #define DEFAULT_TEXT_COLOUR WHITE
 #define DEFAULT_BACKGROUND BLACK
-#define DAMP_GROUND_COLOUR AQUA
+#define DAMP_GROUND_COLOUR LIGHT_AQUA
+#define DRY_GROUND_COLOUR LIGHT_YELLOW
+#define WALL_COLOUR GREY
 
 // CALCULATED DEFINITIONS
 

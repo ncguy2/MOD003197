@@ -13,6 +13,7 @@ public:
 
     virtual void Render(Forest *forest);
     virtual void RenderDebug(Forest *forest);
+    std::vector<std::string> GetDebugLines(Forest *forest);
 
     void Dispose() override;
 
@@ -25,7 +26,7 @@ private:
 class EntityTextRenderer : public EntityRenderer<std::string> {
 public:
     std::string RenderCell(Cell cell);
-    std::string RenderTree(Tree* tree);
+    std::string RenderTree(Cell cell, Tree* tree);
 };
 
 #endif //FIRESIM_TEXTRENDERER_H
