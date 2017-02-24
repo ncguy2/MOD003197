@@ -1,0 +1,9 @@
+Global weather
+    Wind speed
+    Wind direction
+
+Ground moisture
+    Cellular automata from single block, identify all islands and keep only the largest
+
+Random initial forest cover
+    Cellular automata from random cells

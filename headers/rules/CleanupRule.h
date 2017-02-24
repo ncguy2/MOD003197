@@ -14,11 +14,11 @@
 class CleanupRule : public Rule {
 public:
 
-    CleanupRule() : Rule(2) {}
+    CleanupRule() : Rule("cleanup") {}
 
-    virtual void Execute(const Forest *forest, const Neighbours neighbours) {
-        if(!neighbours.self.tree->IsAlive()) {
-            neighbours.self.tree->Clear();
+    void Execute(Forest *forest, Cell self) override{
+        if(!self.tree->IsAlive()) {
+            self.tree->Clear();
         }
     }
 

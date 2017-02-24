@@ -9,12 +9,33 @@
 #include <ctime>
 #include <iostream>
 #include <random>
+#include <windows.h>
+#include <wincon.h>
+#include "Colours.h"
+
+class ConsoleRef {
+public:
+    int foreground = WHITE;
+    int background = BLACK;
+
+    int GetColourAttribute() {
+        return foreground + background * 16;
+    }
+};
 
 /**
  * Header-only utilities
  */
 namespace utils {
 
+    struct Point {
+        int x, y;
+    };
+
+    static ConsoleRef console;
+
+    float distanceTo(utils::Point a, utils::Point b);
+    float distanceTo(int ax, int ay, int bx, int by);
     void outputEmptyLine();
     void outputEmptyLines(int lines);
 
@@ -25,6 +46,9 @@ namespace utils {
      * If CLEAR_SAFELY is not used, std::system is used with the correct command to clear the respective console
      */
     void clearScreen();
+
+    void cls(HANDLE handle);
+    void clsAlt(HANDLE handle);
 
     /**
      * Clamp "polyfill" to remove c++17 dependency
@@ -48,12 +72,10 @@ namespace utils {
      *
      * Currently only continues on detection of ENTER
      */
-    void waitForKeypress();
+    int processInput();
+    int setConsoleColour(int foreground = -1, int background = -1);
 
-    struct Point {
-        int x, y;
-    };
-
+    int getConsoleAttribute();
 }
 
 #endif //FIRESIM_UTILS_H

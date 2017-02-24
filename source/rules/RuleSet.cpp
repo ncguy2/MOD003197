@@ -18,5 +18,7 @@ Rule* RuleSet::Next() {
 
 Rule* RuleSet::Reset() {
     pointer = 0;
+    for(Rule* rule : rules)
+        rule->Reset();
     return rules[pointer];
 }

@@ -6,7 +6,9 @@
 #define FIRESIM_RULE_H
 
 #include <Entity.h>
-class Forest; // Forward declaration
+#include <Defines.h>
+
+class Forest;
 
 /**
  * Contains all information required for a typical rule to execute
@@ -25,13 +27,13 @@ struct Neighbours {
  */
 class Rule {
 public:
-    Rule(const int id) : id(id) {}
-    const int id;
+    Rule(std::string id) : id(id) {}
+    std::string id;
     /**
      * @param forest The owning forest object, in case the rule needs data beyond the scope of Neighbours
-     * @param neighbours The calculated neighbours struct, populated with pointers associated with the surrounding cells
+     * @param self The currently focused cell
      */
-    virtual void Execute(const Forest* forest, const Neighbours neighbours)=0;
+    virtual void Execute(Forest* forest, Cell self)=0;
 
     /**
      * An early check for if the rule can execute.
@@ -47,6 +49,9 @@ public:
             return self.tree->IsAlive();
         return false;
     }
+
+    virtual void Reset() {}
+
 };
 
 

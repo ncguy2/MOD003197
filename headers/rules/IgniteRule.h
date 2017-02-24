@@ -9,32 +9,56 @@
 
 class IgniteRule : public Rule {
 public:
-    IgniteRule() : Rule(1) {}
+    IgniteRule(bool allowBurn = true) : Rule(std::string("ignition:")+(allowBurn?"burn":"")), allowBurn(allowBurn) {}
 
-    virtual void Execute(const Forest *forest, const Neighbours neighbours) {
+    void Execute(Forest *forest, Cell self) override {
 
-        Tree* t = neighbours.self.tree;
+        Tree* t = self.tree;
 
-        if(t->IsIgnited()) t->Burn();
+        if(allowBurn && t->IsIgnited()) {
+            t->Burn();
+            return;
+        }
 
         if(t->IsBurning() || !t->IsAlive()) return;
 
         int burningNeighbours = 0;
-        if(neighbours.north.tree->IsIgnited()) burningNeighbours++;
-        if(neighbours.east.tree->IsIgnited())  burningNeighbours++;
-        if(neighbours.south.tree->IsIgnited()) burningNeighbours++;
-        if(neighbours.west.tree->IsIgnited())  burningNeighbours++;
+
+        utils::Point offsets[] = {
+#if NEIGHBOUR_DETECTION_MODE >= 1
+                utils::Point{ 1,  1},
+                utils::Point{-1,  1},
+                utils::Point{-1, -1},
+                utils::Point{ 1, -1},
+#endif
+                utils::Point{ 0, -1},
+                utils::Point{ 0,  1},
+                utils::Point{-1,  0},
+                utils::Point{ 1,  0}
+        };
+
+        utils::Point local = self.point;
+        for(utils::Point offset : offsets) {
+            Cell cell = forest->GetCell(local.x + offset.x, local.y + offset.y);
+            if(cell.tree != nullptr) {
+                if(cell.tree->IsBurning()) burningNeighbours++;
+            }
+        }
 
         // TODO improve algorithm for proportional probability
 
         if(burningNeighbours == 0) return;
 
-        int chance = 50 + (burningNeighbours * 5);
+        int chance = BASE_IGNITE_CHANCE + (burningNeighbours * BURNING_IGNITE_MODIFIER);
         int val = utils::random(0, 100);
         if(val < chance) {
             (*t).Ignite();
         }
     }
+
+protected:
+    bool allowBurn;
+
 };
 
 #endif //FIRESIM_IGNITERULE_H

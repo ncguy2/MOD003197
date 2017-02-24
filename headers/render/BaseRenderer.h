@@ -20,8 +20,8 @@ class BaseRenderer {
 public:
     BaseRenderer(std::string name, EntityRenderer<T>* renderer) : rendererName(name), renderer(renderer) {}
     const std::string rendererName;
-
     virtual void Render(Forest* forest)=0;
+    virtual void Dispose()=0;
 protected:
     EntityRenderer<T>* renderer;
 };

@@ -7,18 +7,25 @@
 
 #include "BaseRenderer.h"
 
-class TextRenderer : public BaseRenderer<char> {
+class TextRenderer : public BaseRenderer<std::string> {
 public:
     TextRenderer();
 
     virtual void Render(Forest *forest);
     virtual void RenderDebug(Forest *forest);
+
+    void Dispose() override;
+
+    int GetCellForeground(Cell cell);
+    int GetCellBackground(Cell cell);
+private:
+    HANDLE cHandle;
 };
 
-class EntityTextRenderer : public EntityRenderer<char> {
+class EntityTextRenderer : public EntityRenderer<std::string> {
 public:
-    char RenderCell(Cell cell);
-    char RenderTree(Tree* tree);
+    std::string RenderCell(Cell cell);
+    std::string RenderTree(Tree* tree);
 };
 
 #endif //FIRESIM_TEXTRENDERER_H

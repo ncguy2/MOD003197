@@ -40,3 +40,9 @@ void Tree::Clear() {
 void Tree::Kill() {
     this->currentLife = -1;
 }
+
+void Tree::Grow() {
+    currentLife = MAX_TREE_LIFE;
+    burning = false;
+    ignited = false;
+}

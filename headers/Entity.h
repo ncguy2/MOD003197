@@ -6,6 +6,9 @@
 #define FIRESIM_CELL_H
 
 
+#include <windef.h>
+#include "Utils.h"
+
 class Tree {
 public:
 
@@ -22,6 +25,8 @@ public:
 
     void Kill();
 
+    void Grow();
+
 protected:
     bool burning;
     bool ignited;
@@ -30,6 +35,8 @@ protected:
 
 struct Cell {
     Tree* tree;
+    utils::Point point;
+    bool damp;
 };
 
 #endif //FIRESIM_CELL_H

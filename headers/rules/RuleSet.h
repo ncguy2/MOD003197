@@ -20,7 +20,7 @@ public:
     /**
      * Resets the pointer to the first rule
      */
-    Rule * Reset();
+    Rule* Reset();
 
 protected:
     int pointer;
