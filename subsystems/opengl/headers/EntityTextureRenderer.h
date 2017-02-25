@@ -7,7 +7,6 @@
 
 #include <render/BaseRenderer.h>
 #include "Texture.h"
-#include "SpriteRenderer.h"
 
 class EntityTextureRenderer : public EntityRenderer<Texture> {
 public:

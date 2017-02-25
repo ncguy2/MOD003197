@@ -2,8 +2,12 @@
 // Created by Guy on 21/02/2017.
 //
 
+#ifndef _USE_MATH_DEFINES
 #define _USE_MATH_DEFINES true
+#endif
+#ifndef _POSIX_C_SOURCE
 #define _POSIX_C_SOURCE true
+#endif
 
 #define WORLD_SIZE_X 71                               // World size, including single-width border
 #define WORLD_SIZE_Y 31                             // World size, including single-width border

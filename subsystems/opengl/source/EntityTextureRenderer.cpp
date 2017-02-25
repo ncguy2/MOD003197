@@ -28,7 +28,6 @@ Texture EntityTextureRenderer::RenderTree(Cell cell, Tree *tree) {
     if(tree->IsBurning()) {
         float p = (utils::rng::fastrand() % 1000) / 1000.f;
         float perc = p * 6;
-        std::cout << "P: " << p << ", Perc: " << perc << std::endl;
         std::string key;
         if(perc >= 0 && perc < 1) key = BURNING_1_TEXTURE;
         else if(perc >= 1 && perc < 2) key = BURNING_2_TEXTURE;
@@ -58,5 +57,8 @@ void EntityTextureRenderer::LateInitialization() {
     ResourceManager::GetInstance().LoadTexture(BURNING_5_TEXTURE_PATH, GL_TRUE, BURNING_5_TEXTURE);
     ResourceManager::GetInstance().LoadTexture(BURNING_6_TEXTURE_PATH, GL_TRUE, BURNING_6_TEXTURE);
 
+    ResourceManager::GetInstance().LoadTexture(GPU_TEX_PATH, GL_TRUE, GPU_TEX);
+
     ResourceManager::GetInstance().LoadShader(TEXTURE_SHADER_VERT, TEXTURE_SHADER_FRAG, "", TEXTURE_SHADER);
+    ResourceManager::GetInstance().LoadShader(CLOUD_SHADER_VERT, CLOUD_SHADER_FRAG, "", CLOUD_SHADER);
 }

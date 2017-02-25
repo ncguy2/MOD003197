@@ -4,13 +4,27 @@
 
 
 #include <SpriteRenderer.h>
+#include <ResourceManager.h>
+#include <Textures.h>
 
 SpriteRenderer::SpriteRenderer(const Shader &shader) : shader(shader) {
     InitRenderData();
 }
 
-void SpriteRenderer::DrawSprite(Texture texture, glm::vec2 position, glm::vec2 size, GLfloat rotation, glm::vec3 colour) {
-    this->shader.Use();
+void SpriteRenderer::DrawQuad(glm::vec2 position, glm::vec2 size, GLfloat rotation, Shader* shdr) {
+    if(gpuQuad == nullptr)
+        gpuQuad = &ResourceManager::GetInstance().GetTexture(GPU_TEX);
+    this->DrawSprite(*gpuQuad, position, size, rotation, glm::vec4(1), shdr == nullptr ? nullptr : shdr);
+}
+
+void SpriteRenderer::DrawSprite(Texture texture, glm::vec2 position, glm::vec2 size, GLfloat rotation, glm::vec4 colour, Shader* shader) {
+    if(shader == nullptr) shader = &this->shader;
+    shader->Use();
+    shader->SetVector4f("spriteColour", colour);
+
+    glActiveTexture(GL_TEXTURE0);
+    TextureBinder::GetInstance().Bind(texture);
+
     glm::mat4 model;
     model = glm::translate(model, glm::vec3(position, 0.0f));
     model = glm::translate(model, glm::vec3(0.5f * size.x, 0.5f * size.y, 0.f));
@@ -18,11 +32,28 @@ void SpriteRenderer::DrawSprite(Texture texture, glm::vec2 position, glm::vec2 s
     model = glm::translate(model, glm::vec3(-.5f * size.x, -.5f * size.y, 0.f));
     model = glm::scale(model, glm::vec3(size, 1.f));
 
-    this->shader.SetMatrix4("model", model);
-    this->shader.SetVector3f("spriteColour", colour);
+    shader->SetMatrix4("model", model);
+
+    glBindVertexArray(this->quadVAO);
+    glDrawArrays(GL_TRIANGLES, 0, 6);
+    glBindVertexArray(0);
+}
+
+void SpriteRenderer::DrawSprite(GLuint texture, glm::vec2 position, glm::vec2 size, GLfloat rotation, glm::vec4 colour, Shader* shader) {
+    if(shader == nullptr) shader = &this->shader;
+    shader->Use();
+    glm::mat4 model;
+    model = glm::translate(model, glm::vec3(position, 0.0f));
+    model = glm::translate(model, glm::vec3(0.5f * size.x, 0.5f * size.y, 0.f));
+    model = glm::rotate(model, rotation, glm::vec3(0.f, 0.f, 1.f));
+    model = glm::translate(model, glm::vec3(-.5f * size.x, -.5f * size.y, 0.f));
+    model = glm::scale(model, glm::vec3(size, 1.f));
+
+    shader->SetMatrix4("model", model);
+    shader->SetVector4f("spriteColour", colour);
 
     glActiveTexture(GL_TEXTURE0);
-    TextureBinder::GetInstance().Bind(texture);
+    glBindTexture(GL_TEXTURE_2D, texture);
 
     glBindVertexArray(this->quadVAO);
     glDrawArrays(GL_TRIANGLES, 0, 6);

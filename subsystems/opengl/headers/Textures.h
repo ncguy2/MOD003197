@@ -24,6 +24,8 @@
 #define BURNING_5_TEXTURE_PATH TEXTURE_ROOT+"/burning_5.png"
 #define BURNING_6_TEXTURE_PATH TEXTURE_ROOT+"/burning_6.png"
 
+#define GPU_TEX_PATH TEXTURE_ROOT+"/gputex.png"
+
 // Names
 #define GROUND_TEXTURE "assets.textures.ground"
 #define DAMP_TEXTURE "assets.textures.damp"
@@ -38,5 +40,7 @@
 #define BURNING_4_TEXTURE "assets.textures.burning.4"
 #define BURNING_5_TEXTURE "assets.textures.burning.5"
 #define BURNING_6_TEXTURE "assets.textures.burning.6"
+
+#define GPU_TEX "assets.textures.gpu"
 
 #endif //FIRESIM_TEXTURES_H

@@ -7,10 +7,14 @@
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-#include <glm/vec2.hpp>
+#include <glm/glm.hpp>
 #include <render/BaseRenderer.h>
 #include "Texture.h"
 #include "EntityTextureRenderer.h"
+#include "SpriteRenderer.h"
+
+class MetaballController;
+
 
 class OpenGLRenderer : public BaseRenderer<Texture> {
 public:
@@ -30,13 +34,20 @@ public:
     void KeyPress(int key, int scancode, int mode);
     void KeyRelease(int key, int scancode, int mode);
 
+    glm::mat4 GetProjectionMatrix();
+
 protected:
     Forest* forest;
     GLuint width, height;
     glm::vec2 cellSize;
+    glm::mat4 projectionMatrix;
     GLFWwindow* window;
     bool glewInited = false;
     SpriteRenderer* spriteRenderer;
+    MetaballController* metaball;
+    bool doTimestep = false;
+
+    GLuint GenerateAttachmentTexture(GLsizei width, GLsizei height, GLboolean depth = GL_FALSE, GLboolean stencil = GL_FALSE);
 };
 
 static OpenGLRenderer* newestOpenGLRendererInstance;
