@@ -12,7 +12,7 @@
 #define TREE_BURNING "x"                            // Character to use for burning trees
 #define TREE_DEAD " "                               // Character to use for dead trees/empty cells
 #define CELL_DAMP "I"                               // Character to use for damp cells, only used with the block renderer
-#define MAX_TREE_LIFE 2                             // Amount of updated a burning tree should remain
+#define MAX_TREE_LIFE 3.f                             // Amount of updated a burning tree should remain
 #define TREE_BASE_GROWTH_CHANCE 0.01f               // The base chance for a tree to regrow on an empty cell
 #define TREE_GROWTH_EFFECT 1.f                      // The amount a living tree affects the regrowth chance in adjacent cells
 #define MAX_TREE_GROWTH 3                           // The maximum amount of trees that can regrow in a single update

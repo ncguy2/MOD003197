@@ -5,9 +5,12 @@
     <sourceRoots>
       <file path="$PROJECT_DIR$/headers" />
       <file path="$PROJECT_DIR$/source" />
+      <file path="$PROJECT_DIR$/subsystems/opengl/headers" />
+      <file path="$PROJECT_DIR$/subsystems/opengl/source" />
     </sourceRoots>
     <libraryRoots>
       <file path="$PROJECT_DIR$/external" />
+      <file path="$PROJECT_DIR$/subsystems/opengl/external" />
     </libraryRoots>
   </component>
 </project>

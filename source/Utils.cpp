@@ -38,12 +38,12 @@ int utils::clamp(int value, int mn, int mx) {
     return value;
 }
 
-std::mt19937 rng(time(0));
+std::mt19937 randomSeed(time(0));
 int utils::random(int mn, int mx) {
     int min = std::min(mn, mx);
     int max = std::max(mn, mx);
     std::uniform_int_distribution<int> gen(min, max);
-    return gen(rng);
+    return gen(randomSeed);
 }
 
 
@@ -63,7 +63,35 @@ int utils::setConsoleColour(int foreground, int background) {
 
     console.foreground = foreground;
     console.background = background;
+
+#if _WIN32
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), console.GetColourAttribute());
+#endif
+
     return console.GetColourAttribute();
+}
+
+void utils::outputColouredText(std::string text, bool newLine, int foreground, int background, bool resetColour) {
+#if _WIN32
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), utils::setConsoleColour(foreground, background));
+#else
+    std::string fore = foreground > 7 ? "9" : "3";
+    std::string back = background > 7 ? "10" : "4";
+    std::string colPrefix = "\033[" + fore + utils::itos(foreground % 8) + ";" + back + utils::itos(background % 8) + "m";
+    text = colPrefix + text;
+#endif
+    std::cout << text;
+    if(newLine)
+        std::cout << std::endl;
+
+    if(resetColour) {
+#if _WIN32
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), utils::setConsoleColour(WHITE, BLACK));
+#else
+        std::cout << "\033[0m" << std::endl;
+#endif
+    }
+
 }
 
 int utils::getConsoleAttribute() {
@@ -157,12 +185,12 @@ float utils::distanceTo(int ax, int ay, utils::Point b) {
     return distanceTo(ax, ay, b.x, b.y);
 }
 
+
 float utils::distanceTo(int ax, int ay, int bx, int by) {
     float dx = std::abs(ax - bx);
     float dy = std::abs(ay - by);
     return std::sqrt((dx*dx) + (dy*dy));
 }
-
 
 utils::Angle utils::angle(int ax, int ay, int bx, int by) {
     int dx = bx - ax;
@@ -176,4 +204,50 @@ std::string utils::itos(int i) {
     std::stringstream ss;
     ss << i;
     return ss.str();
+}
+
+template<typename Out>
+void utils::Split(const std::string &s, char delim, Out result) {
+    std::stringstream ss;
+    ss.str(s);
+    std::string item;
+    while(std::getline(ss, item, delim))
+        *(result++) = item;
+}
+
+std::vector<std::string> utils::Split(const std::string &s, char delim) {
+    std::vector<std::string> elems;
+    utils::Split(s, delim, std::back_inserter(elems));
+    return elems;
+}
+
+std::string utils::ToString(unsigned const char* s) {
+    std::stringstream ss;
+    ss << s;
+    return ss.str();
+}
+
+static unsigned long x=123456789, y=362436069, z=521288629;
+unsigned long utils::rng::xorshf96() {
+    unsigned long t;
+    x ^= x << 16;
+    x ^= x >> 5;
+    x ^= x << 1;
+
+    t = x;
+    x = y;
+    y = z;
+    z = t ^ x ^ y;
+
+    return z;
+}
+
+static unsigned int g_seed = 1;
+void utils::rng::fast_srand(int seed) {
+    g_seed = seed;
+}
+
+int utils::rng::fastrand() {
+    g_seed = (214013 * g_seed + 2531011);
+    return (g_seed >> 16) & 0x7FFF;
 }

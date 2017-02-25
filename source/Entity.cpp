@@ -51,3 +51,16 @@ void Tree::Extinguish() {
     burning = false;
     ignited = false;
 }
+
+float Tree::GetCurrentLife() {
+    return currentLife;
+}
+
+float Tree::GetCurrentLifePercentage() {
+    if(currentLife <= 0)
+        return 0;
+    if(currentLife >= MAX_TREE_LIFE)
+        return 1;
+    float res = currentLife / MAX_TREE_LIFE;
+    return res;
+}

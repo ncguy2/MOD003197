@@ -11,6 +11,7 @@
 template <class T>
 class EntityRenderer {
 public:
+    virtual void LateInitialization()=0;
     virtual T RenderCell(Cell cell)= 0;
     virtual T RenderTree(Cell cell, Tree* tree)= 0;
 };

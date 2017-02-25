@@ -84,7 +84,42 @@ namespace utils {
     int processInput();
     int setConsoleColour(int foreground = -1, int background = -1);
 
+
+    /**
+     * Writes coloured text to the console
+     *
+     * @param text The text to write
+     * @param newLine Whether to automatically step to the next line after writing
+     * @param foreground The text colour
+     * @param background The background colour
+     * @param resetColour Whether to reset the colour attribute after use (Only applicable in windows terminals)
+     */
+    void outputColouredText(std::string text, bool newLine = true, int foreground = -1, int background = -1, bool resetColour = true);
+
     int getConsoleAttribute();
+
+    template <typename Out>
+    void Split(const std::string &s, char delim, Out result);
+    std::vector<std::string> Split(const std::string &s, char delim);
+
+    std::string ToString(unsigned const char* s);
+
+    namespace rng {
+
+        /**
+         * xorshf generator
+         * Taken from http://stackoverflow.com/a/1640399
+         */
+        unsigned long xorshf96();
+
+        /**
+         * Intel fastrand
+         * https://software.intel.com/en-us/articles/fast-random-number-generator-on-the-intel-pentiumr-4-processor/
+         */
+        void fast_srand(int seed);
+        int fastrand();
+    }
+
 }
 
 #endif //FIRESIM_UTILS_H

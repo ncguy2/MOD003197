@@ -7,7 +7,9 @@
 #include <Config.h>
 
 TextRenderer::TextRenderer() : BaseRenderer("Console Renderer", new EntityTextRenderer()) {
+#if IS_WINDOWS
     cHandle = GetStdHandle(STD_OUTPUT_HANDLE);
+#endif
 }
 
 void TextRenderer::Render(Forest *forest) {
@@ -19,17 +21,18 @@ void TextRenderer::Render(Forest *forest) {
     for(int x = 0; x < WORLD_SIZE_Y; x++) {
         for(int y = 0; y < WORLD_SIZE_X; y++) {
             Cell cell = forest->GetCell(y, x);
-#if USE_COLOURS && IS_WINDOWS
+#if USE_COLOURS
             int attr = 0;
             if(Configuration::Instance().UseBlockRenderer())
                 attr = utils::setConsoleColour(GetCellBackground(cell), GetCellForeground(cell));
             else attr = utils::setConsoleColour(GetCellForeground(cell), GetCellBackground(cell));
 
             if(currentCol != attr) {
-                std::cout << str;
+                int fore = attr % 16;
+                int back = (int) std::floor(attr / 16.f);
+                utils::outputColouredText(str, false, fore, back, false);
                 currentCol = attr;
                 str.clear();
-                SetConsoleTextAttribute(cHandle, attr);
             }
             str.append(renderer->RenderCell(cell));
 #else
@@ -38,14 +41,15 @@ void TextRenderer::Render(Forest *forest) {
         }
         str.append("\n");
     }
-    std::cout << str << std::endl;
+
+    int fore = currentCol % 16;
+    int back = (int) std::floor(currentCol / 16.f);
+    utils::outputColouredText(str, true, fore, back, true);
 
 
 #if RENDER_DEBUG
     RenderDebug(forest);
 #endif
-
-    SetConsoleTextAttribute(cHandle, utils::setConsoleColour(WHITE, BLACK));
 
 }
 
@@ -127,3 +131,5 @@ std::string EntityTextRenderer::RenderTree(Cell cell, Tree *tree) {
     if(tree->IsIgnited()) return TREE_IGNITED;
     return TREE_ALIVE;
 }
+
+void EntityTextRenderer::LateInitialization() {}

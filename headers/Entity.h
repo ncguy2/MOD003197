@@ -29,10 +29,13 @@ public:
 
     void Extinguish();
 
+    float GetCurrentLife();
+    float GetCurrentLifePercentage();
+
 protected:
     bool burning;
     bool ignited;
-    int currentLife;
+    float currentLife;
 };
 
 struct CellStates {

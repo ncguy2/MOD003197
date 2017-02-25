@@ -24,10 +24,19 @@ void MenuHost::DrawMenu() {
 
     utils::outputEmptyLine();
     utils::outputEmptyLine();
+
     for(int i = 0; i < this->menuItems.size(); i++) {
         MenuItem item = this->menuItems[i];
-        std::cout << (i+1) << ") " << item.ToString() << std::endl;
+        std::string text = utils::itos(i+1) + ") " + item.ToString();
+#if USE_COLOURS
+        if(item.IsEnabled()) utils::outputColouredText(text, true, WHITE, BLACK, true);
+        else utils::outputColouredText(text, true, GREY, BLACK, true);
+#else
+        std::cout << text << std::endl;
+#endif
+//        std::cout << (i+1) << ") " << item.ToString() << std::endl;
     }
+//    utils::setConsoleColour(WHITE, BLACK);
     utils::outputEmptyLine();
     std::cout << "Please select the renderer to employ." << std::endl;
 }

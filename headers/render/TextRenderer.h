@@ -20,11 +20,15 @@ public:
     int GetCellForeground(Cell cell);
     int GetCellBackground(Cell cell);
 private:
+#if IS_WINDOWS
     HANDLE cHandle;
+#endif
 };
 
 class EntityTextRenderer : public EntityRenderer<std::string> {
 public:
+    void LateInitialization() override;
+
     std::string RenderCell(Cell cell);
     std::string RenderTree(Cell cell, Tree* tree);
 };

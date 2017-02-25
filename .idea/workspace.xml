@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/subsystems/opengl/source/EntityTextureRenderer.cpp" line="28" />
+  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
       <config projectName="FireSim" targetName="FireSim" />
@@ -14,32 +17,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3858a4bd-4798-4b5f-ba6d-39e31b38ce32" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/headers/Config.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/headers/WindManager.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/headers/rules/CombustRule.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/headers/rules/ExtinguishRule.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/Config.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/WindManager.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/assets/textures/burning_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/assets/textures/burning_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/assets/textures/burning_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/assets/textures/burning_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/assets/textures/burning_5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/assets/textures/burning_6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/assets/textures/damp.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/assets/textures/dry.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/assets/textures/ground.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/assets/textures/ignited.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/assets/textures/textures.psd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/assets/textures/tree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/assets/textures/wall.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CMakePostBuild.cmake" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/CMakeLists.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/assets/shaders/sprite.frag.glsl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/assets/shaders/sprite.vert.glsl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/headers/EntityTextureRenderer.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/headers/OpenGLRenderer.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/headers/ResourceManager.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/headers/Shader.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/headers/Shaders.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/headers/SpriteRenderer.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/headers/Texture.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/headers/Textures.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/source/EntityTextureRenderer.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/source/OpenGLRenderer.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/source/ResourceManager.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/source/Shader.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/source/SpriteRenderer.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/source/Texture.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/Colours.h" afterPath="$PROJECT_DIR$/headers/Colours.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/Defines.h" afterPath="$PROJECT_DIR$/headers/Defines.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/Entity.h" afterPath="$PROJECT_DIR$/headers/Entity.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/Forest.h" afterPath="$PROJECT_DIR$/headers/Forest.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/Utils.h" afterPath="$PROJECT_DIR$/headers/Utils.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/render/BaseRenderer.h" afterPath="$PROJECT_DIR$/headers/render/BaseRenderer.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/render/TextRenderer.h" afterPath="$PROJECT_DIR$/headers/render/TextRenderer.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/rules/IgniteRule.h" afterPath="$PROJECT_DIR$/headers/rules/IgniteRule.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/rules/generation/MoistureGenerationRule.h" afterPath="$PROJECT_DIR$/headers/rules/generation/MoistureGenerationRule.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/Entity.cpp" afterPath="$PROJECT_DIR$/source/Entity.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/Forest.cpp" afterPath="$PROJECT_DIR$/source/Forest.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/Main.cpp" afterPath="$PROJECT_DIR$/source/Main.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/Utils.cpp" afterPath="$PROJECT_DIR$/source/Utils.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/menu/MenuHost.cpp" afterPath="$PROJECT_DIR$/source/menu/MenuHost.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/render/BufferedRenderer.cpp" afterPath="$PROJECT_DIR$/source/render/BufferedRenderer.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/render/CursesRenderer.cpp" afterPath="$PROJECT_DIR$/source/render/CursesRenderer.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/render/TextRenderer.cpp" afterPath="$PROJECT_DIR$/source/render/TextRenderer.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/rules/generation/MoistureGenerationRule.cpp" afterPath="$PROJECT_DIR$/source/rules/generation/MoistureGenerationRule.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,111 +75,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Forest.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/Forest.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="82" column="21" lean-forward="false" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
-              <folding>
-                <element signature="e#40#59#0" expanded="true" />
-                <element signature="e#2513#2758#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TextRenderer.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/render/TextRenderer.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MoistureGenerationRule.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/headers/rules/generation/MoistureGenerationRule.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="31" column="16" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MoistureGenerationRule.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/rules/generation/MoistureGenerationRule.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="112" column="28" lean-forward="false" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CombustRule.h" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/headers/rules/CombustRule.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="26" column="2" lean-forward="true" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TreeGenerationRule.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/headers/rules/generation/TreeGenerationRule.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="86" column="50" lean-forward="true" selection-start-line="86" selection-start-column="50" selection-end-line="86" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExtinguishRule.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/headers/rules/ExtinguishRule.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Entity.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/headers/Entity.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="46" column="16" lean-forward="false" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Defines.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/headers/Defines.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="54" column="24" lean-forward="true" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Colours.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/headers/Colours.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="15" column="8" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -168,6 +85,7 @@
       <find>scr</find>
       <find>M_PI</find>
       <find>fire</find>
+      <find>random</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -176,57 +94,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/source/render/BaseRenderer.cpp" />
-        <option value="$PROJECT_DIR$/headers/rules/RuleSet.h" />
-        <option value="$PROJECT_DIR$/source/rules/RuleSet.cpp" />
-        <option value="$PROJECT_DIR$/external/include/termcolour.hpp" />
-        <option value="$USER_HOME$/.CLion2017.1/clion64.exe.vmoptions" />
-        <option value="$PROJECT_DIR$/TODO.txt" />
-        <option value="$PROJECT_DIR$/headers/render/CursesRender.h" />
-        <option value="$PROJECT_DIR$/headers/menu/MenuHost.h" />
-        <option value="$PROJECT_DIR$/headers/render/CursesRenderer.h" />
-        <option value="$PROJECT_DIR$/headers/linking/OptionalLinker.h" />
-        <option value="$PROJECT_DIR$/source/linking/OptionalLinker.cpp" />
-        <option value="$PROJECT_DIR$/headers/menu/MenuItem.h" />
-        <option value="$PROJECT_DIR$/source/menu/MenuItem.cpp" />
-        <option value="$PROJECT_DIR$/headers/rules/BurnRule.h" />
-        <option value="$PROJECT_DIR$/headers/rules/CleanupRule.h" />
-        <option value="$PROJECT_DIR$/headers/rules/GrowthRule.h" />
-        <option value="$PROJECT_DIR$/headers/rules/GenerationRule.h" />
-        <option value="$PROJECT_DIR$/headers/rules/generation/GenerationRule.h" />
-        <option value="$PROJECT_DIR$/headers/AStarPathFinder.h" />
-        <option value="$PROJECT_DIR$/headers/path/AStarHeuristic.h" />
         <option value="$PROJECT_DIR$/headers/path/AStarPathFinder.h" />
         <option value="$PROJECT_DIR$/headers/rules/Rules.h" />
         <option value="$PROJECT_DIR$/headers/file/FileHandler.h" />
         <option value="$PROJECT_DIR$/source/file/FileHandler.cpp" />
         <option value="$PROJECT_DIR$/headers/rules/generation/TreeGenerationRule.h" />
-        <option value="$PROJECT_DIR$/headers/render/BaseRenderer.h" />
-        <option value="$PROJECT_DIR$/source/menu/MenuHost.cpp" />
         <option value="$PROJECT_DIR$/source/Config.cpp" />
         <option value="$PROJECT_DIR$/headers/Config.h" />
         <option value="$PROJECT_DIR$/headers/Forest.h" />
-        <option value="$PROJECT_DIR$/headers/Utils.h" />
-        <option value="$PROJECT_DIR$/source/Utils.cpp" />
         <option value="$PROJECT_DIR$/headers/render/BufferedRenderer.h" />
-        <option value="$PROJECT_DIR$/headers/render/TextRenderer.h" />
-        <option value="$PROJECT_DIR$/source/render/BufferedRenderer.cpp" />
         <option value="$PROJECT_DIR$/source/render/CursesRenderer.cpp" />
         <option value="$PROJECT_DIR$/headers/WindManager.h" />
-        <option value="$PROJECT_DIR$/source/Main.cpp" />
         <option value="$PROJECT_DIR$/headers/Colours.h" />
         <option value="$PROJECT_DIR$/source/WindManager.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/source/Entity.cpp" />
         <option value="$PROJECT_DIR$/headers/rules/IgniteRule.h" />
         <option value="$PROJECT_DIR$/headers/rules/ExtinguishRule.h" />
-        <option value="$PROJECT_DIR$/headers/Entity.h" />
-        <option value="$PROJECT_DIR$/headers/Defines.h" />
         <option value="$PROJECT_DIR$/source/Forest.cpp" />
-        <option value="$PROJECT_DIR$/source/render/TextRenderer.cpp" />
         <option value="$PROJECT_DIR$/headers/rules/generation/MoistureGenerationRule.h" />
         <option value="$PROJECT_DIR$/source/rules/generation/MoistureGenerationRule.cpp" />
         <option value="$PROJECT_DIR$/headers/rules/CombustRule.h" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/headers/ScreenContainer.h" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/CMakePostBuild.txt" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/CMakePostBuild.cmake" />
+        <option value="$PROJECT_DIR$/source/menu/MenuHost.cpp" />
+        <option value="$PROJECT_DIR$/source/render/BufferedRenderer.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/source/Main.cpp" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/headers/Textures.h" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/headers/Texture.h" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/source/Texture.cpp" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/headers/Shader.h" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/source/Shader.cpp" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/assets/shaders/sprite.frag.glsl" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/headers/SpriteRenderer.h" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/headers/ResourceManager.h" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/headers/Shaders.h" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/source/SpriteRenderer.cpp" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/source/ResourceManager.cpp" />
+        <option value="$PROJECT_DIR$/CMakePostBuild.cmake" />
+        <option value="$PROJECT_DIR$/headers/render/BaseRenderer.h" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/headers/EntityTextureRenderer.h" />
+        <option value="$PROJECT_DIR$/headers/render/TextRenderer.h" />
+        <option value="$PROJECT_DIR$/source/render/TextRenderer.cpp" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/headers/OpenGLRenderer.h" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/source/OpenGLRenderer.cpp" />
+        <option value="$PROJECT_DIR$/headers/Entity.h" />
+        <option value="$PROJECT_DIR$/source/Entity.cpp" />
+        <option value="$PROJECT_DIR$/headers/Defines.h" />
+        <option value="$PROJECT_DIR$/headers/Utils.h" />
+        <option value="$PROJECT_DIR$/source/Utils.cpp" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/source/EntityTextureRenderer.cpp" />
       </list>
     </option>
   </component>
@@ -277,6 +195,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="subsystems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opengl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FireSim" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MOD003197" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="subsystems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opengl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="source" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -291,11 +235,113 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="subsystems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opengl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="headers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FireSim" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MOD003197" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="subsystems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opengl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="external" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FireSim" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MOD003197" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="subsystems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opengl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="external" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FireSim" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MOD003197" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="subsystems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opengl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FireSim" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MOD003197" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="source" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="rules" />
+              <option name="myItemId" value="FireSim" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MOD003197" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmake-build-debug" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -309,159 +355,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
+              <option name="myItemId" value="cmake-build-debug" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="rules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="generation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FireSim" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MOD003197" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="render" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FireSim" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MOD003197" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FireSim" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MOD003197" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="headers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FireSim" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MOD003197" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="headers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FireSim" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MOD003197" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="headers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="generation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FireSim" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MOD003197" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="headers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="render" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FireSim" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MOD003197" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="headers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FireSim" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MOD003197" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="headers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="file" />
+              <option name="myItemId" value="mingw" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -472,18 +370,19 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="CMakeSettings" />
-    <property name="SearchEverywhereHistoryKey" value="Ignite&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/rules/IgniteRule.h&#10;defines&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/Defines.h&#10;util&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/Utils.h&#10;utils&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/source/Utils.cpp&#10;Cell&#9;null&#9;null&#10;TextR&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/render/TextRenderer.h&#10;tEXTr&#9;FILE&#9;file://H:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/render/TextRenderer.h&#10;TexR&#9;FILE&#9;file://H:/Modules/Object-Oriented C++/Assignment/MOD003197/source/render/TextRenderer.cpp&#10;Ruleset&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/rules/RuleSet.h&#10;Tree&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="uti&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/source/Utils.cpp&#10;utils&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/Utils.h&#10;defines&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/Defines.h&#10;TextureBin&#9;null&#9;null&#10;TextRender&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/source/render/TextRenderer.cpp&#10;Buffere&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/source/render/BufferedRenderer.cpp&#10;TextRe&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/source/render/TextRenderer.cpp&#10;TextRenderer&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/source/render/TextRenderer.cpp&#10;Ignite&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/rules/IgniteRule.h&#10;util&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/Utils.h&#10;Cell&#9;null&#9;null&#10;TextR&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/render/TextRenderer.h&#10;tEXTr&#9;FILE&#9;file://H:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/render/TextRenderer.h&#10;TexR&#9;FILE&#9;file://H:/Modules/Object-Oriented C++/Assignment/MOD003197/source/render/TextRenderer.cpp&#10;Ruleset&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/rules/RuleSet.h&#10;Tree&#9;null&#9;null" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="N:\Modules\Object-Oriented C++\Assignment\MOD003197\cmake-build-debug" />
+      <recent name="N:\Modules\Object-Oriented C++\Assignment\MOD003197\subsystems\opengl\assets\shaders" />
       <recent name="N:\Modules\Object-Oriented C++\Assignment\MOD003197\headers\rules\generation" />
       <recent name="N:\Modules\Object-Oriented C++\Assignment\MOD003197\source\render" />
       <recent name="N:\Modules\Object-Oriented C++\Assignment\MOD003197\external\include" />
-      <recent name="N:\Modules\Object-Oriented C++\Assignment\MOD003197\external\lib" />
-      <recent name="N:\Modules\Object-Oriented C++\Assignment\MOD003197\headers\rules" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="N:\Modules\Object-Oriented C++\Assignment\MOD003197" />
       <recent name="N:\Modules\Object-Oriented C++\Assignment\MOD003197\headers\path" />
       <recent name="N:\Modules\Object-Oriented C++\Assignment\MOD003197\headers\rules\generation" />
       <recent name="N:\Modules\Object-Oriented C++\Assignment\MOD003197\headers\rules" />
@@ -662,7 +561,10 @@
       <workItem from="1487781780269" duration="3166000" />
       <workItem from="1487867558246" duration="6831000" />
       <workItem from="1487947140762" duration="27289000" />
-      <workItem from="1487974733000" duration="4426000" />
+      <workItem from="1487974733000" duration="4499000" />
+      <workItem from="1488030664849" duration="5889000" />
+      <workItem from="1488036564079" duration="6000" />
+      <workItem from="1488036581329" duration="10365000" />
     </task>
     <task id="LOCAL-00001" summary="Lots">
       <created>1487711696431</created>
@@ -678,11 +580,18 @@
       <option name="project" value="LOCAL" />
       <updated>1487966593113</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Separated a few functions out to separate rules">
+      <created>1487979202058</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1487979202058</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57884000" />
+    <option name="totallyTimeSpent" value="74217000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -695,18 +604,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11820331" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281412" sideWeight="0.8993711" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32087228" sideWeight="0.49790356" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.8993711" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3219107" sideWeight="0.49790356" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40602285" sideWeight="0.6897275" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52024925" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281412" sideWeight="0.49790356" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.119779356" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31568018" sideWeight="0.31027254" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31568018" sideWeight="0.31027254" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="1158" y="520" width="243" height="40" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -715,7 +624,6 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12321144" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="1354" y="444" width="369" height="427" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -746,302 +654,20 @@
     </ignored-roots>
     <MESSAGE value="Lots" />
     <MESSAGE value="Start of generation rules" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start of generation rules" />
+    <MESSAGE value="Separated a few functions out to separate rules" />
+    <option name="LAST_COMMIT_MESSAGE" value="Separated a few functions out to separate rules" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="79" />
+      <option name="time" value="110" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/headers/linking/OptionalLinker.h" />
-    <entry file="file://$PROJECT_DIR$/source/linking/OptionalLinker.cpp" />
-    <entry file="file://$PROJECT_DIR$/source/menu/MenuItem.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="7" column="70" lean-forward="true" selection-start-line="7" selection-start-column="70" selection-end-line="7" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/rules/RuleSet.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/rules/BurnRule.h" />
-    <entry file="file://C:/MinGW/lib/gcc/mingw32/4.8.1/include/c++/bits/random.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="1669" column="0" lean-forward="true" selection-start-line="1669" selection-start-column="0" selection-end-line="1669" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/menu/MenuHost.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/menu/MenuItem.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/path/AStarHeuristic.h" />
-    <entry file="file://$PROJECT_DIR$/headers/path/AStarPathFinder.h" />
-    <entry file="file://$PROJECT_DIR$/source/AStarPathFinder.cpp" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/file/FileHandler.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" column="79" lean-forward="false" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/file/FileHandler.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="27" column="4" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="35" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/rules/generation/GenerationRule.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/MinGW/include/math.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="71" column="0" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/MinGW/lib/gcc/mingw32/4.8.1/include/c++/cmath">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="43" column="14" lean-forward="true" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/render/BufferedBlockRenderer.h" />
-    <entry file="file://$PROJECT_DIR$/headers/render/BaseRenderer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="14" column="36" lean-forward="false" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/MinGW/include/winuser.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="1916" column="24" lean-forward="false" selection-start-line="1916" selection-start-column="24" selection-end-line="1916" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/menu/MenuHost.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
-          <folding>
-            <element signature="e#40#66#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/Config.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-          <folding>
-            <marker date="1487971612468" expanded="true" signature="159:230" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/Config.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/Utils.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="175" column="11" lean-forward="false" selection-start-line="175" selection-start-column="11" selection-end-line="175" selection-end-column="11" />
-          <folding>
-            <element signature="e#40#58#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/render/TextRenderer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="58" lean-forward="true" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/render/BufferedRenderer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/render/BufferedRenderer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="79" column="0" lean-forward="true" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-          <folding>
-            <element signature="e#40#59#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/Utils.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="59" column="27" lean-forward="true" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/render/CursesRenderer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="45" column="35" lean-forward="false" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/Forest.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/rules/GrowthRule.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/Main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="e#1347#1464#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/rules/CleanupRule.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/rules/Rules.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="46" column="17" lean-forward="false" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/WindManager.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="32" column="15" lean-forward="false" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/WindManager.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="23" column="28" lean-forward="false" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-          <folding>
-            <element signature="e#40#64#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/rules/RuleSet.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/MinGW/lib/gcc/mingw32/4.8.1/include/c++/bits/stl_vector.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="415" column="0" lean-forward="false" selection-start-line="415" selection-start-column="0" selection-end-line="415" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/Entity.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="44" column="32" lean-forward="true" selection-start-line="44" selection-start-column="32" selection-end-line="44" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/rules/IgniteRule.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding>
-            <element signature="e#99#123#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/headers/rules/ExtinguishRule.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
-          <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
-          <folding />
+          <caret line="19" column="41" lean-forward="false" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -1049,74 +675,417 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="15" column="8" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/rules/generation/TreeGenerationRule.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1376">
+          <caret line="86" column="50" lean-forward="false" selection-start-line="86" selection-start-column="50" selection-end-line="86" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/rules/generation/MoistureGenerationRule.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/rules/CombustRule.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/headers/ScreenContainer.h" />
+    <entry file="file://$PROJECT_DIR$/source/rules/generation/MoistureGenerationRule.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="590">
+          <caret line="112" column="28" lean-forward="false" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/MinGW/include/wingdi.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="836" column="8" lean-forward="false" selection-start-line="836" selection-start-column="8" selection-end-line="836" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/MinGW/include/wincon.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="184" column="29" lean-forward="true" selection-start-line="184" selection-start-column="29" selection-end-line="184" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/menu/MenuHost.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/menu/MenuHost.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="e#1051#1082#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/MinGW/include/winbase.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="274" column="8" lean-forward="false" selection-start-line="274" selection-start-column="8" selection-end-line="274" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/render/BufferedRenderer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="54" column="9" lean-forward="true" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/external/include/GL/glew.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="964" column="33" lean-forward="false" selection-start-line="964" selection-start-column="33" selection-end-line="964" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/MinGW/lib/gcc/mingw32/4.8.1/include/c++/iostream">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/WindManager.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding>
+            <element signature="e#489#555#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/Main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <element signature="e#40#59#0" expanded="false" />
+            <element signature="e#232#252#0" expanded="false" />
+            <element signature="e#1717#1834#0" expanded="false" />
+            <element signature="e#2027#2108#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/external/include/GLFW/glfw3.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="267" column="8" lean-forward="false" selection-start-line="267" selection-start-column="8" selection-end-line="267" selection-end-column="8" />
+          <folding>
+            <marker date="1485780448237" expanded="false" signature="3717:3733" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/Forest.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="234" column="13" lean-forward="false" selection-start-line="234" selection-start-column="13" selection-end-line="234" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/Forest.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="42" column="18" lean-forward="false" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/headers/Textures.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="30" column="43" lean-forward="false" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/headers/Texture.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+          <folding>
+            <marker date="1488042467400" expanded="true" signature="362:433" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/source/Texture.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#60#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/external/include/glm/detail/type_vec.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="461" column="7" lean-forward="false" selection-start-line="461" selection-start-column="7" selection-end-line="461" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/assets/shaders/sprite.frag.glsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="29" column="46" lean-forward="false" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="23" column="84" lean-forward="false" selection-start-line="23" selection-start-column="84" selection-end-line="23" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/headers/ResourceManager.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="19" column="34" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+          <folding>
+            <element signature="e#109#126#0" expanded="false" />
+            <marker date="1488043866199" expanded="true" signature="206:1019" ph="{...}" />
+            <marker date="1488043866199" expanded="true" signature="258:331" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/headers/Shaders.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="61" lean-forward="false" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/headers/SpriteRenderer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="14" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <folding>
+            <element signature="e#107#129#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/source/SpriteRenderer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakePostBuild.cmake">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="38" lean-forward="false" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/assets/shaders/sprite.frag.glsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/source/ResourceManager.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/headers/EntityTextureRenderer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="43" lean-forward="false" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+          <folding>
+            <element signature="e#121#153#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/render/BaseRenderer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <folding>
+            <marker date="1488044622238" expanded="true" signature="182:326" ph="{...}" />
+            <marker date="1488044622238" expanded="true" signature="367:639" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/render/TextRenderer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/source/Shader.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+          <folding>
+            <element signature="e#40#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/headers/Shader.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/source/OpenGLRenderer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/headers/OpenGLRenderer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/MinGW/lib/gcc/mingw32/4.8.1/include/c++/cmath">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="1609" column="0" lean-forward="false" selection-start-line="1609" selection-start-column="0" selection-end-line="1609" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/headers/Defines.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="54" column="24" lean-forward="true" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
+        <state relative-caret-position="211">
+          <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/MinGW/include/stdlib.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="350" column="36" lean-forward="false" selection-start-line="350" selection-start-column="36" selection-end-line="350" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/Entity.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/headers/Entity.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="46" column="16" lean-forward="false" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/Forest.cpp">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
-          <caret line="82" column="21" lean-forward="false" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
-          <folding>
-            <element signature="e#40#59#0" expanded="true" />
-            <element signature="e#2513#2758#0" expanded="true" />
-          </folding>
+          <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/render/TextRenderer.cpp">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="134" column="47" lean-forward="false" selection-start-line="134" selection-start-column="47" selection-end-line="134" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/MinGW/include/time.h">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
-          <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
+          <caret line="92" column="40" lean-forward="false" selection-start-line="92" selection-start-column="40" selection-end-line="92" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/headers/rules/generation/TreeGenerationRule.h">
+    <entry file="file://$PROJECT_DIR$/headers/Utils.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="86" column="50" lean-forward="true" selection-start-line="86" selection-start-column="50" selection-end-line="86" selection-end-column="50" />
+        <state relative-caret-position="429">
+          <caret line="119" column="21" lean-forward="true" selection-start-line="119" selection-start-column="21" selection-end-line="119" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/headers/rules/generation/MoistureGenerationRule.h">
+    <entry file="file://$PROJECT_DIR$/source/Utils.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="31" column="16" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+        <state relative-caret-position="294">
+          <caret line="44" column="53" lean-forward="true" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/rules/generation/MoistureGenerationRule.cpp">
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/source/EntityTextureRenderer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="112" column="28" lean-forward="false" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/rules/CombustRule.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="26" column="2" lean-forward="true" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="2" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="2" lean-forward="true" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+          <folding>
+            <element signature="e#40#60#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
