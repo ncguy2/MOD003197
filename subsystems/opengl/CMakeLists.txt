@@ -2,15 +2,18 @@
 INCLUDE_DIRECTORIES("${OPENGL_SUBSYS_ROOT}/external/include")
 INCLUDE_DIRECTORIES("${OPENGL_SUBSYS_ROOT}/headers")
 
-SET(GLEW "${OPENGL_SUBSYS_ROOT_ABS}/external/lib/glew32s.lib")
-SET(GLFW "${OPENGL_SUBSYS_ROOT_ABS}/external/lib/mingw/libglfw3dll.a")
-SET(SOIL "${OPENGL_SUBSYS_ROOT_ABS}/external/lib/libsoil.a")
-SET(FREETYPE "${OPENGL_SUBSYS_ROOT_ABS}/external/lib/freetype6.dll")
+# WINDOWS
+IF(WIN32)
+    SET(GLEW "${OPENGL_SUBSYS_ROOT_ABS}/external/lib/glew32s.lib")
+    SET(GLFW "${OPENGL_SUBSYS_ROOT_ABS}/external/lib/mingw/libglfw3dll.a")
+ELSEIF(UNIX)
+    SET(GLEW "${OPENGL_SUBSYS_ROOT_ABS}/external/lib/libGLEW.a")
+    SET(GLFW "${OPENGL_SUBSYS_ROOT_ABS}/external/lib/libglfw3.a")
+ENDIF()
 
 LINK_LIBRARIES(${GLFW})
 LINK_LIBRARIES(${GLEW})
-LINK_LIBRARIES(${SOIL})
-LINK_LIBRARIES(${FREETYPE})
+#LINK_LIBRARIES(${FREETYPE})
 
 find_package(OpenGL REQUIRED)
 if(OPENGL_FOUND)
@@ -23,8 +26,20 @@ ADD_DEFINITIONS(-DWITH_OPENGL)
 
 #FILE(COPY "${CMAKE_SOURCE_DIR}/subsystems/opengl/assets" DESTINATION "${CMAKE_BINARY_DIR}")
 
+SET(SOIL_SRC
+        ${OPENGL_SUBSYS_ROOT}/libs/SOIL/SOIL.h
+        ${OPENGL_SUBSYS_ROOT}/libs/SOIL/SOIL.c
+        ${OPENGL_SUBSYS_ROOT}/libs/SOIL/image_DXT.c
+        ${OPENGL_SUBSYS_ROOT}/libs/SOIL/image_DXT.h
+        ${OPENGL_SUBSYS_ROOT}/libs/SOIL/image_helper.c
+        ${OPENGL_SUBSYS_ROOT}/libs/SOIL/image_helper.h
+        ${OPENGL_SUBSYS_ROOT}/libs/SOIL/stb_image_aug.c
+        ${OPENGL_SUBSYS_ROOT}/libs/SOIL/stb_image_aug.h
+        ${OPENGL_SUBSYS_ROOT}/libs/SOIL/stbi_DDS_aug.h
+        ${OPENGL_SUBSYS_ROOT}/libs/SOIL/stbi_DDS_aug_c.h
+        )
 
-SET(GL_SUBSYSTEM_FILES
+SET(GL_SUBSYSTEM_FILES ${SOIL_SRC}
         ${OPENGL_SUBSYS_ROOT}/source/OpenGLRenderer.cpp
         ${OPENGL_SUBSYS_ROOT}/source/Texture.cpp
         ${OPENGL_SUBSYS_ROOT}/source/ResourceManager.cpp

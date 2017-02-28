@@ -11,18 +11,16 @@ class TextRenderer : public BaseRenderer<std::string> {
 public:
     TextRenderer();
 
-    virtual void Render(Forest *forest);
-    virtual void RenderDebug(Forest *forest);
+    void Render(Forest *forest);
+    void RenderDebug(Forest *forest);
     std::vector<std::string> GetDebugLines(Forest *forest);
 
     void Dispose() override;
 
+    bool ManageOwnLoop() override;
+
     int GetCellForeground(Cell cell);
     int GetCellBackground(Cell cell);
-private:
-#if IS_WINDOWS
-    HANDLE cHandle;
-#endif
 };
 
 class EntityTextRenderer : public EntityRenderer<std::string> {

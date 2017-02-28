@@ -20,5 +20,7 @@ Rule* RuleSet::Reset() {
     pointer = 0;
     for(Rule* rule : rules)
         rule->Reset();
+    if(pointer >= rules.size())
+        return nullptr;
     return rules[pointer];
 }

@@ -21,6 +21,9 @@ void OpenGLRenderer::InitWindow(GLuint width, GLuint height, std::string title, 
     this->height = height;
     this->cellSize = cellSize;
 
+    if(glfwInit() == GL_FALSE)
+        return;
+
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
@@ -91,14 +94,6 @@ void OpenGLRenderer::Dispose() {
     glfwTerminate();
 }
 
-// STATIC
-
-std::pair<bool, std::string> OpenGLRenderer::Initialize() {
-    if(glfwInit() == GL_FALSE)
-        return std::pair<bool, std::string>(false, utils::ToString(glewGetErrorString(glGetError())));
-
-    return std::pair<bool, std::string>(true, "");
-}
 
 void OpenGLRenderer::KeyHandler(int key, int scancode, int action, int mode) {
     if(action == GLFW_PRESS) return KeyPress(key, scancode, mode);
@@ -169,6 +164,10 @@ GLuint OpenGLRenderer::GenerateAttachmentTexture(GLsizei width, GLsizei height, 
     glBindTexture(GL_TEXTURE_2D, 0);
 
     return texId;
+}
+
+bool OpenGLRenderer::ManageOwnLoop() {
+    return true;
 }
 
 /*

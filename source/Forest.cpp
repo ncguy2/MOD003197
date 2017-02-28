@@ -49,11 +49,11 @@ void Forest::Update() {
 
 void Forest::StartFire() {
     int attempt = 0;
-    Cell* cell = p_GetCell(START_POS_X, START_POS_Y);
+    Cell cell = GetCell(START_POS_X, START_POS_Y);
     do {
         attempt++;
-        if(cell->tree->IsAlive()) cell->tree->Ignite();
-        else cell = p_GetCell(START_POS_X, START_POS_Y);
+        if(cell.tree->IsAlive()) cell.tree->Ignite();
+        else cell = GetCell(START_POS_X, START_POS_Y);
     }while(attempt < IGNITION_MAX_ATTEMPTS);
 }
 
@@ -76,7 +76,7 @@ Cell Forest::GetCell(int x, int y) {
 void Forest::Populate() {
     for(int x = 0; x < WORLD_SIZE_X; x++) {
         for(int y = 0; y < WORLD_SIZE_Y; y++) {
-            Cell c = Cell{new Tree(), utils::Point{x, y}, new CellStates()};
+            Cell c = Cell{new Tree(), utils::Point{x, y}, new CellStates};
             if(x == 0 || x == WORLD_SIZE_X-1 || y == 0 || y == WORLD_SIZE_Y-1) {
                 c.tree->Kill();
                 c.tree->Clear();
@@ -85,6 +85,7 @@ void Forest::Populate() {
             cells[x][y] = c;
         }
     }
+
 
     Rule* r = genRuleSet.Reset();
     if(r != nullptr) {
@@ -211,11 +212,9 @@ int Forest::DampCells() {
 }
 
 void Forest::processCommand(int cmd) {
-//    std::cout << "Key pressed: " << cmd << std::endl;
-//    _sleep(1000);
     if(cmd == 0x46 || cmd == 102) { // F
         StartFire();
-    }else if(cmd == VK_ESCAPE) {
+    }else if(cmd == 0x1B) { // Escape (VK_ESCAPE)
         this->exit = true;
     }
 }
@@ -231,11 +230,15 @@ std::vector<Cell> Forest::AllCells() {
 
 
 template<typename Func>
-
 void Forest::ForEachCell(Func callback) {
     for(int x = 0; x < WORLD_SIZE_X; x++)
-        for(int y = 0; y < WORLD_SIZE_Y; y++)
-            callback(GetCell(x, y));
+        for(int y = 0; y < WORLD_SIZE_Y; y++) {
+            try{
+                callback(GetCell(x, y));
+            }catch(...) {
+                std::cout << "Unhandled error detected" << std::endl;
+            }
+        }
 }
 
 Forest Forest::RegisterCustomRules(RuleSet ruleset) {

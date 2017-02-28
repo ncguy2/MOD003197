@@ -107,14 +107,14 @@ void MoistureGenerationRule::MapToForest(Forest *forest) {
 
     for(int x = 0; x < WORLD_SIZE_X; x++) {
         for(int y = 0; y < WORLD_SIZE_Y; y++) {
-            Cell* cell = forest->p_GetCell(x, y);
-            if(moistureMap[x][y].damp && !cell->states->wall) {
+            Cell cell = forest->GetCell(x, y);
+            if(moistureMap[x][y].damp && !cell.states->wall) {
                 if(dry) {
-                    if(!cell->states->damp)
-                        cell->states->dry = true;
+                    if(!cell.states->damp)
+                    cell.states->dry = true;
                 }else{
-                    if(!cell->states->dry)
-                        cell->states->damp = true;
+                    if(!cell.states->dry)
+                    cell.states->damp = true;
                 }
             }
         }

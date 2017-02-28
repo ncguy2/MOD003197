@@ -2,11 +2,26 @@
 // Created by Guy on 21/02/2017.
 //
 
+#include <PropertiesManager.h>
+
+#ifndef cpmax
+#define cpmax(a,b)            (((a) > (b)) ? (a) : (b))
+#endif
+
+#ifndef cpmin
+#define cpmin(a,b)            (((a) < (b)) ? (a) : (b))
+#endif
+
 #ifndef _USE_MATH_DEFINES
 #define _USE_MATH_DEFINES true
 #endif
 #ifndef _POSIX_C_SOURCE
 #define _POSIX_C_SOURCE true
+#endif
+
+
+#ifndef M_PI
+#define M_PI 3.14
 #endif
 
 #define WORLD_SIZE_X 71                               // World size, including single-width border
@@ -22,7 +37,7 @@
 #define MAX_TREE_GROWTH 3                           // The maximum amount of trees that can regrow in a single update
 #define GENERATION_RULES_USE_STACK false                       // Whether the simulation rules should be stored on the stack.
 #define RULES_USE_STACK false                        // Whether the simulation rules should be stored on the stack.
-#define CLEAR_SAFELY                                // Whether the console should be cleared using "safer" methods of clearing the console. If undefined, system calls are used
+#define CLEAR_SAFELY false                               // Whether the console should be cleared using "safer" methods of clearing the console. If undefined, system calls are used
 #define RENDER_DEBUG true                                // Whether the forest stats should be displayed underneath the forest render
 #define RANDOM_STARTPOS true                        // Whether the start position should be randomised each iteration
 #define BASE_IGNITE_CHANCE 30                       // The base ignition chance of an adjacent tree
@@ -32,7 +47,7 @@
 #define NEIGHBOUR_DETECTION_MODE 1
 #define INITIAL_TREE_GENERATION_CHANCE 35
 #define INITIAL_MOISTURE_GENERATION_CHANCE 100
-#define MOISTURE_GENERATION_RADIUS (std::min(WORLD_SIZE_X, WORLD_SIZE_Y)*0.6f)
+#define MOISTURE_GENERATION_RADIUS (cpmin(WORLD_SIZE_X, WORLD_SIZE_Y)*0.6f)
 #define MOISTURE_GENERATION_MIN_SPAWN_RANGE MOISTURE_GENERATION_RADIUS * 0.9f
 #define MOISTURE_GENERATION_MAX_SPAWNS 5
 #define MOISTURE_GENERATION_SPAWN_CHANCE 1
@@ -73,4 +88,4 @@
 
 // OS DETECTION
 
-#define IS_WINDOWS defined(WIN32) || defined(_WIN32) || (defined(__WIN32) && !defined(__CYGWIN__))
+//#define IS_WINDOWS defined(WIN32) || defined(_WIN32) || (defined(__WIN32) && !defined(__CYGWIN__))

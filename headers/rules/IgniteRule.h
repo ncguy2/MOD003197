@@ -57,9 +57,9 @@ public:
 
         utils::Point local = self.point;
         for(utils::Point offset : offsets) {
-            Cell* cell = forest->p_GetCell(local.x + offset.x, local.y + offset.y);
-            if(cell->tree != nullptr) {
-                if(cell->tree->IsBurning()) burningNeighbours++;
+            Cell cell = forest->GetCell(local.x + offset.x, local.y + offset.y);
+            if(cell.tree != nullptr) {
+                if(cell.tree->IsBurning()) burningNeighbours++;
             }
         }
 

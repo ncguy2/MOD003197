@@ -35,3 +35,14 @@ void files::Write2DVectorToFile(std::string file, std::vector<std::vector<T>> ve
     }
     f.close();
 }
+
+std::vector<std::string> files::ReadLines(std::string file) {
+    std::ifstream in(file);
+    std::vector<std::string> lines;
+    std::string line;
+    while(std::getline(in, line)) {
+        if(!line.empty())
+            lines.push_back(line);
+    }
+    return lines;
+}

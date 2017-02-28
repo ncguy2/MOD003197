@@ -6,7 +6,6 @@
 #define FIRESIM_CELL_H
 
 
-#include <windef.h>
 #include "Utils.h"
 
 class Tree {

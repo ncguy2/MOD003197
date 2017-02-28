@@ -2,32 +2,38 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.6)
 PROJECT(FireSim)
 
 
+#ADD_DEFINITIONS(-DWORLD_SIZE_X=71)
+#ADD_DEFINITIONS(-DWORLD_SIZE_Y=31)
+
 SET(USE_OPENGL TRUE)
 
 SET(CMAKE_CXX_STANDARD 11)
 
 INCLUDE_DIRECTORIES(headers)
 
-
 INCLUDE_DIRECTORIES(external/include)
 
-IF("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
-    # using GCC
-    LINK_LIBRARIES(${CMAKE_SOURCE_DIR}/external/lib/panel_win32_mingw.a)
-    LINK_LIBRARIES(${CMAKE_SOURCE_DIR}/external/lib/pdcurses_win32_mingw.a)
-ELSEIF("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Intel")
-    # using Intel C++
-    LINK_LIBRARIES(${CMAKE_SOURCE_DIR}/external/lib/panel_win32_vcc.lib)
-    LINK_LIBRARIES(${CMAKE_SOURCE_DIR}/external/lib/pdcurses_win32_vcc.lib)
-ELSEIF("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
+SET(SRC_FILES)
+
+IF(MSVC)
     # using Visual Studio C++
-    LINK_LIBRARIES(${CMAKE_SOURCE_DIR}/external/lib/panel_win32_vcc.lib)
-    LINK_LIBRARIES(${CMAKE_SOURCE_DIR}/external/lib/pdcurses_win32_vcc.lib)
+    SET(WIN32_VC_SUBSYSTEM_ROOT "subsystems/win32_vc")
+    INCLUDE(${WIN32_VC_SUBSYSTEM_ROOT}/CMakeLists.txt)
+ELSEIF(UNIX)
+    # Using linux
+    SET(LINUX_GCC_SUBSYSTEM_ROOT "subsystems/linux_gcc")
+    INCLUDE(${LINUX_GCC_SUBSYSTEM_ROOT}/CMakeLists.txt)
+ELSEIF(WIN32)
+    # Using GCC under windows
+    SET(WIN32_GCC_SUBSYSTEM_ROOT "subsystems/win32_gcc")
+    INCLUDE(${WIN32_GCC_SUBSYSTEM_ROOT}/CMakeLists.txt)
 ENDIF()
 
 
 set(CMAKE_BUILD_TYPE RelWithDebInfo)
-SET(SRC_FILES source/Forest.cpp source/render/TextRenderer.cpp source/rules/RuleSet.cpp source/Entity.cpp source/Utils.cpp source/render/CursesRenderer.cpp source/render/BufferedRenderer.cpp source/menu/MenuItem.cpp source/menu/MenuHost.cpp source/rules/generation/MoistureGenerationRule.cpp source/file/FileHandler.cpp source/Config.cpp source/WindManager.cpp)
+SET(SRC_FILES ${SRC_FILES} source/Forest.cpp source/render/TextRenderer.cpp source/rules/RuleSet.cpp source/Entity.cpp source/Utils.cpp
+         source/menu/MenuItem.cpp source/menu/MenuHost.cpp source/rules/generation/MoistureGenerationRule.cpp
+        source/file/FileHandler.cpp source/Config.cpp source/WindManager.cpp source/Mains.cpp source/PropertiesManager.cpp)
 
 SET(HEAD_FILES)
 
@@ -36,6 +42,8 @@ IF(${USE_OPENGL})
     SET(OPENGL_SUBSYS_ROOT "subsystems/opengl")
     INCLUDE(subsystems/opengl/CMakeLists.txt)
 ENDIF()
+
+ADD_DEFINITIONS(-DIS_WINDOWS=${IS_WINDOWS})
 
 ADD_EXECUTABLE(FireSim ${SRC_FILES} source/Main.cpp)
 

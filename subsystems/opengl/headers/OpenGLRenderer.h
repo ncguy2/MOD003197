@@ -36,6 +36,8 @@ public:
 
     glm::mat4 GetProjectionMatrix();
 
+    bool ManageOwnLoop() override;
+
 protected:
     Forest* forest;
     GLuint width, height;

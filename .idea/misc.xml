@@ -7,6 +7,8 @@
       <file path="$PROJECT_DIR$/source" />
       <file path="$PROJECT_DIR$/subsystems/opengl/headers" />
       <file path="$PROJECT_DIR$/subsystems/opengl/source" />
+      <file path="$PROJECT_DIR$/subsystems/win32_gcc/headers" />
+      <file path="$PROJECT_DIR$/subsystems/win32_gcc/source" />
     </sourceRoots>
     <libraryRoots>
       <file path="$PROJECT_DIR$/external" />

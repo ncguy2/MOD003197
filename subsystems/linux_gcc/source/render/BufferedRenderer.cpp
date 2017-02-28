@@ -3,15 +3,12 @@
 //
 
 #include <Forest.h>
-#include <render/TextRenderer.h>
-#include <render/BufferedRenderer.h>
+#include "../../headers/render/BufferedRenderer.h"
 #include <Config.h>
-
 
 #include <iostream>
 #include <string>
-
-#if IS_WINDOWS
+#include <Utils.h>
 
 BufferedRenderer::BufferedRenderer() :
         bufferA(CreateConsoleScreenBuffer(GENERIC_WRITE, FILE_SHARE_WRITE, NULL, CONSOLE_TEXTMODE_BUFFER, NULL)),
@@ -83,20 +80,3 @@ void BufferedRenderer::Dispose() {
     CloseHandle(bufferA);
     CloseHandle(bufferB);
 }
-
-
-#else
-
-BufferedRenderer::BufferedRenderer() {
-
-}
-
-void BufferedRenderer::Render(Forest *forest) {
-    TextRenderer::Render(forest);
-}
-
-void BufferedRenderer::RenderDebug(Forest *forest) {
-    TextRenderer::RenderDebug(forest);
-}
-
-#endif

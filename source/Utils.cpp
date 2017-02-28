@@ -2,6 +2,7 @@
 // Created by Guy on 21/02/2017.
 //
 
+#include <Defines.h>
 #include <Utils.h>
 #include <string>
 #include <conio.h>
@@ -18,20 +19,20 @@ void utils::outputEmptyLines(int lines) {
 }
 
 void utils::clearScreen() {
-#ifdef CLEAR_SAFELY
-    std::cout << std::string(128, '\n');
-#else
+    if(CLEAR_SAFELY)
+        std::cout << std::string(128, '\n');
+    else {
 #ifdef _WIN32
-    system("cls");
+        system("cls");
 #else
-    system("clear");
+        system("clear");
 #endif
-#endif
+    }
 }
 
 int utils::clamp(int value, int mn, int mx) {
-    int min = std::min(mn, mx);
-    int max = std::max(mn, mx);
+    int min = cpmin(mn, mx);
+    int max = cpmax(mn, mx);
 
     if(value < min) value = min;
     else if(value > max) value = max;
@@ -40,20 +41,20 @@ int utils::clamp(int value, int mn, int mx) {
 
 std::mt19937 randomSeed(time(0));
 int utils::random(int mn, int mx) {
-    int min = std::min(mn, mx);
-    int max = std::max(mn, mx);
+    int min = cpmin(mn, mx);
+    int max = cpmax(mn, mx);
     std::uniform_int_distribution<int> gen(min, max);
-    return gen(randomSeed);
+    int rand = gen(randomSeed);
+    return rand;
 }
 
 
-
 int utils::processInput() {
-//    std::string tmp;
-//    std::getline(std::cin, tmp);
-//    return tmp;
-
+#if _WIN32
     return getch();
+#else
+    return std::getchar();
+#endif
 }
 
 int utils::setConsoleColour(int foreground, int background) {
@@ -102,6 +103,7 @@ int utils::getConsoleAttribute() {
  * (Taken from msdn https://msdn.microsoft.com/en-us/library/windows/desktop/ms682022(v=vs.85).aspx)
  * @param hConsole
  */
+#if _WIN32
 void utils::cls( HANDLE hConsole)
 {
     COORD coordScreen = { 0, 0 };    // home for the cursor
@@ -151,13 +153,15 @@ void utils::cls( HANDLE hConsole)
 
     SetConsoleCursorPosition( hConsole, coordScreen );
 }
+#endif
 
 /**
  * (Same as above, taken from (http://stackoverflow.com/a/6487534)), also handles *nix systems
  * @param handle
  */
-void utils::clsAlt(HANDLE handle) {
 #if _WIN32
+void utils::clsAlt(HANDLE handle) {
+
     COORD topLeft = {0, 0};
     CONSOLE_SCREEN_BUFFER_INFO info;
     DWORD written;
@@ -167,11 +171,8 @@ void utils::clsAlt(HANDLE handle) {
     FillConsoleOutputAttribute(handle, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE,
                                info.dwSize.X * info.dwSize.Y, topLeft, &written);
     SetConsoleCursorPosition(handle, topLeft);
-#else
-    // CSI[2J clears screen, CSI[H moves the cursor to top-left corner
-    std::cout << "\x1B[2J\x1B[H";
-#endif
 }
+#endif
 
 float utils::distanceTo(utils::Point a, utils::Point b) {
     return distanceTo(a.x, a.y, b.x, b.y);
@@ -217,7 +218,7 @@ void utils::Split(const std::string &s, char delim, Out result) {
 
 std::vector<std::string> utils::Split(const std::string &s, char delim) {
     std::vector<std::string> elems;
-    utils::Split(s, delim, std::back_inserter(elems));
+    utils::Split(s, delim);
     return elems;
 }
 

@@ -19,6 +19,8 @@ namespace files {
     template <typename T>
     void Write2DVectorToFile(std::string file, std::vector<std::vector<T>> vec);
 
+    std::vector<std::string> ReadLines(std::string file);
+
 }
 
 #endif //FIRESIM_FILEHANDLER_H

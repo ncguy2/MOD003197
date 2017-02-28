@@ -5,7 +5,7 @@
 #include <Texture.h>
 #include <string>
 #include <ResourceManager.h>
-#include <SOIL/SOIL.h>
+#include "../libs/SOIL/SOIL.h"
 #include <fstream>
 #include <sstream>
 #include <iostream>

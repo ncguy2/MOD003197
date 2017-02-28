@@ -23,6 +23,9 @@ public:
     const std::string rendererName;
     virtual void Render(Forest* forest)=0;
     virtual void Dispose()=0;
+
+    virtual bool ManageOwnLoop()=0;
+
 protected:
     EntityRenderer<T>* renderer;
 };

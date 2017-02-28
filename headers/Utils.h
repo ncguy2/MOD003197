@@ -5,13 +5,18 @@
 #ifndef FIRESIM_UTILS_H
 #define FIRESIM_UTILS_H
 
+#include <Defines.h>
+
 #include <algorithm>
 #include <ctime>
 #include <iostream>
 #include <random>
+#include "Colours.h"
+
+#if _WIN32
 #include <windows.h>
 #include <wincon.h>
-#include "Colours.h"
+#endif
 
 class ConsoleRef {
 public:
@@ -54,9 +59,10 @@ namespace utils {
      */
     void clearScreen();
 
+#if _WIN32
     void cls(HANDLE handle);
     void clsAlt(HANDLE handle);
-
+#endif // IS_WINDOWS
     std::string itos(int i);
 
     /**

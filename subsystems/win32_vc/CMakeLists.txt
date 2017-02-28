@@ -1,0 +1,10 @@
+
+ADD_DEFINITIONS(-DUSE_BUFFERED_RENDERER)
+
+SET(WIN32_VC_SUBSYSTEM_FILES
+        ${WIN32_VC_SUBSYSTEM_ROOT}/headers/render/BufferedRenderer.h
+        ${WIN32_VC_SUBSYSTEM_ROOT}/source/render/BufferedRenderer.cpp
+        )
+
+
+SET(SRC_FILES ${SRC_FILES} ${WIN32_VC_SUBSYSTEM_FILES})

@@ -12,7 +12,7 @@ void MenuItem::Act(Forest* forest) {
         this->action(forest);
 }
 
-MenuItem MenuItem::SetAction(void* (*action)(Forest*)) {
+MenuItem MenuItem::SetAction(std::function<void(Forest*)> action) {
     this->action = action;
     return *this;
 }

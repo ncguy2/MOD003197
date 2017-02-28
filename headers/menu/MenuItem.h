@@ -15,11 +15,11 @@ class MenuItem {
 public:
     MenuItem(std::string label);
     void Act(Forest* forest);
-    MenuItem SetAction(void* (*action)(Forest*));
     void SetEnabled(bool enabled);
     bool IsEnabled();
     void SetDisabledReason(std::string reason);
     void SetDisabled(std::string reason);
+    MenuItem SetAction(std::function<void(Forest *)> action);
 
     std::string ToString();
     std::string GetDisabledReason();
@@ -28,8 +28,9 @@ public:
 protected:
     std::string disabledReason;
     bool enabled;
-    void* (*action)(Forest*);
+    std::function<void(Forest *)> action;
     MenuHost* host;
+
 };
 
 #endif //FIRESIM_MENUITEM_H

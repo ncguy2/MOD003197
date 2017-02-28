@@ -1,0 +1,7 @@
+
+SET(LINUX_GCC_SUBSYSTEM_FILES
+#        ${LINUX_GCC_SUBSYSTEM_ROOT}/headers/render/BufferedRenderer.h
+        )
+
+
+SET(SRC_FILES ${SRC_FILES} ${LINUX_GCC_SUBSYSTEM_FILES})

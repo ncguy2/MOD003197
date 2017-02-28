@@ -2,50 +2,25 @@
 // Created by Guy on 21/02/2017.
 //
 
+#include <Defines.h>
 #include <render/TextRenderer.h>
 #include <Utils.h>
 #include <Config.h>
 
-TextRenderer::TextRenderer() : BaseRenderer("Console Renderer", new EntityTextRenderer()) {
-#if IS_WINDOWS
-    cHandle = GetStdHandle(STD_OUTPUT_HANDLE);
-#endif
-}
+TextRenderer::TextRenderer() : BaseRenderer("Text Renderer", new EntityTextRenderer()) {}
 
 void TextRenderer::Render(Forest *forest) {
     utils::clearScreen();
 
     std::string str;
 
-    int currentCol = -1;
     for(int x = 0; x < WORLD_SIZE_Y; x++) {
         for(int y = 0; y < WORLD_SIZE_X; y++) {
             Cell cell = forest->GetCell(y, x);
-#if USE_COLOURS
-            int attr = 0;
-            if(Configuration::Instance().UseBlockRenderer())
-                attr = utils::setConsoleColour(GetCellBackground(cell), GetCellForeground(cell));
-            else attr = utils::setConsoleColour(GetCellForeground(cell), GetCellBackground(cell));
-
-            if(currentCol != attr) {
-                int fore = attr % 16;
-                int back = (int) std::floor(attr / 16.f);
-                utils::outputColouredText(str, false, fore, back, false);
-                currentCol = attr;
-                str.clear();
-            }
-            str.append(renderer->RenderCell(cell));
-#else
             std::cout << renderer->RenderCell(cell);
-#endif
         }
-        str.append("\n");
+        std::cout << std::endl;
     }
-
-    int fore = currentCol % 16;
-    int back = (int) std::floor(currentCol / 16.f);
-    utils::outputColouredText(str, true, fore, back, true);
-
 
 #if RENDER_DEBUG
     RenderDebug(forest);
@@ -112,6 +87,10 @@ std::vector<std::string> TextRenderer::GetDebugLines(Forest *forest) {
             std::string("Wind Speed: " + forest->GetWindManager().GetSpeedString()),
     };
     return lines;
+}
+
+bool TextRenderer::ManageOwnLoop() {
+    return false;
 }
 
 std::string EntityTextRenderer::RenderCell(Cell cell) {
