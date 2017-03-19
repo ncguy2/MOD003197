@@ -33,8 +33,8 @@ ENDIF()
 
 set(CMAKE_BUILD_TYPE RelWithDebInfo)
 SET(SRC_FILES ${SRC_FILES} source/Forest.cpp source/render/TextRenderer.cpp source/rules/RuleSet.cpp source/Entity.cpp source/Utils.cpp
-         source/menu/MenuItem.cpp source/menu/MenuHost.cpp source/rules/generation/MoistureGenerationRule.cpp
-        source/file/FileHandler.cpp source/Config.cpp source/WindManager.cpp source/Mains.cpp source/PropertiesManager.cpp)
+    source/menu/MenuItem.cpp source/menu/MenuHost.cpp source/rules/generation/MoistureGenerationRule.cpp
+    source/file/FileHandler.cpp source/Config.cpp source/WindManager.cpp source/Mains.cpp source/PropertiesManager.cpp subsystems/opengl/source/Framebuffer.cpp subsystems/opengl/source/FireEffect.cpp)
 
 SET(HEAD_FILES)
 

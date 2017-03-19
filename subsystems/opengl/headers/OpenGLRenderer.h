@@ -12,8 +12,7 @@
 #include "Texture.h"
 #include "EntityTextureRenderer.h"
 #include "SpriteRenderer.h"
-
-class MetaballController;
+#include "FireEffect.h"
 
 class TextureBatch {
 public:
@@ -44,7 +43,7 @@ public:
     glm::vec2 ProjectCellPositionToScreen(int x, int y);
     void Dispose() override;
 
-    static std::pair<bool, std::string> Initialize();
+//    static std::pair<bool, std::string> Initialize();
 
     void KeyHandler(int key, int scancode, int action, int mode);
     void KeyPress(int key, int scancode, int mode);
@@ -53,6 +52,9 @@ public:
     glm::mat4 GetProjectionMatrix();
 
     bool ManageOwnLoop() override;
+
+    SpriteRenderer* GetSpriteRenderer();
+    EntityRenderer<Texture>* GetEntityRenderer();
 
 protected:
 
@@ -66,8 +68,8 @@ protected:
     GLFWwindow* window;
     bool glewInited = false;
     SpriteRenderer* spriteRenderer;
-    MetaballController* metaball;
     bool doTimestep = false;
+    FireRenderEffect* fireEffect;
 
     GLuint GenerateAttachmentTexture(GLsizei width, GLsizei height, GLboolean depth = GL_FALSE, GLboolean stencil = GL_FALSE);
 };

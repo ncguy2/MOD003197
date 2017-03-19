@@ -58,8 +58,11 @@ void OpenGLRenderer::InitWindow(GLuint width, GLuint height, std::string title, 
     Shader spriteShader = ResourceManager::GetInstance().GetShader(TEXTURE_SHADER);
     spriteRenderer = new SpriteRenderer(spriteShader);
 
+    fireEffect = new FireRenderEffect(width, height, this);
+
     projectionMatrix = glm::ortho(0.0f, static_cast<GLfloat>(this->width), static_cast<GLfloat>(this->height), 0.0f, -1.0f, 1.0f);
     spriteShader.Use().SetInteger("image", 0);
+    spriteShader.SetInteger("mask", 1);
     spriteShader.SetMatrix4("projection", projectionMatrix);
 
 
@@ -72,7 +75,7 @@ void OpenGLRenderer::InitWindow(GLuint width, GLuint height, std::string title, 
 
 void OpenGLRenderer::Render(Forest *forest) {
     this->forest = forest;
-    InitWindow(WORLD_SIZE_X, WORLD_SIZE_Y, "Fire simulation", glm::vec2(OPENGL_RENDERER_CELL_SIZE));
+    InitWindow(WORLD_SIZE_X * cellSize.x, WORLD_SIZE_Y * cellSize.y, "Fire simulation");
 //    InitWindow(800, 600, "Fire simulation");
     GLfloat deltaTime = 0.0f;
     GLfloat lastFrame = 0.0f;
@@ -138,6 +141,13 @@ void OpenGLRenderer::RenderForest(Forest *forest) {
             }
         }
     }
+
+    fireEffect->Extract(forest);
+    fireEffect->Blur();
+
+    spriteRenderer->DrawSprite(fireEffect->GetExtractedMask(), {0, 0}, {128, 96});
+    spriteRenderer->DrawSprite(fireEffect->GetBlurredMask(1), {0, 0}, {128, 96});
+    spriteRenderer->DrawSprite(fireEffect->GetBlurredMask(2), {0, 0}, {128, 96});
 
     RenderBatches();
 }
@@ -221,6 +231,14 @@ TextureBatch* OpenGLRenderer::GetBatch(Texture tex, int layer) {
     TextureBatch* batch = new TextureBatch(tex, layer);
     batches[tex.id] = batch;
     return batch;
+}
+
+SpriteRenderer* OpenGLRenderer::GetSpriteRenderer() {
+    return spriteRenderer;
+}
+
+EntityRenderer<Texture>* OpenGLRenderer::GetEntityRenderer() {
+    return renderer;
 }
 
 /*

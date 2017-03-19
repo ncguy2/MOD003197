@@ -27,6 +27,10 @@ void TextureBinder::Generate(Texture tex, GLuint width, GLuint height, unsigned 
     glBindTexture(GL_TEXTURE_2D, 0);
 }
 
+void TextureBinder::Bind(GLuint id) const {
+    glBindTexture(GL_TEXTURE_2D, id);
+}
+
 void TextureBinder::Bind(Texture texture) {
     if(currentTexture == texture.id) return;
     glBindTexture(GL_TEXTURE_2D, texture.id);

@@ -24,16 +24,16 @@
 #define M_PI 3.14
 #endif
 
-#define WORLD_SIZE_X 225                               // World size, including single-width border
-#define WORLD_SIZE_Y 125                             // World size, including single-width border
+#define WORLD_SIZE_X 130                               // World size, including single-width border
+#define WORLD_SIZE_Y 75                             // World size, including single-width border
 #define TREE_ALIVE "8"                              // Character to use for living, non-burning trees
 #define TREE_IGNITED "&"                            // Character to use for ignited trees
 #define TREE_BURNING "x"                            // Character to use for burning trees
 #define TREE_DEAD " "                               // Character to use for dead trees/empty cells
 #define CELL_DAMP "I"                               // Character to use for damp cells, only used with the block renderer
-#define MAX_TREE_LIFE 3.f                             // Amount of updated a burning tree should remain
+#define MAX_TREE_LIFE 8.f                             // Amount of updated a burning tree should remain
 #define TREE_BASE_GROWTH_CHANCE 0.01f               // The base chance for a tree to regrow on an empty cell
-#define TREE_GROWTH_EFFECT 1.f                      // The amount a living tree affects the regrowth chance in adjacent cells
+#define TREE_GROWTH_EFFECT 100.f                      // The amount a living tree affects the regrowth chance in adjacent cells
 #define MAX_TREE_GROWTH 3                           // The maximum amount of trees that can regrow in a single update
 #define GENERATION_RULES_USE_STACK false                       // Whether the simulation rules should be stored on the stack.
 #define RULES_USE_STACK false                        // Whether the simulation rules should be stored on the stack.
@@ -57,7 +57,7 @@
 #define IGNITION_MAX_ATTEMPTS 5
 #define MOISTURE_IGNITION_MITIGATION_FACTOR 0.5f
 #define DRY_IGNITION_AGGRAVATION_FACTOR 1.5f
-#define WIND_FIRE_JUMP_CHANCE 1
+#define WIND_FIRE_JUMP_CHANCE 1#
 #define DRY_COMBUST_CHANCE 1
 #define ENABLE_WIND true
 #define DAMP_EXTINGUISH_CHANCE 1
