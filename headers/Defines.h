@@ -16,6 +16,27 @@
 #define cpmin(a,b)            (((a) < (b)) ? (a) : (b))
 #endif
 
+#ifndef cpTOSTRING
+#define cpTOSTRING(var, out) {\
+std::stringstream ss; \
+ss << var; \
+out = ss.str(); \
+}
+#endif
+
+#ifndef cpTOSTRING_INLINE
+#define cpTOSTRING_INLINE(var) \
+[]() -> std::string { \
+    std::string s; \
+    cpTOSTRING(var, s) \
+    return s; \
+}()
+#endif
+
+#ifndef OPENGL_USE_THREADS
+#define OPENGL_USE_THREADS false
+#endif
+
 #ifndef _USE_MATH_DEFINES
 #define _USE_MATH_DEFINES true
 #endif
@@ -96,4 +117,4 @@
 
 //#define IS_WINDOWS defined(WIN32) || defined(_WIN32) || (defined(__WIN32) && !defined(__CYGWIN__))
 
-#endif DEFINES_H
+#endif //DEFINES_H

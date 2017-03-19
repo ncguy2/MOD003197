@@ -91,8 +91,12 @@ void OpenGLRenderer::Render(Forest *forest) {
     GLfloat deltaTime = 0.0f;
     GLfloat lastFrame = 0.0f;
     GLfloat fps = -1;
+    std::string fpsStr;
+    std::string deltaStr;
     threadAlive = true;
-    std::thread task(ThreadedForestUpdate, forest);
+    #if OPENGL_USE_THREADS
+    std::thread task(ThreadedForestUpdate, forest).detach();
+    #endif
     while (!glfwWindowShouldClose(window)) {
         GLfloat currentFrame = glfwGetTime();
         deltaTime = currentFrame - lastFrame;
@@ -104,8 +108,14 @@ void OpenGLRenderer::Render(Forest *forest) {
 //            frameCount = 0;
 //            timeElapsed = 0;
 //        }
+        #if !OPENGL_USE_THREADS
+        ThreadedForestUpdate(forest);
+        #endif
 
-        std::string title = "Fire Simulation | FPS: " + std::to_string(fps) + " delta: " + std::to_string(deltaTime * 1000);
+        cpTOSTRING(fps, fpsStr)
+        cpTOSTRING(deltaTime * 1000, deltaStr)
+
+        std::string title = "Fire Simulation | FPS: " + fpsStr + " delta: " + deltaStr;
         glfwSetWindowTitle(this->window, title.c_str());
 
         if(doTimestep) {
@@ -120,8 +130,10 @@ void OpenGLRenderer::Render(Forest *forest) {
         glfwPollEvents();
         glfwSwapBuffers(window);
     }
+    #if OPENGL_USE_THREADS
     threadAlive = false;
     task.detach();
+    #endif
 }
 
 void OpenGLRenderer::Dispose() {
@@ -315,10 +327,14 @@ GLuint MetaballController::GenerateAttachment(GLsizei width, GLsizei height, GLb
 
  */
 void ThreadedForestUpdate(Forest *forest) {
+    #if OPENGL_USE_THREADS
     while(newestOpenGLRendererInstance->ThreadAlive()) {
+    #endif
         if (newestOpenGLRendererInstance->SecondTimer() >= 0.3) {
             newestOpenGLRendererInstance->SecondTimer(0);
             forest->Update();
         }
+    #if OPENGL_USE_THREADS
     }
+    #endif
 }

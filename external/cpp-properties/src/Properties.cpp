@@ -47,20 +47,20 @@ void Properties::RemoveProperty(std::string key) {
 
 int Properties::GetIntProperty(std::string key) {
     std::string str = GetProperty(key);
-    return std::stoi(str);
+    return std::atoi(str.c_str());
 }
 int Properties::GetIntProperty(std::string key, int defVal) {
     std::string str = GetProperty(key, "");
-    return str.empty() ? defVal : std::stoi(str);
+    return str.empty() ? defVal : std::atoi(str.c_str());
 }
 
 float Properties::GetFloatProperty(std::string key) {
     std::string str = GetProperty(key);
-    return std::stof(str);
+    return std::atof(str.c_str());
 }
 float Properties::GetFloatProperty(std::string key, float defVal) {
     std::string str = GetProperty(key, "");
-    return str.empty() ? defVal : std::stof(str);
+    return str.empty() ? defVal : std::atof(str.c_str());
 }
 
 bool Properties::GetBoolProperty(std::string key) {
