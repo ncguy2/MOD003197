@@ -14,7 +14,7 @@
 
 class Forest {
 public:
-    Forest(WindManager manager);
+    Forest(WindManager manager, int w, int h);
     void Update();
     void UpdateCell(Cell cell);
     Neighbours GetNeighbours(Cell cell);
@@ -45,23 +45,26 @@ public:
     void processCommand(int basic_string);
 
     Forest RegisterDefaultGenerationRules();
-    Forest RegisterCustomGenerationRules(RuleSet ruleset);
+    Forest RegisterCustomGenerationRules(RuleSet* ruleset);
 
     Forest RegisterDefaultRules();
-    Forest RegisterCustomRules(RuleSet ruleset);
+    Forest RegisterCustomRules(RuleSet* ruleset);
 
     void Reset();
 
     WindManager GetWindManager();
 
+    const int worldSizeX;
+    const int worldSizeY;
 protected:
     void Populate();
 
     bool firstPass;
     bool exit;
-    RuleSet ruleSet;
-    RuleSet genRuleSet;
-    Cell cells[WORLD_SIZE_X][WORLD_SIZE_Y];
+    RuleSet* ruleSet;
+    RuleSet* genRuleSet;
+//    Cell cells[worldSizeX][worldSizeY];
+    std::map<int, std::map<int, Cell>> cells;
     WindManager windManager;
 
     void StartFire();

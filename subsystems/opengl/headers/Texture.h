@@ -16,6 +16,11 @@ struct Texture {
     GLuint internalFormat, imageFormat;
     GLuint wrapS, wrapT;
     GLuint filterMin, filterMag;
+
+    bool operator==(Texture& other) const {
+        return id == other.id;
+    }
+
 };
 
 class TextureBinder {
@@ -26,7 +31,10 @@ public:
     }
 
     void Generate(Texture tex, GLuint width, GLuint height, unsigned char* data);
-    void Bind(Texture texture) const;
+    void Bind(Texture texture);
+
+protected:
+    GLuint currentTexture = (GLuint) -1;
 };
 
 #endif //FIRESIM_TEXTURE_H

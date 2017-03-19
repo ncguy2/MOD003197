@@ -5,7 +5,9 @@
 #include <Defines.h>
 #include <Utils.h>
 #include <string>
+#if IS_WINDOWS || _WIN32
 #include <conio.h>
+#endif
 #include <cmath>
 #include <sstream>
 
@@ -218,7 +220,7 @@ void utils::Split(const std::string &s, char delim, Out result) {
 
 std::vector<std::string> utils::Split(const std::string &s, char delim) {
     std::vector<std::string> elems;
-    utils::Split(s, delim);
+//utils::Split(s, delim);
     return elems;
 }
 
@@ -226,6 +228,14 @@ std::string utils::ToString(unsigned const char* s) {
     std::stringstream ss;
     ss << s;
     return ss.str();
+}
+
+bool utils::stob(std::string s) {
+    std::transform(s.begin(), s.end(), s.begin(), ::tolower);
+    std::istringstream is(s);
+    bool b;
+    is >> std::boolalpha >> b;
+    return b;
 }
 
 static unsigned long x=123456789, y=362436069, z=521288629;

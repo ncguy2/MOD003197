@@ -14,8 +14,16 @@
 
 template <typename T, typename U>
 void UseRenderer(Forest* forest) {
-    T t;
-    Mains::Render(forest, &t, (&t)->ManageOwnLoop());
+    T* t;
+    try {
+        t = new T();
+        Mains::Render(forest, t, t->ManageOwnLoop());
+    }catch(ErrorException ee) {
+        std::cerr << "Render initialization error occurred: " << std::endl;
+        std::cerr << "\t" << ee.message << std::endl;
+        utils::processInput();
+        return;
+    }
 }
 
 void Mains::SearchForRenderers() {

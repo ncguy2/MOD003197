@@ -110,6 +110,8 @@ namespace utils {
 
     std::string ToString(unsigned const char* s);
 
+    bool stob(std::string s);
+
     namespace rng {
 
         /**

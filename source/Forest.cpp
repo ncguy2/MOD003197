@@ -11,10 +11,13 @@
 #include <rules/generation/MoistureGenerationRule.h>
 #include <rules/CombustRule.h>
 #include <rules/ExtinguishRule.h>
+#include <rules/generation/TreeIslandCleanupRule.h>
 
 // PUBLIC
 
-Forest::Forest(WindManager manager) : firstPass(true), exit(false), windManager(manager) {
+Forest::Forest(WindManager manager, int w, int h) : firstPass(true), exit(false), windManager(manager), worldSizeX(w), worldSizeY(h) {
+    ruleSet = new RuleSet;
+    genRuleSet = new RuleSet;
     RegisterDefaultRules();
     RegisterDefaultGenerationRules();
     Populate();
@@ -22,7 +25,7 @@ Forest::Forest(WindManager manager) : firstPass(true), exit(false), windManager(
 
 void Forest::Update() {
 
-    Rule* r = ruleSet.Reset();
+    Rule* r = ruleSet->Reset();
     if(r != nullptr) {
         do {
             ForEachCell([this, r](Cell cell) {
@@ -30,11 +33,11 @@ void Forest::Update() {
                     r->Execute(this, cell);
                 }
             });
-        }while((r = ruleSet.Next()) != nullptr);
+        }while((r = ruleSet->Next()) != nullptr);
     }
 
-    for(int x = 0; x < WORLD_SIZE_X; x++) {
-        for(int y = 0; y < WORLD_SIZE_Y; y++) {
+    for(int x = 0; x < worldSizeX; x++) {
+        for(int y = 0; y < worldSizeX; y++) {
             UpdateCell(GetCell(x, y));
         }
     }
@@ -63,8 +66,8 @@ void Forest::UpdateCell(Cell cell) {
 }
 
 Cell Forest::GetCell(int x, int y) {
-    x = utils::clamp(x, 0, WORLD_SIZE_X-1);
-    y = utils::clamp(y, 0, WORLD_SIZE_Y-1);
+    x = utils::clamp(x, 0, worldSizeX-1);
+    y = utils::clamp(y, 0, worldSizeY-1);
     return (cells[x][y]);
 }
 
@@ -74,10 +77,11 @@ Cell Forest::GetCell(int x, int y) {
  * Populates the initial forest, placing each Tree object onto the heap
  */
 void Forest::Populate() {
-    for(int x = 0; x < WORLD_SIZE_X; x++) {
-        for(int y = 0; y < WORLD_SIZE_Y; y++) {
+    for(int x = 0; x < worldSizeX; x++) {
+        cells[x] = std::map<int, Cell>();
+        for(int y = 0; y < worldSizeY; y++) {
             Cell c = Cell{new Tree(), utils::Point{x, y}, new CellStates};
-            if(x == 0 || x == WORLD_SIZE_X-1 || y == 0 || y == WORLD_SIZE_Y-1) {
+            if(x == 0 || x == worldSizeX-1 || y == 0 || y == worldSizeY-1) {
                 c.tree->Kill();
                 c.tree->Clear();
                 c.states->wall = true;
@@ -87,11 +91,11 @@ void Forest::Populate() {
     }
 
 
-    Rule* r = genRuleSet.Reset();
+    Rule* r = genRuleSet->Reset();
     if(r != nullptr) {
         do {
             r->Execute(this, cells[0][0]);
-        }while((r = genRuleSet.Next()) != nullptr);
+        }while((r = genRuleSet->Next()) != nullptr);
     }
 
 }
@@ -111,12 +115,12 @@ Forest Forest::RegisterDefaultRules() {
     ruleSet.AddRule(&igniteRule);
     ruleSet.AddRule(&growthRule);
 #else // RULES_USE_HEAP
-    ruleSet.AddRule(new IgniteRule());
-    ruleSet.AddRule(new CleanupRule());
-    ruleSet.AddRule(new IgniteRule(false));
-    ruleSet.AddRule(new GrowthRule());
-    ruleSet.AddRule(new CombustRule());
-    ruleSet.AddRule(new ExtinguishRule());
+    ruleSet->AddRule(new IgniteRule());
+    ruleSet->AddRule(new CleanupRule());
+    ruleSet->AddRule(new IgniteRule(false));
+    ruleSet->AddRule(new GrowthRule());
+    ruleSet->AddRule(new CombustRule());
+    ruleSet->AddRule(new ExtinguishRule());
 #endif
     return *this;
 }
@@ -125,8 +129,10 @@ bool Forest::CanContinue() {
     if(exit) return false;
     Cell cell;
     if(!firstPass) return true;
-    for(int x = 0; x < WORLD_SIZE_X; x++) {
-        for(int y = 0; y < WORLD_SIZE_Y; y++) {
+    int worldX = WORLD_SIZE_X;
+    int worldY = WORLD_SIZE_Y;
+    for(int x = 0; x < worldX; x++) {
+        for(int y = 0; y < worldY; y++) {
             cell = cells[x][y];
             if(cell.tree != nullptr)
                 if(cell.tree->IsBurning() || cell.tree->IsIgnited())
@@ -241,7 +247,7 @@ void Forest::ForEachCell(Func callback) {
         }
 }
 
-Forest Forest::RegisterCustomRules(RuleSet ruleset) {
+Forest Forest::RegisterCustomRules(RuleSet* ruleset) {
     this->ruleSet = ruleset;
     return *this;
 }
@@ -264,14 +270,15 @@ Forest Forest::RegisterDefaultGenerationRules() {
     genRuleSet.AddRule(&dryGen);
 
 #else
-    genRuleSet.AddRule(new TreeGenerationRule());
-    genRuleSet.AddRule(new MoistureGenerationRule());
-    genRuleSet.AddRule(new MoistureGenerationRule(true));
+    genRuleSet->AddRule(new TreeGenerationRule());
+    genRuleSet->AddRule(new MoistureGenerationRule());
+    genRuleSet->AddRule(new MoistureGenerationRule(true));
+    genRuleSet->AddRule(new TreeIslandCleanupRule());
 #endif
     return *this;
 }
 
-Forest Forest::RegisterCustomGenerationRules(RuleSet ruleset) {
+Forest Forest::RegisterCustomGenerationRules(RuleSet* ruleset) {
     this->genRuleSet = ruleset;
     return *this;
 }

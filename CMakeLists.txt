@@ -2,18 +2,20 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.6)
 PROJECT(FireSim)
 
 
-#ADD_DEFINITIONS(-DWORLD_SIZE_X=71)
-#ADD_DEFINITIONS(-DWORLD_SIZE_Y=31)
+ADD_DEFINITIONS(-DWORLD_SIZE_X=41)
+ADD_DEFINITIONS(-DWORLD_SIZE_Y=21)
 
 SET(USE_OPENGL TRUE)
+SET(IS_WINDOWS FALSE)
 
 SET(CMAKE_CXX_STANDARD 11)
+SET(CMAKE_BUILD_TYPE Debug)
 
 INCLUDE_DIRECTORIES(headers)
 
 INCLUDE_DIRECTORIES(external/include)
 
-SET(SRC_FILES)
+SET(SRC_FILES external/cpp-properties/include/PropertiesUtils.h external/cpp-properties/include/PropertiesParser.h external/cpp-properties/include/Properties.h external/cpp-properties/src/Properties.cpp external/cpp-properties/src/PropertiesParser.cpp external/cpp-properties/src/PropertiesUtils.cpp)
 
 IF(MSVC)
     # using Visual Studio C++
@@ -33,7 +35,7 @@ ENDIF()
 set(CMAKE_BUILD_TYPE RelWithDebInfo)
 SET(SRC_FILES ${SRC_FILES} source/Forest.cpp source/render/TextRenderer.cpp source/rules/RuleSet.cpp source/Entity.cpp source/Utils.cpp
          source/menu/MenuItem.cpp source/menu/MenuHost.cpp source/rules/generation/MoistureGenerationRule.cpp
-        source/file/FileHandler.cpp source/Config.cpp source/WindManager.cpp source/Mains.cpp source/PropertiesManager.cpp)
+        source/file/FileHandler.cpp source/Config.cpp source/WindManager.cpp source/Mains.cpp)
 
 SET(HEAD_FILES)
 

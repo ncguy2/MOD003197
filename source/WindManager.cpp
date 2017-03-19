@@ -7,22 +7,22 @@
 #include <Defines.h>
 
 void WindManager::Randomise() {
-#if ENABLE_WIND
-    int d = utils::random(0, 1000);
-    int s = utils::random(0, 1000);
+    if(ENABLE_WIND) {
+        int d = utils::random(0, 1000);
+        int s = utils::random(0, 1000);
 
-    int dirMax = FINAL_WINDDIRECTION_ENTRY;
-    int spdMax = FINAL_WINDSPEED_ENTRY;
+        int dirMax = FINAL_WINDDIRECTION_ENTRY;
+        int spdMax = FINAL_WINDSPEED_ENTRY;
 
-    WindDirection dir = static_cast<WindDirection>(d % dirMax);
-    WindSpeed speed = static_cast<WindSpeed>(s % spdMax);
+        WindDirection dir = static_cast<WindDirection>(d % dirMax);
+        WindSpeed speed = static_cast<WindSpeed>(s % spdMax);
 
-    SetDirection(dir);
-    SetSpeed(speed);
-#else
-    SetDirection(WindDirection::NORTH);
-    SetSpeed(WindSpeed::NONE);
-#endif
+        SetDirection(dir);
+        SetSpeed(speed);
+    }else {
+        SetDirection(WindDirection::NORTH);
+        SetSpeed(WindSpeed::NONE);
+    }
 }
 
 void WindManager::SetDirection(WindDirection direction) {

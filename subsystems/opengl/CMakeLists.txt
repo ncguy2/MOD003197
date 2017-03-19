@@ -9,11 +9,30 @@ IF(WIN32)
 ELSEIF(UNIX)
     SET(GLEW "${OPENGL_SUBSYS_ROOT_ABS}/external/lib/libGLEW.a")
     SET(GLFW "${OPENGL_SUBSYS_ROOT_ABS}/external/lib/libglfw3.a")
+
+    find_package(X11 REQUIRED)
+    IF(${X11_FOUND})
+        LINK_LIBRARIES(${X11_LIBRARIES})
+        INCLUDE_DIRECTORIES(${X11_INCLUDE_DIR})
+        MESSAGE("X11: ${X11_Xrandr_FOUND} | ${X11_Xrandr_LIB}")
+    ENDIF()
+
+    LINK_LIBRARIES(dl)
+    LINK_LIBRARIES(pthread)
+    LINK_LIBRARIES(Xrandr)
+    LINK_LIBRARIES(Xi)
+    LINK_LIBRARIES(Xxf86vm)
+    LINK_LIBRARIES(Xinerama)
+    LINK_LIBRARIES(Xcursor)
+
 ENDIF()
+
 
 LINK_LIBRARIES(${GLFW})
 LINK_LIBRARIES(${GLEW})
 #LINK_LIBRARIES(${FREETYPE})
+
+
 
 find_package(OpenGL REQUIRED)
 if(OPENGL_FOUND)

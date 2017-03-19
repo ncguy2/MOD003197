@@ -8,6 +8,10 @@
 #include <string>
 #include <Forest.h>
 
+struct ErrorException {
+    std::string message;
+};
+
 template <class T>
 class EntityRenderer {
 public:

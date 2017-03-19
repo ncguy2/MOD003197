@@ -33,7 +33,8 @@ public:
 
 private:
 
-    LandCell moistureMap[WORLD_SIZE_X][WORLD_SIZE_Y];
+//    LandCell moistureMap[WORLD_SIZE_X][WORLD_SIZE_Y];
+    std::map<int, std::map<int, LandCell>> moistureMap;
 
     void GenerateOriginal();
     void GenerateFromPoint(int ox, int oy, int depth = 1, int px = -1, int py = -1);

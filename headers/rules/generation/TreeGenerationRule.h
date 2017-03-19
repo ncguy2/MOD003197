@@ -14,29 +14,31 @@ public:
 
     void Generate(Forest *forest) override {
         GenerateOriginal();
-        for(int i = 0; i < TREE_GENERATION_ITERATIONS; i++)
+        int treeSmoothingIterations = TREE_GENERATION_ITERATIONS;
+        for(int i = 0; i < treeSmoothingIterations; i++)
             Step();
-#if !ALLOW_TREE_ISLANDS
-        RemoveIslands();
-#endif
+        if(!ALLOW_TREE_ISLANDS) RemoveIslands();
         MapToForest(forest);
     }
 
 private:
 
-    bool treeMap[WORLD_SIZE_X][WORLD_SIZE_Y];
+//    bool treeMap[WORLD_SIZE_X][WORLD_SIZE_Y];
+    std::map<int, std::map<int, bool>> treeMap;
 
     void GenerateOriginal() {
         std::vector<int> randomNums;
-        for(int x = 0; x < WORLD_SIZE_X; x++) {
-            for(int y = 0; y < WORLD_SIZE_Y; y++) {
-                int r = utils::random(1, 100);
-                randomNums.push_back(r);
-                bool t = (r < INITIAL_TREE_GENERATION_CHANCE);
+        int initialGenChance = INITIAL_TREE_GENERATION_CHANCE;
+//        randomNums.push_back(initialGenChance);
+        for(int x = 0; x < forest->worldSizeX; x++) {
+            for(int y = 0; y < forest->worldSizeY; y++) {
+                int r = utils::rng::fastrand() % 100 + 1;
+//                randomNums.push_back(r);
+                bool t = (r < initialGenChance);
                 treeMap[x][y] = t;
             }
         }
-//        files::WriteVectorToFile("TreeGenNumbers.txt", randomNums);
+//        files::WriteVectorToFile<int>("TreeGen.txt", randomNums);
     }
 
     void Step() {
@@ -52,8 +54,8 @@ private:
                 utils::Point{-1,  0},
                 utils::Point{ 1,  0}
         };
-        for(int x = 1; x < WORLD_SIZE_X-1; x++) {
-            for(int y = 1; y < WORLD_SIZE_Y-1; y++) {
+        for(int x = 1; x < forest->worldSizeX-1; x++) {
+            for(int y = 1; y < forest->worldSizeY-1; y++) {
                 counter = 0;
 
                 for(utils::Point point : offsets)
@@ -71,9 +73,9 @@ private:
 
     std::vector<std::vector<char>> TreeMapToVector() {
         std::vector<std::vector<char>> root = std::vector<std::vector<char>>();
-        for(int x = 0; x < WORLD_SIZE_X; x++) {
+        for(int x = 0; x < forest->worldSizeX; x++) {
             std::vector<char> current = std::vector<char>();
-            for(int y = 0; y < WORLD_SIZE_Y; y++) {
+            for(int y = 0; y < forest->worldSizeY; y++) {
                 current.push_back(treeMap[x][y] ? '#' : '.');
             }
             root.push_back(current);
@@ -82,8 +84,8 @@ private:
     }
 
     void MapToForest(Forest* forest) {
-        for(int x = 0; x < WORLD_SIZE_X; x++) {
-            for(int y = 0; y < WORLD_SIZE_Y; y++) {
+        for(int x = 0; x < forest->worldSizeX; x++) {
+            for(int y = 0; y < forest->worldSizeY; y++) {
                 Cell cell = forest->GetCell(x, y);
                 if(!treeMap[x][y]) {
                     cell.tree->Kill();

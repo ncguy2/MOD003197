@@ -14,12 +14,16 @@ public:
     virtual void Generate(Forest* forest)=0;
 
     void Execute(Forest *forest, Cell self) override {
+        this->forest = forest;
         Generate(forest);
     }
 
     bool CanExecute(Cell self) override {
         return true;
     }
+
+protected:
+    Forest* forest;
 
 };
 

@@ -54,7 +54,7 @@ void MenuHost::ProcessInput() {
         case 0x37: if(ProcessItem(6)) return; break;
         case 0x38: if(ProcessItem(7)) return; break;
         case 0x39: if(ProcessItem(8)) return; break;
-        case 0x1B: alive = false; return; // ESCAPE
+        case 0x1B: case 0x45: alive = false; return; // ESCAPEB
         case 0x42: // B key
             std::cout << "Block renderer "
                       << (Configuration::Instance().ToggleUseBlockRenderer() ? "enabled" : "disabled")
