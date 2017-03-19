@@ -14,6 +14,8 @@
 #include "EntityTextureRenderer.h"
 #include "SpriteRenderer.h"
 
+#include "FireEffect.h"
+
 class TextureBatch {
 public:
     Texture texture;
@@ -57,6 +59,9 @@ public:
     void SecondTimer(GLfloat seconds);
     bool ThreadAlive();
 
+    SpriteRenderer* GetSpriteRenderer();
+    EntityRenderer<Texture>* GetEntityRenderer();
+
 protected:
 
     TextureBatch* GetBatch(Texture tex, int layer);
@@ -72,6 +77,7 @@ protected:
     bool doTimestep = false;
     bool threadAlive = false;
     GLfloat secondTimer = 0.f;
+    FireRenderEffect* fireEffect;
 
     GLuint GenerateAttachmentTexture(GLsizei width, GLsizei height, GLboolean depth = GL_FALSE, GLboolean stencil = GL_FALSE);
 

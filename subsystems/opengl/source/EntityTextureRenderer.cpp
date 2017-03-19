@@ -61,4 +61,8 @@ void EntityTextureRenderer::LateInitialization() {
 
     ResourceManager::GetInstance().LoadShader(TEXTURE_SHADER_VERT, TEXTURE_SHADER_FRAG, "", TEXTURE_SHADER);
     ResourceManager::GetInstance().LoadShader(CLOUD_SHADER_VERT, CLOUD_SHADER_FRAG, "", CLOUD_SHADER);
+    ResourceManager::GetInstance().LoadShader(EXTRACT_SHADER_VERT, EXTRACT_SHADER_FRAG, "", EXTRACT_SHADER);
+    ResourceManager::GetInstance().LoadShader(BLUR_SHADER_VERT, BLUR_SHADER_FRAG, "", BLUR_SHADER);
+
+
 }

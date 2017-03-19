@@ -32,6 +32,8 @@ public:
 
     void Generate(Texture tex, GLuint width, GLuint height, unsigned char* data);
     void Bind(Texture texture);
+    void Bind(GLuint id) const;
+
 
 protected:
     GLuint currentTexture = (GLuint) -1;

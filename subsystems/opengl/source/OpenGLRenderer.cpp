@@ -69,8 +69,11 @@ void OpenGLRenderer::InitWindow(GLuint width, GLuint height, std::string title, 
     Shader spriteShader = ResourceManager::GetInstance().GetShader(TEXTURE_SHADER);
     spriteRenderer = new SpriteRenderer(spriteShader);
 
+    fireEffect = new FireRenderEffect(width, height, this);
+
     projectionMatrix = glm::ortho(0.0f, static_cast<GLfloat>(this->width), static_cast<GLfloat>(this->height), 0.0f, -1.0f, 1.0f);
     spriteShader.Use().SetInteger("image", 0);
+    spriteShader.SetInteger("mask", 1);
     spriteShader.SetMatrix4("projection", projectionMatrix);
 
 
@@ -161,6 +164,13 @@ void OpenGLRenderer::RenderForest(Forest *forest) {
         }
     }
 
+    fireEffect->Extract(forest);
+    fireEffect->Blur();
+
+    spriteRenderer->DrawSprite(fireEffect->GetExtractedMask(), {0, 0}, {128, 96});
+    spriteRenderer->DrawSprite(fireEffect->GetBlurredMask(1), {0, 0}, {128, 96});
+    spriteRenderer->DrawSprite(fireEffect->GetBlurredMask(2), {0, 0}, {128, 96});
+
     RenderBatches();
 }
 
@@ -245,16 +255,12 @@ TextureBatch* OpenGLRenderer::GetBatch(Texture tex, int layer) {
     return batch;
 }
 
-GLfloat OpenGLRenderer::SecondTimer() {
-    return secondTimer;
+SpriteRenderer* OpenGLRenderer::GetSpriteRenderer() {
+    return spriteRenderer;
 }
 
-void OpenGLRenderer::SecondTimer(GLfloat seconds) {
-    this->secondTimer = seconds;
-}
-
-bool OpenGLRenderer::ThreadAlive() {
-    return threadAlive;
+EntityRenderer<Texture>* OpenGLRenderer::GetEntityRenderer() {
+    return renderer;
 }
 
 /*
