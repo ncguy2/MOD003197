@@ -11,6 +11,7 @@
 #include <rules/generation/MoistureGenerationRule.h>
 #include <rules/CombustRule.h>
 #include <rules/ExtinguishRule.h>
+#include <rules/generation/TreeIslandCleanupRule.h>
 
 // PUBLIC
 
@@ -267,6 +268,7 @@ Forest Forest::RegisterDefaultGenerationRules() {
     genRuleSet.AddRule(new TreeGenerationRule());
     genRuleSet.AddRule(new MoistureGenerationRule());
     genRuleSet.AddRule(new MoistureGenerationRule(true));
+    genRuleSet.AddRule(new TreeIslandCleanupRule());
 #endif
     return *this;
 }

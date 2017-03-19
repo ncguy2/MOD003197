@@ -15,6 +15,20 @@
 
 class MetaballController;
 
+class TextureBatch {
+public:
+    Texture texture;
+
+    std::vector<glm::vec4> positions;
+    int layer;
+
+    TextureBatch(Texture texture, int layer)
+            : texture(texture), positions(vector<glm::vec4>()), layer(layer) {}
+
+    void Flush() {
+        positions.clear();
+    }
+};
 
 class OpenGLRenderer : public BaseRenderer<Texture> {
 public:
@@ -24,7 +38,9 @@ public:
     void InitWindow(GLuint width, GLuint height, std::string title, glm::vec2 cellSize = glm::vec2(16));
     void Render(Forest *forest) override;
     void RenderForest(Forest *forest);
-    void RenderTextureAtCell(Texture tex, int x, int y);
+    void RenderTextureAtCell(Texture tex, int x, int y, int layer, glm::vec4 offsets = glm::vec4(0, 0, 1, 1));
+    void RenderBatches();
+    void RenderBatch(TextureBatch* batch, Shader* shdr = nullptr);
     glm::vec2 ProjectCellPositionToScreen(int x, int y);
     void Dispose() override;
 
@@ -39,6 +55,10 @@ public:
     bool ManageOwnLoop() override;
 
 protected:
+
+    TextureBatch* GetBatch(Texture tex, int layer);
+
+    std::map<GLuint, TextureBatch*> batches;
     Forest* forest;
     GLuint width, height;
     glm::vec2 cellSize;

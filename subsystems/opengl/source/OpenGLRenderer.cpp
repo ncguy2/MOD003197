@@ -17,9 +17,13 @@ OpenGLRenderer::OpenGLRenderer() : BaseRenderer("OpenGLRenderer", new EntityText
 
 void OpenGLRenderer::InitWindow(GLuint width, GLuint height, std::string title, glm::vec2 cellSize) {
 
+    this->cellSize = cellSize;
+
+    width *= cellSize.x;
+    height *= cellSize.y;
+
     this->width = width;
     this->height = height;
-    this->cellSize = cellSize;
 
     if(glfwInit() == GL_FALSE)
         return;
@@ -58,11 +62,17 @@ void OpenGLRenderer::InitWindow(GLuint width, GLuint height, std::string title, 
     spriteShader.Use().SetInteger("image", 0);
     spriteShader.SetMatrix4("projection", projectionMatrix);
 
+
+    Shader cloudShader = ResourceManager::GetInstance().GetShader(CLOUD_SHADER);
+
+    cloudShader.Use().SetInteger("image", 0);
+    cloudShader.SetMatrix4("projection", projectionMatrix);
+
 }
 
 void OpenGLRenderer::Render(Forest *forest) {
     this->forest = forest;
-    InitWindow(WORLD_SIZE_X * cellSize.x, WORLD_SIZE_Y * cellSize.y, "Fire simulation");
+    InitWindow(WORLD_SIZE_X, WORLD_SIZE_Y, "Fire simulation", glm::vec2(OPENGL_RENDERER_CELL_SIZE));
 //    InitWindow(800, 600, "Fire simulation");
     GLfloat deltaTime = 0.0f;
     GLfloat lastFrame = 0.0f;
@@ -118,15 +128,24 @@ void OpenGLRenderer::RenderForest(Forest *forest) {
     for(int x = 0; x < WORLD_SIZE_X; x++) {
         for(int y = 0; y < WORLD_SIZE_Y; y++) {
             Cell cell = forest->GetCell(x, y);
-            RenderTextureAtCell(this->renderer->RenderCell(cell), x, y);
-            if(cell.tree->IsAlive())
-                RenderTextureAtCell(this->renderer->RenderTree(cell, cell.tree), x, y);
+            if(cell.states->wall) {
+                RenderTextureAtCell(this->renderer->RenderCell(cell), x, y, 2, glm::vec4(0, 0, 0, 0));
+            }else{
+                RenderTextureAtCell(this->renderer->RenderCell(cell), x, y, 0, glm::vec4(0, 0, 0, 0));
+            }
+            if(cell.tree->IsAlive()) {
+                RenderTextureAtCell(this->renderer->RenderTree(cell, cell.tree), x, y, 1, glm::vec4(0, 0, 6.f, 6.f));
+            }
         }
     }
+
+    RenderBatches();
 }
 
-void OpenGLRenderer::RenderTextureAtCell(Texture tex, int x, int y) {
-    spriteRenderer->DrawSprite(tex, ProjectCellPositionToScreen(x, y), glm::vec2(16));
+void OpenGLRenderer::RenderTextureAtCell(Texture tex, int x, int y, int layer, glm::vec4 offsets) {
+    TextureBatch* batch = GetBatch(tex, layer);
+    batch->positions.push_back(glm::vec4(x + offsets.x, y + offsets.y, offsets.z, offsets.w));
+//    spriteRenderer->DrawSprite(tex, ProjectCellPositionToScreen(x, y), cellSize);
 }
 
 glm::vec2 OpenGLRenderer::ProjectCellPositionToScreen(int x, int y) {
@@ -168,6 +187,40 @@ GLuint OpenGLRenderer::GenerateAttachmentTexture(GLsizei width, GLsizei height, 
 
 bool OpenGLRenderer::ManageOwnLoop() {
     return true;
+}
+
+void OpenGLRenderer::RenderBatches() {
+    for (std::pair<const GLuint, TextureBatch*> batch : batches) {
+        if (batch.second->layer != 0) continue;
+        this->RenderBatch(batch.second);
+    }
+//    Shader shader = ResourceManager::GetInstance().GetShader(CLOUD_SHADER);
+    for (std::pair<const GLuint, TextureBatch*> batch : batches) {
+        if (batch.second->layer != 1) continue;
+        this->RenderBatch(batch.second);
+    }
+
+    for (std::pair<const GLuint, TextureBatch*> batch : batches) {
+        if (batch.second->layer != 2) continue;
+        this->RenderBatch(batch.second);
+    }
+
+    for (std::pair<const GLuint, TextureBatch*> batch : batches) batch.second->Flush();
+}
+
+
+void OpenGLRenderer::RenderBatch(TextureBatch* batch, Shader* shdr) {
+    for(glm::vec4 pos : batch->positions) {
+        spriteRenderer->DrawSprite(batch->texture, ProjectCellPositionToScreen(pos.x, pos.y), glm::vec2(cellSize.x + pos.z, cellSize.y + pos.w), 0.f, glm::vec4(1), shdr);
+    }
+}
+
+TextureBatch* OpenGLRenderer::GetBatch(Texture tex, int layer) {
+    for(std::pair<const GLuint, TextureBatch*> batch : batches)
+        if(batch.first == tex.id) return batch.second;
+    TextureBatch* batch = new TextureBatch(tex, layer);
+    batches[tex.id] = batch;
+    return batch;
 }
 
 /*

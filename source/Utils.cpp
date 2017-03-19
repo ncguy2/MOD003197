@@ -5,7 +5,9 @@
 #include <Defines.h>
 #include <Utils.h>
 #include <string>
+#if IS_WINDOWS || _WIN32
 #include <conio.h>
+#endif
 #include <cmath>
 #include <sstream>
 

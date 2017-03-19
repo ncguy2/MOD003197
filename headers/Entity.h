@@ -41,6 +41,7 @@ struct CellStates {
     bool damp = false;
     bool dry = false;
     bool wall = false;
+    bool tokill = true;
 };
 
 struct Cell {

@@ -24,8 +24,8 @@
 #define M_PI 3.14
 #endif
 
-#define WORLD_SIZE_X 71                               // World size, including single-width border
-#define WORLD_SIZE_Y 31                             // World size, including single-width border
+#define WORLD_SIZE_X 225                               // World size, including single-width border
+#define WORLD_SIZE_Y 125                             // World size, including single-width border
 #define TREE_ALIVE "8"                              // Character to use for living, non-burning trees
 #define TREE_IGNITED "&"                            // Character to use for ignited trees
 #define TREE_BURNING "x"                            // Character to use for burning trees
@@ -52,7 +52,7 @@
 #define MOISTURE_GENERATION_MAX_SPAWNS 5
 #define MOISTURE_GENERATION_SPAWN_CHANCE 1
 #define ALLOW_TREE_ISLANDS true
-#define TREE_GENERATION_ITERATIONS 3
+#define TREE_GENERATION_ITERATIONS 4
 #define MOISTURE_GENERATION_ITERATIONS 20
 #define IGNITION_MAX_ATTEMPTS 5
 #define MOISTURE_IGNITION_MITIGATION_FACTOR 0.5f
@@ -61,6 +61,8 @@
 #define DRY_COMBUST_CHANCE 1
 #define ENABLE_WIND true
 #define DAMP_EXTINGUISH_CHANCE 1
+#define OPENGL_RENDERER_CELL_SIZE 4
+#define TREE_MINIMUM_CLUSTER 5
 
 // CONSOLE COLOUR DEFINITIONS
 

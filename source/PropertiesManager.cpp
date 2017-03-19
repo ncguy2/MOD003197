@@ -17,7 +17,7 @@ struct RetrieveKey {
 
 vector<string> PropertiesManager::GetCategories() {
     vector<string> cats;
-    transform(properties.begin(), properties.end(), back_inserter(cats), RetrieveKey());
+    //transform(properties.begin(), properties.end(), back_inserter(cats), RetrieveKey());
     return cats;
 }
 
@@ -55,8 +55,8 @@ PropertiesManager::PropertiesManager() {
     map<string, string>* cat = nullptr;
     string catName;
     for(string line : lines) {
-        line.erase(std::find_if(line.rbegin(), line.rend(),
-                             std::not1(std::ptr_fun<int, int>(std::isspace))).base(), line.end());
+        //line.erase(std::find_if(line.rbegin(), line.rend(),
+          //                   std::not1(std::ptr_fun<int, int>(std::isspace))).base(), line.end());
         if(line.find_first_of('[') == 0 && line.find_last_of(']') == line.length()-1) {
             if(cat != nullptr)
                 properties[catName] = *cat;
