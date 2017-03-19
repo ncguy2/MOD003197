@@ -16,102 +16,59 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3858a4bd-4798-4b5f-ba6d-39e31b38ce32" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/external/cpp-properties/include/Properties.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/external/cpp-properties/include/PropertiesParser.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/external/cpp-properties/include/PropertiesUtils.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/external/cpp-properties/src/Properties.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/external/cpp-properties/src/PropertiesParser.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/external/cpp-properties/src/PropertiesUtils.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/headers/PropertyDefines.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/headers/rules/generation/TreeIslandCleanupRule.h" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/headers/PropertiesManager.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/PropertiesManager.cpp" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+    <list default="true" id="3858a4bd-4798-4b5f-ba6d-39e31b38ce32" name="Default" comment="Segmented renderers into platform-specific subsystems">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/headers/Mains.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/headers/PropertiesManager.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/Mains.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/PropertiesManager.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/linux_gcc/CMakeLists.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/linux_gcc/headers/render/BufferedRenderer.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/linux_gcc/source/render/BufferedRenderer.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/SOIL.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/SOIL.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/image_DXT.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/image_DXT.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/image_helper.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/image_helper.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/original/stb_image-1.09.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/original/stb_image-1.16.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/stb_image_aug.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/stb_image_aug.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/stbi_DDS_aug.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/stbi_DDS_aug_c.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/test_SOIL.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/win32_gcc/CMakeLists.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/win32_vc/CMakeLists.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/win32_vc/headers/render/BufferedRenderer.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subsystems/win32_vc/source/render/BufferedRenderer.cpp" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/headers/render/CursesRenderer.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/source/render/CursesRenderer.cpp" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakePostBuild.cmake" afterPath="$PROJECT_DIR$/CMakePostBuild.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TODO.txt" afterPath="$PROJECT_DIR$/TODO.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/external/include/curses.h" afterPath="$PROJECT_DIR$/external/include/curses.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/external/include/curspriv.h" afterPath="$PROJECT_DIR$/external/include/curspriv.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/external/include/panel.h" afterPath="$PROJECT_DIR$/external/include/panel.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/external/include/term.h" afterPath="$PROJECT_DIR$/external/include/term.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/Colours.h" afterPath="$PROJECT_DIR$/headers/Colours.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/Config.h" afterPath="$PROJECT_DIR$/headers/Config.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/Defines.h" afterPath="$PROJECT_DIR$/headers/Defines.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/Entity.h" afterPath="$PROJECT_DIR$/headers/Entity.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/Forest.h" afterPath="$PROJECT_DIR$/headers/Forest.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/Mains.h" afterPath="$PROJECT_DIR$/headers/Mains.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/Utils.h" afterPath="$PROJECT_DIR$/headers/Utils.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/WindManager.h" afterPath="$PROJECT_DIR$/headers/WindManager.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/file/FileHandler.h" afterPath="$PROJECT_DIR$/headers/file/FileHandler.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/menu/MenuHost.h" afterPath="$PROJECT_DIR$/headers/menu/MenuHost.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/menu/MenuItem.h" afterPath="$PROJECT_DIR$/headers/menu/MenuItem.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/render/BaseRenderer.h" afterPath="$PROJECT_DIR$/headers/render/BaseRenderer.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/render/TextRenderer.h" afterPath="$PROJECT_DIR$/headers/render/TextRenderer.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/rules/CombustRule.h" afterPath="$PROJECT_DIR$/headers/rules/CombustRule.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/rules/ExtinguishRule.h" afterPath="$PROJECT_DIR$/headers/rules/ExtinguishRule.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/rules/GrowthRule.h" afterPath="$PROJECT_DIR$/headers/rules/GrowthRule.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/rules/IgniteRule.h" afterPath="$PROJECT_DIR$/headers/rules/IgniteRule.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/rules/RuleSet.h" afterPath="$PROJECT_DIR$/headers/rules/RuleSet.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/rules/Rules.h" afterPath="$PROJECT_DIR$/headers/rules/Rules.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/rules/generation/GenerationRule.h" afterPath="$PROJECT_DIR$/headers/rules/generation/GenerationRule.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/rules/generation/MoistureGenerationRule.h" afterPath="$PROJECT_DIR$/headers/rules/generation/MoistureGenerationRule.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/rules/generation/TreeGenerationRule.h" afterPath="$PROJECT_DIR$/headers/rules/generation/TreeGenerationRule.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/Config.cpp" afterPath="$PROJECT_DIR$/source/Config.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/Entity.cpp" afterPath="$PROJECT_DIR$/source/Entity.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/Forest.cpp" afterPath="$PROJECT_DIR$/source/Forest.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/Main.cpp" afterPath="$PROJECT_DIR$/source/Main.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/Mains.cpp" afterPath="$PROJECT_DIR$/source/Mains.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/Utils.cpp" afterPath="$PROJECT_DIR$/source/Utils.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/WindManager.cpp" afterPath="$PROJECT_DIR$/source/WindManager.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/file/FileHandler.cpp" afterPath="$PROJECT_DIR$/source/file/FileHandler.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/menu/MenuHost.cpp" afterPath="$PROJECT_DIR$/source/menu/MenuHost.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/menu/MenuItem.cpp" afterPath="$PROJECT_DIR$/source/menu/MenuItem.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/render/TextRenderer.cpp" afterPath="$PROJECT_DIR$/source/render/TextRenderer.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/rules/RuleSet.cpp" afterPath="$PROJECT_DIR$/source/rules/RuleSet.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/rules/generation/MoistureGenerationRule.cpp" afterPath="$PROJECT_DIR$/source/rules/generation/MoistureGenerationRule.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/linux_gcc/CMakeLists.txt" afterPath="$PROJECT_DIR$/subsystems/linux_gcc/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/linux_gcc/headers/render/BufferedRenderer.h" afterPath="$PROJECT_DIR$/subsystems/linux_gcc/headers/render/BufferedRenderer.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/linux_gcc/source/render/BufferedRenderer.cpp" afterPath="$PROJECT_DIR$/subsystems/linux_gcc/source/render/BufferedRenderer.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/CMakeLists.txt" afterPath="$PROJECT_DIR$/subsystems/opengl/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/assets/shaders/cloud.frag.glsl" afterPath="$PROJECT_DIR$/subsystems/opengl/assets/shaders/cloud.frag.glsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/assets/shaders/sprite.frag.glsl" afterPath="$PROJECT_DIR$/subsystems/opengl/assets/shaders/sprite.frag.glsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/assets/shaders/vert.glsl" afterPath="$PROJECT_DIR$/subsystems/opengl/assets/shaders/vert.glsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/headers/EntityTextureRenderer.h" afterPath="$PROJECT_DIR$/subsystems/opengl/headers/EntityTextureRenderer.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/headers/OpenGLRenderer.h" afterPath="$PROJECT_DIR$/subsystems/opengl/headers/OpenGLRenderer.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/headers/ResourceManager.h" afterPath="$PROJECT_DIR$/subsystems/opengl/headers/ResourceManager.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/headers/Shader.h" afterPath="$PROJECT_DIR$/subsystems/opengl/headers/Shader.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/headers/Shaders.h" afterPath="$PROJECT_DIR$/subsystems/opengl/headers/Shaders.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/headers/SpriteRenderer.h" afterPath="$PROJECT_DIR$/subsystems/opengl/headers/SpriteRenderer.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/headers/Texture.h" afterPath="$PROJECT_DIR$/subsystems/opengl/headers/Texture.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/headers/Textures.h" afterPath="$PROJECT_DIR$/subsystems/opengl/headers/Textures.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/SOIL.c" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/SOIL.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/SOIL.h" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/SOIL.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/image_DXT.c" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/image_DXT.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/image_DXT.h" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/image_DXT.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/image_helper.c" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/image_helper.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/image_helper.h" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/image_helper.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/original/stb_image-1.09.c" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/original/stb_image-1.09.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/original/stb_image-1.16.c" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/original/stb_image-1.16.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/stb_image_aug.c" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/stb_image_aug.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/stb_image_aug.h" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/stb_image_aug.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/stbi_DDS_aug.h" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/stbi_DDS_aug.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/stbi_DDS_aug_c.h" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/stbi_DDS_aug_c.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/test_SOIL.cpp" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/test_SOIL.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/source/EntityTextureRenderer.cpp" afterPath="$PROJECT_DIR$/subsystems/opengl/source/EntityTextureRenderer.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/source/OpenGLRenderer.cpp" afterPath="$PROJECT_DIR$/subsystems/opengl/source/OpenGLRenderer.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/source/ResourceManager.cpp" afterPath="$PROJECT_DIR$/subsystems/opengl/source/ResourceManager.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/source/Shader.cpp" afterPath="$PROJECT_DIR$/subsystems/opengl/source/Shader.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/source/SpriteRenderer.cpp" afterPath="$PROJECT_DIR$/subsystems/opengl/source/SpriteRenderer.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/source/Texture.cpp" afterPath="$PROJECT_DIR$/subsystems/opengl/source/Texture.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/win32_gcc/CMakeLists.txt" afterPath="$PROJECT_DIR$/subsystems/win32_gcc/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/win32_gcc/headers/render/BufferedRenderer.h" afterPath="$PROJECT_DIR$/subsystems/win32_gcc/headers/render/BufferedRenderer.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/win32_gcc/source/render/BufferedRenderer.cpp" afterPath="$PROJECT_DIR$/subsystems/win32_gcc/source/render/BufferedRenderer.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/win32_vc/CMakeLists.txt" afterPath="$PROJECT_DIR$/subsystems/win32_vc/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/win32_vc/headers/render/BufferedRenderer.h" afterPath="$PROJECT_DIR$/subsystems/win32_vc/headers/render/BufferedRenderer.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/win32_vc/source/render/BufferedRenderer.cpp" afterPath="$PROJECT_DIR$/subsystems/win32_vc/source/render/BufferedRenderer.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/headers/render/BufferedRenderer.h" afterPath="$PROJECT_DIR$/subsystems/win32_gcc/headers/render/BufferedRenderer.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/render/BufferedRenderer.cpp" afterPath="$PROJECT_DIR$/subsystems/win32_gcc/source/render/BufferedRenderer.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -125,39 +82,89 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
-  <component name="FavoritesManager">
-    <favorites_list name="FireSim" />
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Defines.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/headers/Defines.h">
+      <file leaf-file-name="PropertiesManager.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/headers/PropertiesManager.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="639">
-              <caret line="87" column="116" lean-forward="false" selection-start-line="87" selection-start-column="116" selection-end-line="87" selection-end-column="116" />
+            <state relative-caret-position="544">
+              <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
               <folding>
-                <element signature="e#77#135#0" expanded="true" />
+                <element signature="e#113#130#0" expanded="true" />
+                <element signature="e#355#367#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Forest.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/Forest.cpp">
+      <file leaf-file-name="ResourceManager.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/subsystems/opengl/headers/ResourceManager.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="117" column="33" lean-forward="false" selection-start-line="117" selection-start-column="33" selection-end-line="117" selection-end-column="33" />
+            <state relative-caret-position="80">
+              <caret line="12" column="6" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IgniteRule.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/headers/rules/IgniteRule.h">
+      <file leaf-file-name="PropertiesManager.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/PropertiesManager.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="129" column="34" lean-forward="false" selection-start-line="129" selection-start-column="34" selection-end-line="129" selection-end-column="34" />
+            <state relative-caret-position="272">
+              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="50" selection-end-column="1" />
+              <folding>
+                <element signature="e#40#57#0" expanded="true" />
+                <element signature="e#194#206#0" expanded="true" />
+                <element signature="e#1041#1053#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileHandler.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/headers/file/FileHandler.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+              <folding>
+                <element signature="e#253#265#0" expanded="true" />
+                <element signature="e#367#379#0" expanded="true" />
+                <marker date="1488304822856" expanded="true" signature="173:522" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileHandler.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/file/FileHandler.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="464">
+              <caret line="38" column="60" lean-forward="false" selection-start-line="38" selection-start-column="60" selection-end-line="38" selection-end-column="60" />
+              <folding>
+                <marker date="1488304824676" expanded="true" signature="154:225" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Defines.h" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/headers/Defines.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="47" column="41" lean-forward="true" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextRenderer.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/render/TextRenderer.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="108" column="41" lean-forward="false" selection-start-line="108" selection-start-column="41" selection-end-line="108" selection-end-column="41" />
+              <folding>
+                <element signature="e#40#60#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -165,63 +172,19 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
-              <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PropertyDefines.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/headers/PropertyDefines.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
+            <state relative-caret-position="96">
               <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OpenGLRenderer.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/subsystems/opengl/source/OpenGLRenderer.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="102" column="11" lean-forward="true" selection-start-line="102" selection-start-column="11" selection-end-line="102" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="thread" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/include/c++/6/thread">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="170" column="4" lean-forward="false" selection-start-line="170" selection-start-column="4" selection-end-line="170" selection-end-column="4" />
-              <folding>
-                <element signature="e#3497#3536#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="properties.props" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cmake-build-debug/properties.props">
+      <file leaf-file-name="Forest.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/headers/Forest.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="432">
-              <caret line="24" column="36" lean-forward="false" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+              <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OpenGLRenderer.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/subsystems/opengl/headers/OpenGLRenderer.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding>
-                <element signature="e#107#127#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -244,11 +207,6 @@
       <find>getch</find>
       <find>Initial</find>
       <find>SOIL_load_image</find>
-      <find>PROP_BURNING_IGNITE_MODIFIER</find>
-      <find>file</find>
-      <find>deltaTime</find>
-      <find>fps</find>
-      <find>second</find>
     </findStrings>
     <replaceStrings>
       <replace>pass.</replace>
@@ -262,65 +220,66 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/subsystems/opengl/assets/shaders/sprite.frag.glsl" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/headers/ResourceManager.h" />
+        <option value="$PROJECT_DIR$/CMakePostBuild.cmake" />
+        <option value="$PROJECT_DIR$/source/Entity.cpp" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/headers/Texture.h" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/headers/EntityTextureRenderer.h" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/assets/shaders/combine.frag.glsl" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/headers/Metaball.h" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/headers/Textures.h" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/headers/Shaders.h" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/source/Metaball.cpp" />
+        <option value="$PROJECT_DIR$/cmake-build-debug/assets/shaders/sprite.frag.glsl" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/source/EntityTextureRenderer.cpp" />
+        <option value="$PROJECT_DIR$/cmake-build-debug/assets/shaders/cloud.frag.glsl" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/source/SpriteRenderer.cpp" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/headers/SpriteRenderer.h" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/assets/shaders/cloud.frag.glsl" />
+        <option value="$PROJECT_DIR$/source/rules/generation/MoistureGenerationRule.cpp" />
+        <option value="$PROJECT_DIR$/headers/rules/IgniteRule.h" />
+        <option value="$PROJECT_DIR$/headers/Entity.h" />
+        <option value="$PROJECT_DIR$/headers/render/BufferedRenderer.h" />
+        <option value="$PROJECT_DIR$/source/menu/MenuHost.cpp" />
+        <option value="$PROJECT_DIR$/headers/render/CursesRenderer.h" />
+        <option value="$PROJECT_DIR$/source/render/BufferedRenderer.cpp" />
+        <option value="$PROJECT_DIR$/source/rules/RuleSet.cpp" />
+        <option value="$PROJECT_DIR$/source/menu/MenuItem.cpp" />
         <option value="$PROJECT_DIR$/headers/menu/MenuItem.h" />
+        <option value="$PROJECT_DIR$/source/Main.cpp" />
         <option value="$PROJECT_DIR$/subsystems/win32_gcc/source/render/BufferedRenderer.cpp" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/headers/OpenGLRenderer.h" />
+        <option value="$PROJECT_DIR$/headers/render/BaseRenderer.h" />
         <option value="$PROJECT_DIR$/headers/Mains.h" />
         <option value="$PROJECT_DIR$/subsystems/win32_gcc/headers/render/BufferedRenderer.h" />
         <option value="$PROJECT_DIR$/headers/render/TextRenderer.h" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/source/OpenGLRenderer.cpp" />
         <option value="$PROJECT_DIR$/subsystems/win32_vc/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/subsystems/win32_gcc/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/headers/Utils.h" />
         <option value="$PROJECT_DIR$/subsystems/opengl/source/ResourceManager.cpp" />
+        <option value="$PROJECT_DIR$/source/Mains.cpp" />
         <option value="$PROJECT_DIR$/subsystems/linux_gcc/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/source/Forest.cpp" />
+        <option value="$PROJECT_DIR$/source/Utils.cpp" />
+        <option value="$PROJECT_DIR$/headers/PropertiesManager.h" />
         <option value="$PROJECT_DIR$/source/PropertiesManager.cpp" />
         <option value="$PROJECT_DIR$/headers/file/FileHandler.h" />
         <option value="$PROJECT_DIR$/source/file/FileHandler.cpp" />
         <option value="$PROJECT_DIR$/source/render/TextRenderer.cpp" />
-        <option value="$APPLICATION_HOME_DIR$/bin/cmake/share/cmake-3.7/Modules/FindGLFW.cmake" />
-        <option value="$PROJECT_DIR$/subsystems/opengl/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/headers/rules/generation/TreeIslandClenaupRule.h" />
-        <option value="$PROJECT_DIR$/headers/Entity.h" />
-        <option value="$PROJECT_DIR$/subsystems/opengl/source/Texture.cpp" />
-        <option value="$PROJECT_DIR$/subsystems/opengl/headers/Texture.h" />
-        <option value="$PROJECT_DIR$/subsystems/opengl/assets/shaders/cloud.frag.glsl" />
-        <option value="$PROJECT_DIR$/cmake-build-debug/assets/shaders/cloud.frag.glsl" />
-        <option value="$PROJECT_DIR$/subsystems/opengl/assets/shaders/sprite.frag.glsl" />
-        <option value="$PROJECT_DIR$/source/Entity.cpp" />
-        <option value="$PROJECT_DIR$/headers/rules/generation/TreeIslandCleanupRule.h" />
-        <option value="$PROJECT_DIR$/headers/render/BaseRenderer.h" />
-        <option value="$PROJECT_DIR$/source/Mains.cpp" />
-        <option value="$PROJECT_DIR$/headers/PropertiesManager.h" />
-        <option value="$PROJECT_DIR$/external/cpp-properties/include/PropertiesParser.h" />
-        <option value="$PROJECT_DIR$/external/cpp-properties/include/PropertiesUtils.h" />
-        <option value="$PROJECT_DIR$/external/cpp-properties/src/PropertiesUtils.cpp" />
-        <option value="$PROJECT_DIR$/source/menu/MenuHost.cpp" />
-        <option value="$PROJECT_DIR$/headers/rules/generation/MoistureGenerationRule.h" />
-        <option value="$PROJECT_DIR$/headers/Forest.h" />
-        <option value="$PROJECT_DIR$/headers/rules/generation/GenerationRule.h" />
-        <option value="$PROJECT_DIR$/source/rules/generation/MoistureGenerationRule.cpp" />
-        <option value="$PROJECT_DIR$/headers/rules/GrowthRule.h" />
-        <option value="$PROJECT_DIR$/source/WindManager.cpp" />
-        <option value="$PROJECT_DIR$/external/cpp-properties/src/PropertiesParser.cpp" />
-        <option value="$PROJECT_DIR$/external/cpp-properties/include/Properties.h" />
-        <option value="$PROJECT_DIR$/external/cpp-properties/src/Properties.cpp" />
-        <option value="$PROJECT_DIR$/headers/Utils.h" />
-        <option value="$PROJECT_DIR$/source/Utils.cpp" />
-        <option value="$PROJECT_DIR$/headers/PropertyDefines.h" />
-        <option value="$PROJECT_DIR$/source/Main.cpp" />
-        <option value="$PROJECT_DIR$/headers/rules/generation/TreeGenerationRule.h" />
-        <option value="$PROJECT_DIR$/source/Forest.cpp" />
-        <option value="$PROJECT_DIR$/headers/Defines.h" />
-        <option value="$PROJECT_DIR$/cmake-build-debug/properties.props" />
-        <option value="$PROJECT_DIR$/subsystems/opengl/headers/OpenGLRenderer.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/subsystems/opengl/source/OpenGLRenderer.cpp" />
+        <option value="$PROJECT_DIR$/headers/Defines.h" />
       </list>
     </option>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="width" value="1922" />
-    <option name="height" value="1081" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="2576" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -348,29 +307,7 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Header Search Paths" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FireSim" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Header Search Paths" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="external" />
+              <option name="myItemId" value="MOD003197" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -380,79 +317,7 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Header Search Paths" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="external" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cpp-properties" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FireSim" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AssignmentStaging" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FireSim" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AssignmentStaging" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="subsystems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FireSim" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AssignmentStaging" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="subsystems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="opengl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FireSim" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AssignmentStaging" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="subsystems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="opengl" />
+              <option name="myItemId" value="MOD003197" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -466,21 +331,7 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AssignmentStaging" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FireSim" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AssignmentStaging" />
+              <option name="myItemId" value="MOD003197" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -494,65 +345,15 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AssignmentStaging" />
+              <option name="myItemId" value="MOD003197" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="external" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FireSim" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AssignmentStaging" />
+              <option name="myItemId" value="headers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="external" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cpp-properties" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FireSim" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AssignmentStaging" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="external" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cpp-properties" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FireSim" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AssignmentStaging" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cmake-build-debug" />
+              <option name="myItemId" value="file" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -562,9 +363,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="SearchEverywhereHistoryKey" value="defines&#9;FILE&#9;file:///media/nick/Win10/Modules/Object-Oriented C++/AssignmentStaging/headers/Defines.h&#10;Propert&#9;FILE&#9;file:///media/nick/Win10/Modules/Object-Oriented C++/AssignmentStaging/external/cpp-properties/src/PropertiesParser.cpp&#10;utils&#9;FILE&#9;file:///media/nick/Win10/Modules/Object-Oriented C++/AssignmentStaging/headers/Utils.h&#10;std::map&#9;null&#9;null&#10;util&#9;FILE&#9;file:///media/nick/Win10/Modules/Object-Oriented C++/AssignmentStaging/headers/Utils.h&#10;Def&#9;FILE&#9;file:///media/nick/Win10/Modules/Object-Oriented C++/AssignmentStaging/headers/Defines.h&#10;Prop&#9;FILE&#9;file:///media/nick/Win10/Modules/Object-Oriented C++/AssignmentStaging/external/cpp-properties/src/PropertiesParser.cpp&#10;P&#9;FILE&#9;file:///media/nick/Win10/Modules/Object-Oriented C++/AssignmentStaging/external/cpp-properties/include/PropertiesParser.h&#10;define&#9;FILE&#9;file:///media/nick/Win10/Modules/Object-Oriented C++/AssignmentStaging/headers/Defines.h&#10;Forest&#9;FILE&#9;file:///media/nick/Win10/Modules/Object-Oriented C++/AssignmentStaging/source/Forest.cpp&#10;Properties.cpp&#9;FILE&#9;file:///media/nick/Win10/Modules/Object-Oriented C++/AssignmentStaging/external/cpp-properties/src/Properties.cpp&#10;Buffered&#9;FILE&#9;file:///home/nick/CLionProjects/Assignment/MOD003197/subsystems/linux_gcc/source/render/BufferedRenderer.cpp&#10;Buffere&#9;FILE&#9;file:///home/nick/CLionProjects/Assignment/MOD003197/subsystems/linux_gcc/headers/render/BufferedRenderer.h&#10;Tree&#9;null&#9;null&#10;fore&#9;FILE&#9;file:///home/nick/CLionProjects/Assignment/MOD003197/source/Forest.cpp&#10;TextureRe&#9;null&#9;null&#10;Mains&#9;FILE&#9;file:///home/nick/CLionProjects/Assignment/MOD003197/source/Mains.cpp&#10;EntityR&#9;null&#9;null&#10;OpenGLR&#9;FILE&#9;file:///home/nick/CLionProjects/Assignment/MOD003197/subsystems/opengl/source/OpenGLRenderer.cpp&#10;ResourceMa&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/subsystems/opengl/source/ResourceManager.cpp&#10;utils.cpp&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/source/Utils.cpp&#10;Moisture&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/source/rules/generation/MoistureGenerationRule.cpp&#10;RuleSet&#9;FILE&#9;file://H:/Modules/Object-Oriented C++/Assignment/MOD003197/source/rules/RuleSet.cpp&#10;Utils&#9;FILE&#9;file://H:/Modules/Object-Oriented C++/Assignment/MOD003197/source/Utils.cpp&#10;main&#9;FILE&#9;file:///media/nick/Win10/Modules/Object-Oriented C++/Assignment/MOD003197/source/Main.cpp&#10;DEF&#9;FILE&#9;file://H:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/Defines.h&#10;textures&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/subsystems/opengl/headers/Textures.h&#10;SpriteRenderer&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/subsystems/opengl/source/SpriteRenderer.cpp&#10;Shaders&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/subsystems/opengl/headers/Shaders.h&#10;Shader&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/subsystems/opengl/headers/Shader.h&#10;Entity&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/subsystems/opengl/source/EntityTextureRenderer.cpp&#10;uti&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/source/Utils.cpp&#10;TextureBin&#9;null&#9;null&#10;TextRender&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/source/render/TextRenderer.cpp&#10;TextRe&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/source/render/TextRenderer.cpp&#10;TextRenderer&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/source/render/TextRenderer.cpp&#10;Ignite&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/rules/IgniteRule.h&#10;Cell&#9;null&#9;null&#10;TextR&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/render/TextRenderer.h&#10;tEXTr&#9;FILE&#9;file://H:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/render/TextRenderer.h&#10;TexR&#9;FILE&#9;file://H:/Modules/Object-Oriented C++/Assignment/MOD003197/source/render/TextRenderer.cpp&#10;Ruleset&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/rules/RuleSet.h" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../OpenGLBootstrap" />
+    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
+    <property name="SearchEverywhereHistoryKey" value="ResourceMa&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/subsystems/opengl/source/ResourceManager.cpp&#10;utils.cpp&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/source/Utils.cpp&#10;Moisture&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/source/rules/generation/MoistureGenerationRule.cpp&#10;utils&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/Utils.h&#10;defines&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/Defines.h&#10;RuleSet&#9;FILE&#9;file://H:/Modules/Object-Oriented C++/Assignment/MOD003197/source/rules/RuleSet.cpp&#10;Utils&#9;FILE&#9;file://H:/Modules/Object-Oriented C++/Assignment/MOD003197/source/Utils.cpp&#10;main&#9;FILE&#9;file:///media/nick/Win10/Modules/Object-Oriented C++/Assignment/MOD003197/source/Main.cpp&#10;DEF&#9;FILE&#9;file://H:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/Defines.h&#10;textures&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/subsystems/opengl/headers/Textures.h&#10;SpriteRenderer&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/subsystems/opengl/source/SpriteRenderer.cpp&#10;Shaders&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/subsystems/opengl/headers/Shaders.h&#10;Shader&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/subsystems/opengl/headers/Shader.h&#10;Entity&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/subsystems/opengl/source/EntityTextureRenderer.cpp&#10;uti&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/source/Utils.cpp&#10;TextureBin&#9;null&#9;null&#10;TextRender&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/source/render/TextRenderer.cpp&#10;Buffere&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/source/render/BufferedRenderer.cpp&#10;TextRe&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/source/render/TextRenderer.cpp&#10;TextRenderer&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/source/render/TextRenderer.cpp&#10;Ignite&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/rules/IgniteRule.h&#10;util&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/Utils.h&#10;Cell&#9;null&#9;null&#10;TextR&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/render/TextRenderer.h&#10;tEXTr&#9;FILE&#9;file://H:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/render/TextRenderer.h&#10;TexR&#9;FILE&#9;file://H:/Modules/Object-Oriented C++/Assignment/MOD003197/source/render/TextRenderer.cpp&#10;Ruleset&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/rules/RuleSet.h&#10;Tree&#9;null&#9;null" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -575,11 +376,11 @@
       <recent name="N:\Modules\Object-Oriented C++\Assignment\MOD003197\headers\path" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/cmake-build-debug" />
-      <recent name="$PROJECT_DIR$/subsystems/opengl/assets/shaders" />
-      <recent name="$PROJECT_DIR$/cmake-build-debug/assets/shaders" />
       <recent name="N:\Modules\Object-Oriented C++\Assignment\MOD003197\subsystems\linux_gcc" />
       <recent name="N:\Modules\Object-Oriented C++\Assignment\MOD003197\subsystems\win32_vc" />
+      <recent name="$PROJECT_DIR$/cmake-build-debug" />
+      <recent name="N:\Modules\Object-Oriented C++\Assignment\MOD003197\cmake-build-debug\assets\shaders" />
+      <recent name="N:\Modules\Object-Oriented C++\Assignment\MOD003197\cmake-build-debug" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -710,9 +511,7 @@
       <method />
     </configuration>
     <configuration default="false" name="FireSim" type="CMakeRunConfiguration" factoryName="Application" singleton="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FireSim" TARGET_NAME="FireSim" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="FireSim" RUN_TARGET_NAME="FireSim">
-      <envs>
-        <env name="TERM" value="konsole" />
-      </envs>
+      <envs />
       <method />
     </configuration>
     <list size="2">
@@ -763,7 +562,7 @@
       <workItem from="1488036581329" duration="10460000" />
       <workItem from="1488048331449" duration="8806000" />
       <workItem from="1488139564987" duration="337000" />
-      <workItem from="1488296700978" duration="8752000" />
+      <workItem from="1488296700978" duration="8447000" />
     </task>
     <task id="LOCAL-00001" summary="Lots">
       <created>1487711696431</created>
@@ -800,18 +599,11 @@
       <option name="project" value="LOCAL" />
       <updated>1488056641811</updated>
     </task>
-    <task id="LOCAL-00006" summary="Segmented renderers into platform-specific subsystems">
-      <created>1488305215717</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1488305215717</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92207000" />
+    <option name="totallyTimeSpent" value="91902000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -823,20 +615,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1922" height="1081" extended-state="6" />
+    <frame x="-8" y="-8" width="2576" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3803109" sideWeight="0.85887307" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3253886" sideWeight="0.49790356" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32606438" sideWeight="0.8993711" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3271028" sideWeight="0.49790356" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33367875" sideWeight="0.6940495" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21865284" sideWeight="0.40600315" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32771823" sideWeight="0.49790356" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27277514" sideWeight="0.49195403" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32746115" sideWeight="0.49815693" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40602285" sideWeight="0.6897275" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5181724" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281412" sideWeight="0.49790356" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20173365" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26632124" sideWeight="0.3059505" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27286246" sideWeight="0.508046" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31464174" sideWeight="0.31027254" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="1158" y="520" width="243" height="40" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -882,213 +675,91 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="218" />
+      <option name="time" value="164" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://H:/Tools/Toolchains/MinGW/lib/gcc/mingw32/5.3.0/include/c++/bits/stl_map.h" />
-    <entry file="file://H:/Tools/Toolchains/MinGW/lib/gcc/mingw32/5.3.0/include/c++/bits/stl_tree.h" />
-    <entry file="file://$PROJECT_DIR$/headers/rules/Rules.h">
+    <entry file="file://$PROJECT_DIR$/source/Entity.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="522">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/headers/rules/RuleSet.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/rules/RuleSet.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="10" lean-forward="false" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://H:/Tools/Toolchains/MinGW/lib/gcc/mingw32/5.3.0/include/c++/bits/basic_string.h" />
-    <entry file="file://H:/Tools/Toolchains/MinGW/lib/gcc/mingw32/5.3.0/include/c++/bits/basic_string.tcc" />
-    <entry file="file://$PROJECT_DIR$/headers/rules/generation/TreeIslandCleanupRule.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="63" lean-forward="false" selection-start-line="11" selection-start-column="63" selection-end-line="11" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/subsystems/opengl/external/include/GL/glew.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="277" column="21" lean-forward="false" selection-start-line="277" selection-start-column="21" selection-end-line="277" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/render/BaseRenderer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="17" lean-forward="false" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/menu/MenuHost.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/menu/MenuItem.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="17" lean-forward="false" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/menu/MenuItem.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="26" lean-forward="false" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/PropertiesManager.cpp" />
-    <entry file="file://$PROJECT_DIR$/headers/PropertiesManager.h" />
-    <entry file="file://$PROJECT_DIR$/external/cpp-properties/include/PropertiesUtils.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/menu/MenuHost.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="56" column="28" lean-forward="false" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/Project.cbp">
+    <entry file="file://$PROJECT_DIR$/headers/rules/CleanupRule.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/external/cpp-properties/src/PropertiesUtils.cpp">
+    <entry file="file://$PROJECT_DIR$/headers/rules/CombustRule.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="48" column="18" lean-forward="false" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/headers/Forest.h">
+    <entry file="file://$PROJECT_DIR$/headers/rules/ExtinguishRule.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="57" column="25" lean-forward="false" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/rules/generation/GenerationRule.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="16" column="30" lean-forward="false" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/rules/generation/MoistureGenerationRule.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="31" column="14" lean-forward="false" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/Mains.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="38" column="16" lean-forward="false" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/subsystems/opengl/headers/ResourceManager.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/headers/rules/GrowthRule.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="39" column="37" lean-forward="false" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/rules/IgniteRule.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="114" column="47" lean-forward="false" selection-start-line="114" selection-start-column="47" selection-end-line="114" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/Entity.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/menu/MenuHost.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="56" column="51" lean-forward="false" selection-start-line="56" selection-start-column="51" selection-end-line="56" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/render/CursesRenderer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/render/CursesRenderer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://H:/Tools/Toolchains/MinGW/include/wincon.h" />
+    <entry file="file://$PROJECT_DIR$/source/rules/RuleSet.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/rules/generation/MoistureGenerationRule.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="48" column="31" lean-forward="false" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/WindManager.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="7" lean-forward="false" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/6/bits/stl_map.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="95" column="10" lean-forward="false" selection-start-line="95" selection-start-column="10" selection-end-line="95" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/6/bits/stl_algo.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="4162" column="36" lean-forward="false" selection-start-line="4162" selection-start-column="36" selection-end-line="4162" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/Utils.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="112" column="25" lean-forward="false" selection-start-line="112" selection-start-column="25" selection-end-line="112" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/external/cpp-properties/include/PropertiesParser.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-          <folding>
-            <element signature="e#110#127#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/external/cpp-properties/src/PropertiesParser.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="57" column="49" lean-forward="false" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
-          <folding>
-            <element signature="e#40#58#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/properties.props.default">
+    <entry file="file://$PROJECT_DIR$/CMakePostBuild.cmake">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1096,185 +767,493 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/external/cpp-properties/src/Properties.cpp">
+    <entry file="file://$PROJECT_DIR$/headers/menu/MenuItem.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#38#58#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/external/cpp-properties/include/Properties.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="38" column="13" lean-forward="false" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-          <folding>
-            <element signature="e#98#115#0" expanded="false" />
-            <marker date="1489582030711" expanded="true" signature="204:455" ph="{...}" />
-            <marker date="1489582030711" expanded="true" signature="517:773" ph="{...}" />
-            <marker date="1489582030711" expanded="true" signature="797:1708" ph="{...}" />
-            <marker date="1489582030711" expanded="true" signature="849:929" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/Utils.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="235" column="11" lean-forward="false" selection-start-line="235" selection-start-column="11" selection-end-line="235" selection-end-column="11" />
-          <folding>
-            <marker date="1489582080127" expanded="true" signature="216:247" ph="{...}" />
-            <marker date="1489582080127" expanded="true" signature="289:354" ph="{...}" />
-            <marker date="1489582080127" expanded="true" signature="382:543" ph="{...}" />
-            <marker date="1489582080127" expanded="true" signature="589:740" ph="{...}" />
-            <marker date="1489582080127" expanded="true" signature="810:974" ph="{...}" />
-            <marker date="1489582080127" expanded="true" signature="1003:1077" ph="{...}" />
-            <marker date="1489582080127" expanded="true" signature="1139:1501" ph="{...}" />
-            <marker date="1489582080127" expanded="true" signature="1616:2284" ph="{...}" />
-            <marker date="1489582080127" expanded="true" signature="2319:2363" ph="{...}" />
-            <marker date="1489582080127" expanded="true" signature="4834:4880" ph="{...}" />
-            <marker date="1489582080127" expanded="true" signature="4938:4982" ph="{...}" />
-            <marker date="1489582080127" expanded="true" signature="5040:5084" ph="{...}" />
-            <marker date="1489582080127" expanded="true" signature="5143:5255" ph="{...}" />
-            <marker date="1489582080127" expanded="true" signature="5315:5496" ph="{...}" />
-            <marker date="1489582080127" expanded="true" signature="5529:5592" ph="{...}" />
-            <marker date="1489582080127" expanded="true" signature="5681:5816" ph="{...}" />
-            <marker date="1489582080127" expanded="true" signature="5890:5973" ph="{...}" />
-            <marker date="1489582080127" expanded="true" signature="6027:6090" ph="{...}" />
-            <marker date="1489582080127" expanded="true" signature="6124:6276" ph="{...}" />
-            <marker date="1489582080127" expanded="true" signature="6375:6519" ph="{...}" />
-            <marker date="1489582080127" expanded="true" signature="6591:6613" ph="{...}" />
-            <marker date="1489582080127" expanded="true" signature="6642:6723" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/Main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding>
-            <element signature="e#40#59#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/6/bits/stl_vector.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="915" column="0" lean-forward="false" selection-start-line="915" selection-start-column="0" selection-end-line="915" selection-end-column="0" />
+        <state relative-caret-position="320">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/c++/6/bits/stl_bvector.h">
+    <entry file="file://$PROJECT_DIR$/source/menu/MenuItem.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="715" column="0" lean-forward="false" selection-start-line="715" selection-start-column="0" selection-end-line="715" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/rules/generation/TreeGenerationRule.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="28" column="29" lean-forward="false" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/Forest.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="117" column="33" lean-forward="false" selection-start-line="117" selection-start-column="33" selection-end-line="117" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/subsystems/opengl/external/include/GLFW/glfw3.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="327" column="38" lean-forward="true" selection-start-line="327" selection-start-column="38" selection-end-line="327" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/Defines.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="639">
-          <caret line="87" column="116" lean-forward="false" selection-start-line="87" selection-start-column="116" selection-end-line="87" selection-end-column="116" />
-          <folding>
-            <element signature="e#77#135#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/properties.props">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="36" lean-forward="false" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/PropertyDefines.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/file/FileHandler.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/rules/IgniteRule.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="129" column="34" lean-forward="false" selection-start-line="129" selection-start-column="34" selection-end-line="129" selection-end-column="34" />
+        <state relative-caret-position="208">
+          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/subsystems/opengl/headers/OpenGLRenderer.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="479">
+          <caret line="38" column="4" lean-forward="false" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/render/BaseRenderer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="2" lean-forward="false" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
           <folding>
-            <element signature="e#107#127#0" expanded="true" />
+            <element signature="e#151#160#0" expanded="false" />
+            <element signature="e#338#347#0" expanded="false" />
+            <marker date="1488299812222" expanded="true" signature="367:677" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/c++/6/thread">
+    <entry file="file://$PROJECT_DIR$/subsystems/win32_gcc/headers/render/BufferedRenderer.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="170" column="4" lean-forward="false" selection-start-line="170" selection-start-column="4" selection-end-line="170" selection-end-column="4" />
-          <folding>
-            <element signature="e#3497#3536#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="144">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/render/TextRenderer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/Main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="39" column="17" lean-forward="false" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/subsystems/opengl/source/OpenGLRenderer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="102" column="11" lean-forward="true" selection-start-line="102" selection-start-column="11" selection-end-line="102" selection-end-column="11" />
+        <state relative-caret-position="208">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/Mains.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" column="46" lean-forward="false" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+          <folding>
+            <element signature="e#89#121#0" expanded="false" />
+            <element signature="e#382#394#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/source/Shader.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" column="9" lean-forward="false" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+          <folding>
+            <element signature="e#40#59#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/win32_gcc/source/render/BufferedRenderer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#59#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/win32_vc/headers/render/BufferedRenderer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/win32_gcc/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="29" lean-forward="false" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/rules/generation/MoistureGenerationRule.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="48" column="47" lean-forward="false" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
+          <folding>
+            <marker date="1488189267197" expanded="false" signature="49:112" ph="..." />
+            <marker date="1488189267197" expanded="true" signature="168:296" ph="{...}" />
+            <marker date="1488189267197" expanded="true" signature="346:631" ph="{...}" />
+            <marker date="1488189267197" expanded="true" signature="723:2076" ph="{...}" />
+            <marker date="1488189267197" expanded="true" signature="2114:2817" ph="{...}" />
+            <marker date="1488189267197" expanded="true" signature="2896:3257" ph="{...}" />
+            <marker date="1488189267197" expanded="true" signature="3317:4081" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/MinGW/lib/gcc/mingw32/4.8.1/include/c++/bits/algorithmfwd.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="359" column="5" lean-forward="false" selection-start-line="359" selection-start-column="5" selection-end-line="359" selection-end-column="5" />
+          <folding>
+            <marker date="1380996714000" expanded="false" signature="1362:1449" ph="..." />
+            <marker date="1380996714000" expanded="true" signature="1556:21061" ph="{...}" />
+            <marker date="1380996714000" expanded="false" signature="5053:5099" ph="&lt;_IIter,_Predicate&gt;" />
+            <marker date="1380996714000" expanded="false" signature="5152:5198" ph="&lt;_IIter,_Predicate&gt;" />
+            <marker date="1380996714000" expanded="false" signature="5258:5297" ph="&lt;_FIter,_Tp&gt;" />
+            <marker date="1380996714000" expanded="false" signature="5358:5416" ph="&lt;_FIter,_Tp,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="5487:5529" ph="&lt;_IIter,_OIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="5579:5623" ph="&lt;_BIter1,_BIter2&gt;" />
+            <marker date="1380996714000" expanded="false" signature="5712:5775" ph="&lt;_IIter,_OIter,_Predicate&gt;" />
+            <marker date="1380996714000" expanded="false" signature="5839:5897" ph="&lt;_IIter,_Size,_OIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="5980:6019" ph="&lt;_FIter,_Tp&gt;" />
+            <marker date="1380996714000" expanded="false" signature="6093:6151" ph="&lt;_FIter,_Tp,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="6235:6274" ph="&lt;_FIter,_Tp&gt;" />
+            <marker date="1380996714000" expanded="false" signature="6326:6381" ph="&lt;_OIter,_Size,_Tp&gt;" />
+            <marker date="1380996714000" expanded="false" signature="6446:6490" ph="&lt;_FIter1,_FIter2&gt;" />
+            <marker date="1380996714000" expanded="false" signature="6556:6627" ph="&lt;_FIter1,_FIter2,_BinaryPredicate&gt;" />
+            <marker date="1380996714000" expanded="false" signature="6771:6817" ph="&lt;_IIter,_Predicate&gt;" />
+            <marker date="1380996714000" expanded="false" signature="6929:6973" ph="&lt;_IIter1,_IIter2&gt;" />
+            <marker date="1380996714000" expanded="false" signature="7037:7100" ph="&lt;_IIter1,_IIter2,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="7174:7199" ph="&lt;_BIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="7256:7300" ph="&lt;_BIter,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="7394:7420" ph="&lt;_RAIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="7465:7510" ph="&lt;_RAIter,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="7565:7591" ph="&lt;_RAIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="7645:7690" ph="&lt;_RAIter,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="7754:7800" ph="&lt;_IIter,_Predicate&gt;" />
+            <marker date="1380996714000" expanded="false" signature="7861:7905" ph="&lt;_FIter1,_FIter2&gt;" />
+            <marker date="1380996714000" expanded="false" signature="7965:8040" ph="&lt;_FIter1,_FIter2,_BinaryPredicate&gt;" />
+            <marker date="1380996714000" expanded="false" signature="8118:8143" ph="&lt;_FIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="8188:8232" ph="&lt;_FIter,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="8287:8312" ph="&lt;_FIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="8365:8409" ph="&lt;_FIter,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="8479:8523" ph="&lt;_FIter1,_FIter2&gt;" />
+            <marker date="1380996714000" expanded="false" signature="8570:8609" ph="&lt;_FIter,_Tp&gt;" />
+            <marker date="1380996714000" expanded="false" signature="8670:8728" ph="&lt;_FIter,_Tp,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="8799:8825" ph="&lt;_RAIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="8872:8917" ph="&lt;_RAIter,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="8974:8996" ph="&lt;_Tp&gt;" />
+            <marker date="1380996714000" expanded="false" signature="9050:9091" ph="&lt;_Tp,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="9183:9205" ph="&lt;_Tp&gt;" />
+            <marker date="1380996714000" expanded="false" signature="9259:9300" ph="&lt;_Tp,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="9408:9430" ph="&lt;_Tp&gt;" />
+            <marker date="1380996714000" expanded="false" signature="9504:9545" ph="&lt;_Tp,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="9628:9653" ph="&lt;_FIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="9718:9762" ph="&lt;_FIter,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="9837:9859" ph="&lt;_Tp&gt;" />
+            <marker date="1380996714000" expanded="false" signature="9903:9944" ph="&lt;_Tp,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="9998:10020" ph="&lt;_Tp&gt;" />
+            <marker date="1380996714000" expanded="false" signature="10064:10105" ph="&lt;_Tp,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="10159:10181" ph="&lt;_Tp&gt;" />
+            <marker date="1380996714000" expanded="false" signature="10239:10280" ph="&lt;_Tp,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="10370:10395" ph="&lt;_BIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="10447:10491" ph="&lt;_BIter,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="10580:10626" ph="&lt;_IIter,_Predicate&gt;" />
+            <marker date="1380996714000" expanded="false" signature="10723:10766" ph="&lt;_IIter,_RAIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="10839:10901" ph="&lt;_IIter,_RAIter,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="11027:11113" ph="&lt;_IIter,_OIter1,_OIter2,_Predicate&gt;" />
+            <marker date="1380996714000" expanded="false" signature="11210:11256" ph="&lt;_FIter,_Predicate&gt;" />
+            <marker date="1380996714000" expanded="false" signature="11327:11353" ph="&lt;_RAIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="11399:11444" ph="&lt;_RAIter,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="11500:11525" ph="&lt;_BIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="11577:11621" ph="&lt;_BIter,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="11683:11709" ph="&lt;_RAIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="11756:11801" ph="&lt;_RAIter,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="11879:11918" ph="&lt;_FIter,_Tp&gt;" />
+            <marker date="1380996714000" expanded="false" signature="11974:12020" ph="&lt;_FIter,_Predicate&gt;" />
+            <marker date="1380996714000" expanded="false" signature="12079:12135" ph="&lt;_IIter,_OIter,_Tp&gt;" />
+            <marker date="1380996714000" expanded="false" signature="12204:12267" ph="&lt;_IIter,_OIter,_Predicate&gt;" />
+            <marker date="1380996714000" expanded="false" signature="12353:12409" ph="&lt;_IIter,_OIter,_Tp&gt;" />
+            <marker date="1380996714000" expanded="false" signature="12491:12567" ph="&lt;_Iter,_OIter,_Predicate,_Tp&gt;" />
+            <marker date="1380996714000" expanded="false" signature="12667:12692" ph="&lt;_BIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="12735:12777" ph="&lt;_BIter,_OIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="12835:12860" ph="&lt;_FIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="12910:12952" ph="&lt;_FIter,_OIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="13200:13248" ph="&lt;_RAIter,_UGenerator&gt;" />
+            <marker date="1380996714000" expanded="false" signature="13314:13340" ph="&lt;_RAIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="13387:13432" ph="&lt;_RAIter,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="13489:13535" ph="&lt;_BIter,_Predicate&gt;" />
+            <marker date="1380996714000" expanded="false" signature="13601:13623" ph="&lt;_Tp&gt;" />
+            <marker date="1380996714000" expanded="false" signature="13809:13843" ph="&lt;_Tp,size_t _Nm&gt;" />
+            <marker date="1380996714000" expanded="false" signature="13980:14024" ph="&lt;_FIter1,_FIter2&gt;" />
+            <marker date="1380996714000" expanded="false" signature="14101:14126" ph="&lt;_FIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="14170:14222" ph="&lt;_FIter,_BinaryPredicate&gt;" />
+            <marker date="1380996714000" expanded="false" signature="14302:14341" ph="&lt;_FIter,_Tp&gt;" />
+            <marker date="1380996714000" expanded="false" signature="14402:14460" ph="&lt;_FIter,_Tp,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="14594:14619" ph="&lt;_FIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="14670:14722" ph="&lt;_FIter,_BinaryPredicate&gt;" />
+            <marker date="1380996714000" expanded="false" signature="14791:14830" ph="&lt;_IIter,_Tp&gt;" />
+            <marker date="1380996714000" expanded="false" signature="14927:14973" ph="&lt;_IIter,_Predicate&gt;" />
+            <marker date="1380996714000" expanded="false" signature="15073:15117" ph="&lt;_IIter1,_IIter2&gt;" />
+            <marker date="1380996714000" expanded="false" signature="15169:15240" ph="&lt;_IIter1,_IIter2,_BinaryPredicate&gt;" />
+            <marker date="1380996714000" expanded="false" signature="15310:15349" ph="&lt;_IIter,_Tp&gt;" />
+            <marker date="1380996714000" expanded="false" signature="15403:15447" ph="&lt;_FIter1,_FIter2&gt;" />
+            <marker date="1380996714000" expanded="false" signature="15518:15589" ph="&lt;_FIter1,_FIter2,_BinaryPredicate&gt;" />
+            <marker date="1380996714000" expanded="false" signature="15678:15724" ph="&lt;_IIter,_Predicate&gt;" />
+            <marker date="1380996714000" expanded="false" signature="15780:15822" ph="&lt;_IIter,_Funct&gt;" />
+            <marker date="1380996714000" expanded="false" signature="15876:15922" ph="&lt;_FIter,_Generator&gt;" />
+            <marker date="1380996714000" expanded="false" signature="15978:16040" ph="&lt;_OIter,_Size,_Generator&gt;" />
+            <marker date="1380996714000" expanded="false" signature="16098:16142" ph="&lt;_IIter1,_IIter2&gt;" />
+            <marker date="1380996714000" expanded="false" signature="16221:16284" ph="&lt;_IIter1,_IIter2,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="16373:16398" ph="&lt;_FIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="16447:16491" ph="&lt;_FIter,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="16550:16611" ph="&lt;_IIter1,_IIter2,_OIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="16682:16767" ph="&lt;_IIter1,_IIter2,_OIter,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="16848:16873" ph="&lt;_FIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="16922:16966" ph="&lt;_FIter,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="17025:17069" ph="&lt;_IIter1,_IIter2&gt;" />
+            <marker date="1380996714000" expanded="false" signature="17141:17212" ph="&lt;_IIter1,_IIter2,_BinaryPredicate&gt;" />
+            <marker date="1380996714000" expanded="false" signature="17302:17328" ph="&lt;_RAIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="17386:17431" ph="&lt;_RAIter,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="17499:17525" ph="&lt;_RAIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="17584:17629" ph="&lt;_RAIter,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="17698:17744" ph="&lt;_BIter,_Predicate&gt;" />
+            <marker date="1380996714000" expanded="false" signature="17803:17829" ph="&lt;_RAIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="17881:17928" ph="&lt;_RAIter,_Generator&gt;" />
+            <marker date="1380996714000" expanded="false" signature="18034:18047" ph="..." />
+            <marker date="1380996714000" expanded="false" signature="18058:18097" ph="&lt;_FIter,_Tp&gt;" />
+            <marker date="1380996714000" expanded="false" signature="18164:18224" ph="&lt;_FIter,_Predicate,_Tp&gt;" />
+            <marker date="1380996714000" expanded="false" signature="18294:18338" ph="&lt;_FIter1,_FIter2&gt;" />
+            <marker date="1380996714000" expanded="false" signature="18403:18474" ph="&lt;_FIter1,_FIter2,_BinaryPredicate&gt;" />
+            <marker date="1380996714000" expanded="false" signature="18557:18612" ph="&lt;_FIter,_Size,_Tp&gt;" />
+            <marker date="1380996714000" expanded="false" signature="18677:18764" ph="&lt;_FIter,_Size,_Tp,_BinaryPredicate&gt;" />
+            <marker date="1380996714000" expanded="false" signature="18847:18908" ph="&lt;_IIter1,_IIter2,_OIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="18988:19073" ph="&lt;_IIter1,_IIter2,_OIter,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="19163:19224" ph="&lt;_IIter1,_IIter2,_OIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="19306:19390" ph="&lt;_IIter1,_IIter2,_OIter,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="19482:19543" ph="&lt;_IIter1,_IIter2,_OIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="19632:19717" ph="&lt;_IIter1,_IIter2,_OIter,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="19825:19886" ph="&lt;_IIter1,_IIter2,_OIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="19961:20045" ph="&lt;_IIter1,_IIter2,_OIter,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="20130:20156" ph="&lt;_RAIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="20198:20243" ph="&lt;_RAIter,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="20295:20321" ph="&lt;_RAIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="20370:20415" ph="&lt;_RAIter,_Compare&gt;" />
+            <marker date="1380996714000" expanded="false" signature="20474:20542" ph="&lt;_IIter,_OIter,_UnaryOperation&gt;" />
+            <marker date="1380996714000" expanded="false" signature="20614:20707" ph="&lt;_IIter1,_IIter2,_OIter,_BinaryOperation&gt;" />
+            <marker date="1380996714000" expanded="false" signature="20791:20833" ph="&lt;_IIter,_OIter&gt;" />
+            <marker date="1380996714000" expanded="false" signature="20890:20959" ph="&lt;_IIter,_OIter,_BinaryPredicate&gt;" />
+            <marker date="1380996714000" expanded="false" signature="21105:21140" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/Utils.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-224">
+          <caret line="7" column="14" lean-forward="false" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+          <folding>
+            <element signature="e#220#240#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/libs/SOIL/SOIL.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="1423" column="0" lean-forward="false" selection-start-line="1423" selection-start-column="0" selection-end-line="1441" selection-end-column="1" />
+          <folding>
+            <marker date="1215454408000" expanded="false" signature="361:451" ph="..." />
+            <marker date="1215454408000" expanded="false" signature="503:609" ph="..." />
+            <marker date="1215454408000" expanded="false" signature="54940:55062" ph="..." />
+            <marker date="1215454408000" expanded="false" signature="55120:55843" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/libs/SOIL/SOIL.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="385" column="5" lean-forward="false" selection-start-line="385" selection-start-column="5" selection-end-line="385" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/win32_vc/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/linux_gcc/win32_vc/source/render/BufferedRenderer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/linux_gcc/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="56" lean-forward="false" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/linux_gcc/headers/render/BufferedRenderer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/libs/SOIL/test_SOIL.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="23" column="30" lean-forward="false" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/Mains.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="47" column="29" lean-forward="false" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+          <folding>
+            <element signature="e#40#66#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/Forest.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/Utils.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#60#0" expanded="false" />
+            <element signature="e#480#496#0" expanded="false" />
+            <element signature="e#1014#1036#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/source/ResourceManager.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/Forest.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/PropertiesManager.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+          <folding>
+            <element signature="e#113#130#0" expanded="true" />
+            <element signature="e#355#367#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/headers/ResourceManager.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="12" column="6" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/file/FileHandler.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <folding>
+            <element signature="e#253#265#0" expanded="true" />
+            <element signature="e#367#379#0" expanded="true" />
+            <marker date="1488304822856" expanded="true" signature="173:522" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/file/FileHandler.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="38" column="60" lean-forward="false" selection-start-line="38" selection-start-column="60" selection-end-line="38" selection-end-column="60" />
+          <folding>
+            <marker date="1488304824676" expanded="true" signature="154:225" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/render/TextRenderer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="108" column="41" lean-forward="false" selection-start-line="108" selection-start-column="41" selection-end-line="108" selection-end-column="41" />
+          <folding>
+            <element signature="e#40#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/PropertiesManager.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="50" selection-end-column="1" />
+          <folding>
+            <element signature="e#40#57#0" expanded="true" />
+            <element signature="e#194#206#0" expanded="true" />
+            <element signature="e#1041#1053#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/libs/SOIL/stb_image_aug.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="2118" column="12" lean-forward="false" selection-start-line="2118" selection-start-column="12" selection-end-line="2118" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/Defines.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="47" column="41" lean-forward="true" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
           <folding />
         </state>
       </provider>
