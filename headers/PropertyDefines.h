@@ -31,6 +31,10 @@
 #define PROP_DAMP_EXTINGUISH_CHANCE "Extinguish.Chance"
 #define PROP_TREE_MINIMUM_CLUSTER "Tree.MinimumCluster"
 #define PROP_OPENGL_RENDERER_CELL_SIZE "Renderer.OpenGL.RendererCellSize"
+#define PROP_TREE_ALLOW_REGROWTH "Tree.Growth.Enable"
+#define PROP_OPENGL_RENDERER_USE_FIRE_SHADER "renderer.opengl.FireShader"
+#define PROP_OPENGL_RENDERER_FIRE_SHADER_BLURS "renderer.opengl.FireShader.blurPasses"
+#define PROP_OPENGL_RENDERER_FIRE_SHADER_SCALE "renderer.opengl.FireShader.scale"
 
 
 #endif //FIRESIM_PROPERTYDEFINES_H

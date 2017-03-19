@@ -88,6 +88,10 @@ out = ss.str(); \
 #define DAMP_EXTINGUISH_CHANCE Properties::Instance().GetIntProperty(PROP_DAMP_EXTINGUISH_CHANCE, 1)
 #define OPENGL_RENDERER_CELL_SIZE Properties::Instance().GetIntProperty(PROP_OPENGL_RENDERER_CELL_SIZE, 4)
 #define TREE_MINIMUM_CLUSTER Properties::Instance().GetIntProperty(PROP_TREE_MINIMUM_CLUSTER, 5)
+#define TREE_ALLOW_REGROWTH Properties::Instance().GetBoolProperty(PROP_TREE_ALLOW_REGROWTH, true)
+#define OPENGL_RENDERER_USE_FIRE_SHADER Properties::Instance().GetBoolProperty(PROP_OPENGL_RENDERER_USE_FIRE_SHADER, true)
+#define OPENGL_RENDERER_FIRE_SHADER_BLURS Properties::Instance().GetIntProperty(PROP_OPENGL_RENDERER_FIRE_SHADER_BLURS, 32)
+#define OPENGL_RENDERER_FIRE_SHADER_SCALE Properties::Instance().GetFloatProperty(PROP_OPENGL_RENDERER_FIRE_SHADER_SCALE, 1)
 
 // CONSOLE COLOUR DEFINITIONS
 

@@ -6,6 +6,7 @@
 #include <iostream>
 #include <Utils.h>
 #include <Config.h>
+#include "../../external/cpp-properties/include/PropertiesParser.h"
 
 MenuHost::MenuHost(Forest* forest) : forest(forest), alive(true) {}
 
@@ -54,6 +55,12 @@ void MenuHost::ProcessInput() {
         case 0x37: if(ProcessItem(6)) return; break;
         case 0x38: if(ProcessItem(7)) return; break;
         case 0x39: if(ProcessItem(8)) return; break;
+        case 0x50: {
+            PropertiesParser::Read("properties.props");
+            std::cout << "Properties reloaded, some properties may not update correctly" << std::endl;
+            suppressMsg = true;
+            break;
+        }
         case 0x1B: case 0x45: alive = false; return; // ESCAPEB
         case 0x42: // B key
             std::cout << "Block renderer "

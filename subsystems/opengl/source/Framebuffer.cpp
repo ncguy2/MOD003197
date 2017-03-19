@@ -6,31 +6,32 @@
 #include <Framebuffer.h>
 #include <iostream>
 
-framebuffer::FBO framebuffer::CreateFramebuffer(int width, int height, int attachments) {
-    framebuffer::FBO fbo;
+framebuffer::FBO* framebuffer::CreateFramebuffer(int width, int height, int attachments) {
+    framebuffer::FBO* fbo = new framebuffer::FBO;
 
-    glGenFramebuffers(1, &fbo.handle);
-    glBindFramebuffer(GL_FRAMEBUFFER, fbo.handle);
+    glGenFramebuffers(1, &fbo->handle);
+    glBindFramebuffer(GL_FRAMEBUFFER, fbo->handle);
 
-    GLuint texIds[attachments];
-    glGenTextures(attachments, texIds);
+
     for(int i = 0; i < attachments; i++) {
-        glBindTexture(GL_TEXTURE_2D, texIds[i]);
+        GLuint texId;
+        glGenTextures(attachments, &texId);
+        glBindTexture(GL_TEXTURE_2D, texId);
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-        glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0 + i, GL_TEXTURE_2D, texIds[i], 0);
+        glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texId, 0);
 
-        fbo.colourAttachments.push_back({texIds[i], i});
+        fbo->colourAttachments.push_back(Attachment{texId, i});
     }
     glBindTexture(GL_TEXTURE_2D, 0);
 
-    fbo.renderBuffer.attachmentOffset = -1;
-    glGenRenderbuffers(1, &fbo.renderBuffer.texHandle);
-    glBindRenderbuffer(GL_RENDERBUFFER, fbo.renderBuffer.texHandle);
+    fbo->renderBuffer.attachmentOffset = -1;
+    glGenRenderbuffers(1, &fbo->renderBuffer.texHandle);
+    glBindRenderbuffer(GL_RENDERBUFFER, fbo->renderBuffer.texHandle);
     glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, width, height);
     glBindRenderbuffer(GL_RENDERBUFFER, 0);
-    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, fbo.renderBuffer.texHandle);
+    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, fbo->renderBuffer.texHandle);
 
     if(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
         std::cout << "ERROR::FRAMEBUFFER:: Framebuffer is not complete!" << std::endl;

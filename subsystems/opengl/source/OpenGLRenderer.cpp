@@ -43,7 +43,6 @@ void OpenGLRenderer::InitWindow(GLuint width, GLuint height, std::string title, 
     if (this->window == nullptr) {
         this->Dispose();
         throw ErrorException{"GLFW window failed to initialize"};
-        return;
     }
     glfwMakeContextCurrent(this->window);
 
@@ -69,19 +68,23 @@ void OpenGLRenderer::InitWindow(GLuint width, GLuint height, std::string title, 
     Shader spriteShader = ResourceManager::GetInstance().GetShader(TEXTURE_SHADER);
     spriteRenderer = new SpriteRenderer(spriteShader);
 
-    fireEffect = new FireRenderEffect(width, height, this);
 
     projectionMatrix = glm::ortho(0.0f, static_cast<GLfloat>(this->width), static_cast<GLfloat>(this->height), 0.0f, -1.0f, 1.0f);
     spriteShader.Use().SetInteger("image", 0);
-    spriteShader.SetInteger("mask", 1);
     spriteShader.SetMatrix4("projection", projectionMatrix);
 
 
-    Shader cloudShader = ResourceManager::GetInstance().GetShader(CLOUD_SHADER);
+    if(OPENGL_RENDERER_USE_FIRE_SHADER) {
+        Shader screenShader = ResourceManager::GetInstance().GetShader(SCREEN_SHADER);
+        screenShader.Use().SetInteger("image", 0);
+        screenShader.SetInteger("blur", 1);
+        screenShader.SetMatrix4("projection", projectionMatrix);
+        screenShader.SetFloat("fireScale", OPENGL_RENDERER_FIRE_SHADER_SCALE);
 
-    cloudShader.Use().SetInteger("image", 0);
-    cloudShader.SetMatrix4("projection", projectionMatrix);
+        fireEffect = new FireRenderEffect(width, height, this);
 
+        forestFBO = framebuffer::CreateFramebuffer(width, height, 1);
+    }
 }
 
 void OpenGLRenderer::Render(Forest *forest) {
@@ -137,6 +140,7 @@ void OpenGLRenderer::Render(Forest *forest) {
 }
 
 void OpenGLRenderer::Dispose() {
+    if(OPENGL_RENDERER_USE_FIRE_SHADER) delete fireEffect;
     glfwTerminate();
 }
 
@@ -162,8 +166,13 @@ void OpenGLRenderer::KeyRelease(int key, int scancode, int mode) {
 }
 
 void OpenGLRenderer::RenderForest(Forest *forest) {
-    for(int x = 0; x < WORLD_SIZE_X; x++) {
-        for(int y = 0; y < WORLD_SIZE_Y; y++) {
+    if(OPENGL_RENDERER_USE_FIRE_SHADER) {
+        glBindFramebuffer(GL_FRAMEBUFFER, forestFBO->handle);
+        glClearColor(0.f, 1.f, 0.f, 1.f);
+        glClear(GL_COLOR_BUFFER_BIT);
+    }
+    for(int x = 0; x < forest->worldSizeX; x++) {
+        for(int y = 0; y < forest->worldSizeY; y++) {
             Cell cell = forest->GetCell(x, y);
             if(cell.states->wall) {
                 RenderTextureAtCell(this->renderer->RenderCell(cell), x, y, 2, glm::vec4(0, 0, 0, 0));
@@ -175,15 +184,25 @@ void OpenGLRenderer::RenderForest(Forest *forest) {
             }
         }
     }
-
-    fireEffect->Extract(forest);
-    fireEffect->Blur();
-
-    spriteRenderer->DrawSprite(fireEffect->GetExtractedMask(), {0, 0}, {128, 96});
-    spriteRenderer->DrawSprite(fireEffect->GetBlurredMask(1), {0, 0}, {128, 96});
-    spriteRenderer->DrawSprite(fireEffect->GetBlurredMask(2), {0, 0}, {128, 96});
-
     RenderBatches();
+    if(OPENGL_RENDERER_USE_FIRE_SHADER) {
+        glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+
+        fireEffect->Extract(forest);
+        fireEffect->Blur();
+
+        Shader screenShader = ResourceManager::GetInstance().GetShader(SCREEN_SHADER);
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D, fireEffect->GetBlurredMask(1));
+        spriteRenderer->DrawSprite(forestFBO->colourAttachments[0].texHandle, {0, 0}, {width, height}, 0.f,
+                                   {1.f, 1.f, 1.f, 1.f}, &screenShader);
+    }
+
+//    spriteRenderer->DrawSprite(fireEffect->GetExtractedMask(), {0, 0}, {256, 192});
+//    spriteRenderer->DrawSprite(fireEffect->GetBlurredMask(0), {0, 192}, {256, 192});
+//    spriteRenderer->DrawSprite(fireEffect->GetBlurredMask(1), {256, 192}, {256, 192});
+
 }
 
 void OpenGLRenderer::RenderTextureAtCell(Texture tex, int x, int y, int layer, glm::vec4 offsets) {
@@ -265,6 +284,18 @@ TextureBatch* OpenGLRenderer::GetBatch(Texture tex, int layer) {
     TextureBatch* batch = new TextureBatch(tex, layer);
     batches[tex.id] = batch;
     return batch;
+}
+
+GLfloat OpenGLRenderer::SecondTimer() {
+    return secondTimer;
+}
+
+void OpenGLRenderer::SecondTimer(GLfloat seconds) {
+    secondTimer = seconds;
+}
+
+bool OpenGLRenderer::ThreadAlive() {
+    return threadAlive;
 }
 
 SpriteRenderer* OpenGLRenderer::GetSpriteRenderer() {

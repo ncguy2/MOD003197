@@ -118,7 +118,8 @@ Forest Forest::RegisterDefaultRules() {
     ruleSet->AddRule(new IgniteRule());
     ruleSet->AddRule(new CleanupRule());
     ruleSet->AddRule(new IgniteRule(false));
-    ruleSet->AddRule(new GrowthRule());
+    if(TREE_ALLOW_REGROWTH)
+        ruleSet->AddRule(new GrowthRule());
     ruleSet->AddRule(new CombustRule());
     ruleSet->AddRule(new ExtinguishRule());
 #endif

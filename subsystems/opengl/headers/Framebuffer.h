@@ -13,7 +13,6 @@ namespace framebuffer {
     struct Attachment {
         GLuint texHandle;
         int attachmentOffset;
-
     };
 
     struct FBO {
@@ -25,7 +24,7 @@ namespace framebuffer {
         void operator=(bool state);
     };
 
-    FBO CreateFramebuffer(int width, int height, int attachments);
+    FBO* CreateFramebuffer(int width, int height, int attachments);
 
 }
 

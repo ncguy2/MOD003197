@@ -25,6 +25,11 @@ Texture EntityTextureRenderer::RenderCell(Cell cell) {
 }
 
 Texture EntityTextureRenderer::RenderTree(Cell cell, Tree *tree) {
+
+    if(OPENGL_RENDERER_USE_FIRE_SHADER)
+        return ResourceManager::GetInstance().GetTexture(TREE_TEXTURE);
+
+
     if(tree->IsBurning()) {
         float p = (utils::rng::fastrand() % 1000) / 1000.f;
         float perc = p * 6;
@@ -63,6 +68,7 @@ void EntityTextureRenderer::LateInitialization() {
     ResourceManager::GetInstance().LoadShader(CLOUD_SHADER_VERT, CLOUD_SHADER_FRAG, "", CLOUD_SHADER);
     ResourceManager::GetInstance().LoadShader(EXTRACT_SHADER_VERT, EXTRACT_SHADER_FRAG, "", EXTRACT_SHADER);
     ResourceManager::GetInstance().LoadShader(BLUR_SHADER_VERT, BLUR_SHADER_FRAG, "", BLUR_SHADER);
+    ResourceManager::GetInstance().LoadShader(SCREEN_SHADER_VERT, SCREEN_SHADER_FRAG, "", SCREEN_SHADER);
 
 
 }

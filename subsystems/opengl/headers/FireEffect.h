@@ -19,6 +19,8 @@ class FireRenderEffect {
 public:
     FireRenderEffect(int sWidth, int sHeight, OpenGLRenderer* renderer);
 
+    virtual ~FireRenderEffect();
+
     void Extract(Forest* forest);
     void Blur();
 
@@ -26,9 +28,9 @@ public:
     GLuint GetBlurredMask(int index = 0);
 
 protected:
-    framebuffer::FBO extractionFBO;
-    framebuffer::FBO blurFBO1;
-    framebuffer::FBO blurFBO2;
+    framebuffer::FBO* extractionFBO;
+    framebuffer::FBO* blurFBO1;
+    framebuffer::FBO* blurFBO2;
 
     Shader extractionShader;
     Shader blurShader;
@@ -36,6 +38,7 @@ protected:
     OpenGLRenderer* renderer;
 
     int sWidth, sHeight;
+    int blurIterations;
 };
 
 

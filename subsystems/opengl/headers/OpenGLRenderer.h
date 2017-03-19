@@ -81,6 +81,8 @@ protected:
 
     GLuint GenerateAttachmentTexture(GLsizei width, GLsizei height, GLboolean depth = GL_FALSE, GLboolean stencil = GL_FALSE);
 
+    framebuffer::FBO* forestFBO;
+
 private:
     long frameCount = 0;
     long timeElapsed = 0;

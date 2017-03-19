@@ -9,7 +9,7 @@ SET(USE_OPENGL TRUE)
 SET(IS_WINDOWS FALSE)
 
 SET(CMAKE_CXX_STANDARD 11)
-SET(CMAKE_BUILD_TYPE Debug)
+SET(CMAKE_BUILD_TYPE Release)
 
 INCLUDE_DIRECTORIES(headers)
 
@@ -32,10 +32,9 @@ ELSEIF(WIN32)
 ENDIF()
 
 
-set(CMAKE_BUILD_TYPE RelWithDebInfo)
 SET(SRC_FILES ${SRC_FILES} source/Forest.cpp source/render/TextRenderer.cpp source/rules/RuleSet.cpp source/Entity.cpp source/Utils.cpp
     source/menu/MenuItem.cpp source/menu/MenuHost.cpp source/rules/generation/MoistureGenerationRule.cpp
-    source/file/FileHandler.cpp source/Config.cpp source/WindManager.cpp source/Mains.cpp source/PropertiesManager.cpp subsystems/opengl/source/Framebuffer.cpp subsystems/opengl/source/FireEffect.cpp)
+    source/file/FileHandler.cpp source/Config.cpp source/WindManager.cpp source/Mains.cpp subsystems/opengl/source/Framebuffer.cpp subsystems/opengl/source/FireEffect.cpp)
 
 SET(HEAD_FILES)
 
