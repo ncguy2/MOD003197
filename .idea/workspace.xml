@@ -17,94 +17,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3858a4bd-4798-4b5f-ba6d-39e31b38ce32" name="Default" comment="Switched from compile-time defines to runtime properies">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/headers/rules/generation/TreeIslandCleanupRule.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakePostBuild.cmake" afterPath="$PROJECT_DIR$/CMakePostBuild.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TODO.txt" afterPath="$PROJECT_DIR$/TODO.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/external/include/curses.h" afterPath="$PROJECT_DIR$/external/include/curses.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/external/include/curspriv.h" afterPath="$PROJECT_DIR$/external/include/curspriv.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/external/include/panel.h" afterPath="$PROJECT_DIR$/external/include/panel.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/external/include/term.h" afterPath="$PROJECT_DIR$/external/include/term.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/Colours.h" afterPath="$PROJECT_DIR$/headers/Colours.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/Config.h" afterPath="$PROJECT_DIR$/headers/Config.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/Defines.h" afterPath="$PROJECT_DIR$/headers/Defines.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/Entity.h" afterPath="$PROJECT_DIR$/headers/Entity.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/Forest.h" afterPath="$PROJECT_DIR$/headers/Forest.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/Mains.h" afterPath="$PROJECT_DIR$/headers/Mains.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/PropertiesManager.h" afterPath="$PROJECT_DIR$/headers/PropertiesManager.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/Utils.h" afterPath="$PROJECT_DIR$/headers/Utils.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/WindManager.h" afterPath="$PROJECT_DIR$/headers/WindManager.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/file/FileHandler.h" afterPath="$PROJECT_DIR$/headers/file/FileHandler.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/menu/MenuHost.h" afterPath="$PROJECT_DIR$/headers/menu/MenuHost.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/menu/MenuItem.h" afterPath="$PROJECT_DIR$/headers/menu/MenuItem.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/render/BaseRenderer.h" afterPath="$PROJECT_DIR$/headers/render/BaseRenderer.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/render/TextRenderer.h" afterPath="$PROJECT_DIR$/headers/render/TextRenderer.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/rules/CombustRule.h" afterPath="$PROJECT_DIR$/headers/rules/CombustRule.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/rules/ExtinguishRule.h" afterPath="$PROJECT_DIR$/headers/rules/ExtinguishRule.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/rules/GrowthRule.h" afterPath="$PROJECT_DIR$/headers/rules/GrowthRule.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/rules/IgniteRule.h" afterPath="$PROJECT_DIR$/headers/rules/IgniteRule.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/rules/RuleSet.h" afterPath="$PROJECT_DIR$/headers/rules/RuleSet.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/rules/Rules.h" afterPath="$PROJECT_DIR$/headers/rules/Rules.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/rules/generation/GenerationRule.h" afterPath="$PROJECT_DIR$/headers/rules/generation/GenerationRule.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/rules/generation/MoistureGenerationRule.h" afterPath="$PROJECT_DIR$/headers/rules/generation/MoistureGenerationRule.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/headers/rules/generation/TreeGenerationRule.h" afterPath="$PROJECT_DIR$/headers/rules/generation/TreeGenerationRule.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/Config.cpp" afterPath="$PROJECT_DIR$/source/Config.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/Entity.cpp" afterPath="$PROJECT_DIR$/source/Entity.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/Forest.cpp" afterPath="$PROJECT_DIR$/source/Forest.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/Main.cpp" afterPath="$PROJECT_DIR$/source/Main.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/Mains.cpp" afterPath="$PROJECT_DIR$/source/Mains.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/PropertiesManager.cpp" afterPath="$PROJECT_DIR$/source/PropertiesManager.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/Utils.cpp" afterPath="$PROJECT_DIR$/source/Utils.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/WindManager.cpp" afterPath="$PROJECT_DIR$/source/WindManager.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/file/FileHandler.cpp" afterPath="$PROJECT_DIR$/source/file/FileHandler.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/menu/MenuHost.cpp" afterPath="$PROJECT_DIR$/source/menu/MenuHost.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/menu/MenuItem.cpp" afterPath="$PROJECT_DIR$/source/menu/MenuItem.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/render/TextRenderer.cpp" afterPath="$PROJECT_DIR$/source/render/TextRenderer.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/rules/RuleSet.cpp" afterPath="$PROJECT_DIR$/source/rules/RuleSet.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/rules/generation/MoistureGenerationRule.cpp" afterPath="$PROJECT_DIR$/source/rules/generation/MoistureGenerationRule.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/linux_gcc/CMakeLists.txt" afterPath="$PROJECT_DIR$/subsystems/linux_gcc/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/linux_gcc/headers/render/BufferedRenderer.h" afterPath="$PROJECT_DIR$/subsystems/linux_gcc/headers/render/BufferedRenderer.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/linux_gcc/source/render/BufferedRenderer.cpp" afterPath="$PROJECT_DIR$/subsystems/linux_gcc/source/render/BufferedRenderer.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/CMakeLists.txt" afterPath="$PROJECT_DIR$/subsystems/opengl/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/assets/shaders/cloud.frag.glsl" afterPath="$PROJECT_DIR$/subsystems/opengl/assets/shaders/cloud.frag.glsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/assets/shaders/sprite.frag.glsl" afterPath="$PROJECT_DIR$/subsystems/opengl/assets/shaders/sprite.frag.glsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/assets/shaders/vert.glsl" afterPath="$PROJECT_DIR$/subsystems/opengl/assets/shaders/vert.glsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/headers/EntityTextureRenderer.h" afterPath="$PROJECT_DIR$/subsystems/opengl/headers/EntityTextureRenderer.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/headers/OpenGLRenderer.h" afterPath="$PROJECT_DIR$/subsystems/opengl/headers/OpenGLRenderer.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/headers/ResourceManager.h" afterPath="$PROJECT_DIR$/subsystems/opengl/headers/ResourceManager.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/headers/Shader.h" afterPath="$PROJECT_DIR$/subsystems/opengl/headers/Shader.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/headers/Shaders.h" afterPath="$PROJECT_DIR$/subsystems/opengl/headers/Shaders.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/headers/SpriteRenderer.h" afterPath="$PROJECT_DIR$/subsystems/opengl/headers/SpriteRenderer.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/headers/Texture.h" afterPath="$PROJECT_DIR$/subsystems/opengl/headers/Texture.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/headers/Textures.h" afterPath="$PROJECT_DIR$/subsystems/opengl/headers/Textures.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/SOIL.c" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/SOIL.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/SOIL.h" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/SOIL.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/image_DXT.c" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/image_DXT.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/image_DXT.h" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/image_DXT.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/image_helper.c" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/image_helper.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/image_helper.h" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/image_helper.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/original/stb_image-1.09.c" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/original/stb_image-1.09.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/original/stb_image-1.16.c" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/original/stb_image-1.16.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/stb_image_aug.c" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/stb_image_aug.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/stb_image_aug.h" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/stb_image_aug.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/stbi_DDS_aug.h" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/stbi_DDS_aug.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/stbi_DDS_aug_c.h" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/stbi_DDS_aug_c.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/test_SOIL.cpp" afterPath="$PROJECT_DIR$/subsystems/opengl/libs/SOIL/test_SOIL.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/source/EntityTextureRenderer.cpp" afterPath="$PROJECT_DIR$/subsystems/opengl/source/EntityTextureRenderer.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/source/OpenGLRenderer.cpp" afterPath="$PROJECT_DIR$/subsystems/opengl/source/OpenGLRenderer.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/source/ResourceManager.cpp" afterPath="$PROJECT_DIR$/subsystems/opengl/source/ResourceManager.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/source/Shader.cpp" afterPath="$PROJECT_DIR$/subsystems/opengl/source/Shader.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/source/SpriteRenderer.cpp" afterPath="$PROJECT_DIR$/subsystems/opengl/source/SpriteRenderer.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/source/Texture.cpp" afterPath="$PROJECT_DIR$/subsystems/opengl/source/Texture.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/win32_gcc/CMakeLists.txt" afterPath="$PROJECT_DIR$/subsystems/win32_gcc/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/win32_gcc/headers/render/BufferedRenderer.h" afterPath="$PROJECT_DIR$/subsystems/win32_gcc/headers/render/BufferedRenderer.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/win32_gcc/source/render/BufferedRenderer.cpp" afterPath="$PROJECT_DIR$/subsystems/win32_gcc/source/render/BufferedRenderer.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/win32_vc/CMakeLists.txt" afterPath="$PROJECT_DIR$/subsystems/win32_vc/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/win32_vc/headers/render/BufferedRenderer.h" afterPath="$PROJECT_DIR$/subsystems/win32_vc/headers/render/BufferedRenderer.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/win32_vc/source/render/BufferedRenderer.cpp" afterPath="$PROJECT_DIR$/subsystems/win32_vc/source/render/BufferedRenderer.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/headers/FireEffect.h" afterPath="$PROJECT_DIR$/subsystems/opengl/headers/FireEffect.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subsystems/opengl/source/FireEffect.cpp" afterPath="$PROJECT_DIR$/subsystems/opengl/source/FireEffect.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -120,11 +36,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Defines.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/headers/Defines.h">
+      <file leaf-file-name="FireEffect.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/subsystems/opengl/headers/FireEffect.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="33" column="30" lean-forward="false" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+            <state relative-caret-position="48">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FireEffect.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/subsystems/opengl/source/FireEffect.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -133,7 +59,7 @@
       <file leaf-file-name="Forest.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/Forest.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2070">
+            <state relative-caret-position="1840">
               <caret line="115" column="33" lean-forward="false" selection-start-line="115" selection-start-column="33" selection-end-line="115" selection-end-column="33" />
               <folding />
             </state>
@@ -143,8 +69,8 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="774">
-              <caret line="43" column="37" lean-forward="false" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
+            <state relative-caret-position="496">
+              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -153,8 +79,8 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/subsystems/opengl/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+            <state relative-caret-position="832">
+              <caret line="67" column="47" lean-forward="false" selection-start-line="67" selection-start-column="47" selection-end-line="67" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -163,7 +89,7 @@
       <file leaf-file-name="CleanupRule.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/headers/rules/CleanupRule.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
+            <state relative-caret-position="96">
               <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
@@ -173,7 +99,7 @@
       <file leaf-file-name="Forest.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/headers/Forest.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1188">
+            <state relative-caret-position="1056">
               <caret line="66" column="21" lean-forward="false" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
               <folding />
             </state>
@@ -183,7 +109,7 @@
       <file leaf-file-name="BufferedRenderer.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/subsystems/linux_gcc/headers/render/BufferedRenderer.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
+            <state relative-caret-position="192">
               <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
@@ -193,7 +119,7 @@
       <file leaf-file-name="BufferedRenderer.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/subsystems/linux_gcc/source/render/BufferedRenderer.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
+            <state relative-caret-position="768">
               <caret line="48" column="38" lean-forward="false" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
               <folding />
             </state>
@@ -203,18 +129,8 @@
       <file leaf-file-name="FireSim.log" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Build/FireSim.dir/Debug/FireSim.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
+            <state relative-caret-position="320">
               <caret line="20" column="2" lean-forward="false" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Entity.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/Entity.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -251,8 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/subsystems/opengl/headers/Metaball.h" />
-        <option value="$PROJECT_DIR$/subsystems/opengl/headers/Textures.h" />
         <option value="$PROJECT_DIR$/subsystems/opengl/headers/Shaders.h" />
         <option value="$PROJECT_DIR$/subsystems/opengl/source/Metaball.cpp" />
         <option value="$PROJECT_DIR$/cmake-build-debug/assets/shaders/sprite.frag.glsl" />
@@ -288,7 +202,6 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/source/Utils.cpp" />
         <option value="$APPLICATION_HOME_DIR$/bin/cmake/share/cmake-3.7/Modules/FindGLFW.cmake" />
-        <option value="$PROJECT_DIR$/subsystems/opengl/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/headers/rules/generation/TreeIslandClenaupRule.h" />
         <option value="$PROJECT_DIR$/headers/Entity.h" />
         <option value="$PROJECT_DIR$/headers/rules/generation/TreeIslandCleanupRule.h" />
@@ -302,14 +215,18 @@
         <option value="$PROJECT_DIR$/subsystems/opengl/source/OpenGLRenderer.cpp" />
         <option value="$PROJECT_DIR$/headers/Defines.h" />
         <option value="$PROJECT_DIR$/source/Entity.cpp" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/headers/FireEffect.h" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/source/FireEffect.cpp" />
+        <option value="$PROJECT_DIR$/subsystems/opengl/CMakeLists.txt" />
       </list>
     </option>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="width" value="1368" />
-    <option name="height" value="769" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="2576" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -373,6 +290,50 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FireSim" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MOD003197" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="subsystems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opengl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FireSim" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MOD003197" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="subsystems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opengl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="headers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -381,7 +342,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
     <property name="SearchEverywhereHistoryKey" value="Buffered&#9;FILE&#9;file:///home/nick/CLionProjects/Assignment/MOD003197/subsystems/linux_gcc/source/render/BufferedRenderer.cpp&#10;Buffere&#9;FILE&#9;file:///home/nick/CLionProjects/Assignment/MOD003197/subsystems/linux_gcc/headers/render/BufferedRenderer.h&#10;Tree&#9;null&#9;null&#10;fore&#9;FILE&#9;file:///home/nick/CLionProjects/Assignment/MOD003197/source/Forest.cpp&#10;defines&#9;FILE&#9;file:///home/nick/CLionProjects/Assignment/MOD003197/headers/Defines.h&#10;TextureRe&#9;null&#9;null&#10;Mains&#9;FILE&#9;file:///home/nick/CLionProjects/Assignment/MOD003197/source/Mains.cpp&#10;EntityR&#9;null&#9;null&#10;OpenGLR&#9;FILE&#9;file:///home/nick/CLionProjects/Assignment/MOD003197/subsystems/opengl/source/OpenGLRenderer.cpp&#10;ResourceMa&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/subsystems/opengl/source/ResourceManager.cpp&#10;utils.cpp&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/source/Utils.cpp&#10;Moisture&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/source/rules/generation/MoistureGenerationRule.cpp&#10;utils&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/Utils.h&#10;RuleSet&#9;FILE&#9;file://H:/Modules/Object-Oriented C++/Assignment/MOD003197/source/rules/RuleSet.cpp&#10;Utils&#9;FILE&#9;file://H:/Modules/Object-Oriented C++/Assignment/MOD003197/source/Utils.cpp&#10;main&#9;FILE&#9;file:///media/nick/Win10/Modules/Object-Oriented C++/Assignment/MOD003197/source/Main.cpp&#10;DEF&#9;FILE&#9;file://H:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/Defines.h&#10;textures&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/subsystems/opengl/headers/Textures.h&#10;SpriteRenderer&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/subsystems/opengl/source/SpriteRenderer.cpp&#10;Shaders&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/subsystems/opengl/headers/Shaders.h&#10;Shader&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/subsystems/opengl/headers/Shader.h&#10;Entity&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/subsystems/opengl/source/EntityTextureRenderer.cpp&#10;uti&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/source/Utils.cpp&#10;TextureBin&#9;null&#9;null&#10;TextRender&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/source/render/TextRenderer.cpp&#10;TextRe&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/source/render/TextRenderer.cpp&#10;TextRenderer&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/source/render/TextRenderer.cpp&#10;Ignite&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/rules/IgniteRule.h&#10;util&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/Utils.h&#10;Cell&#9;null&#9;null&#10;TextR&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/render/TextRenderer.h&#10;tEXTr&#9;FILE&#9;file://H:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/render/TextRenderer.h&#10;TexR&#9;FILE&#9;file://H:/Modules/Object-Oriented C++/Assignment/MOD003197/source/render/TextRenderer.cpp&#10;Ruleset&#9;FILE&#9;file://N:/Modules/Object-Oriented C++/Assignment/MOD003197/headers/rules/RuleSet.h" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../OpenGLBootstrap" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../AssignmentStaging" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -413,6 +374,10 @@
   </component>
   <component name="RunManager" selected="Application.FireSim">
     <configuration default="true" type="CLion_Remote" factoryName="GDB Remote Debug" remoteCommand="" symbolFile="" sysroot="">
+      <method />
+    </configuration>
+    <configuration default="true" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" PASS_PARENT_ENVS_2="true" TEST_MODE="SUITE_TEST">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" TEST_MODE="SUITE_TEST">
@@ -579,6 +544,8 @@
       <workItem from="1488048331449" duration="8806000" />
       <workItem from="1488139564987" duration="337000" />
       <workItem from="1488296700978" duration="8752000" />
+      <workItem from="1489946942052" duration="65000" />
+      <workItem from="1489953978269" duration="99000" />
     </task>
     <task id="LOCAL-00001" summary="Lots">
       <created>1487711696431</created>
@@ -626,7 +593,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92207000" />
+    <option name="totallyTimeSpent" value="92371000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -638,13 +605,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1368" height="769" extended-state="6" />
+    <frame x="-8" y="-8" width="2576" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14200744" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14427663" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3253886" sideWeight="0.49790356" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40602285" sideWeight="0.6897275" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22052068" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281412" sideWeight="0.49790356" order="10" side_tool="false" content_ui="tabs" />
@@ -656,6 +623,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21898928" sideWeight="0.8993711" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12321144" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="1354" y="444" width="369" height="427" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -704,14 +672,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/subsystems/opengl/libs/SOIL/test_SOIL.cpp" />
-    <entry file="file://$PROJECT_DIR$/subsystems/opengl/source/ResourceManager.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/headers/PropertiesManager.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -768,13 +728,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/bin/cmake/share/cmake-3.7/Modules/FindGLFW.cmake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/bin/cmake/share/cmake-3.7/Modules/FindGLFW.cmake" />
     <entry file="file://$PROJECT_DIR$/headers/rules/CombustRule.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -789,20 +743,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/c++/6/bits/stl_tree.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="832" column="0" lean-forward="false" selection-start-line="832" selection-start-column="0" selection-end-line="832" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/6/bits/stl_map.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="185" column="0" lean-forward="false" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/include/c++/6/bits/stl_tree.h" />
+    <entry file="file:///usr/include/c++/6/bits/stl_map.h" />
     <entry file="file://$PROJECT_DIR$/headers/WindManager.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
@@ -817,13 +759,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/c++/6/bits/basic_string.tcc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="218" column="0" lean-forward="false" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/include/c++/6/bits/basic_string.tcc" />
     <entry file="file://$PROJECT_DIR$/subsystems/opengl/source/Texture.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="458">
@@ -866,20 +802,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/c++/6/ext/new_allocator.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/6/bits/stl_function.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="385" column="27" lean-forward="true" selection-start-line="385" selection-start-column="27" selection-end-line="385" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/include/c++/6/ext/new_allocator.h" />
+    <entry file="file:///usr/include/c++/6/bits/stl_function.h" />
     <entry file="file://$PROJECT_DIR$/subsystems/opengl/headers/Shader.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -894,13 +818,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/c++/6/bits/stl_pair.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3510">
-          <caret line="195" column="10" lean-forward="false" selection-start-line="195" selection-start-column="10" selection-end-line="195" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/include/c++/6/bits/stl_pair.h" />
     <entry file="file://$PROJECT_DIR$/subsystems/opengl/source/OpenGLRenderer.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2394">
@@ -974,7 +892,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/Entity.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
+        <state relative-caret-position="112">
           <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
           <folding />
         </state>
@@ -982,7 +900,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/headers/Defines.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
+        <state relative-caret-position="528">
           <caret line="33" column="30" lean-forward="false" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
           <folding />
         </state>
@@ -990,7 +908,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/headers/Forest.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1188">
+        <state relative-caret-position="1056">
           <caret line="66" column="21" lean-forward="false" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
           <folding />
         </state>
@@ -998,7 +916,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Build/FireSim.dir/Debug/FireSim.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
+        <state relative-caret-position="320">
           <caret line="20" column="2" lean-forward="false" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
           <folding />
         </state>
@@ -1006,7 +924,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/subsystems/linux_gcc/headers/render/BufferedRenderer.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
+        <state relative-caret-position="192">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
@@ -1014,7 +932,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/subsystems/linux_gcc/source/render/BufferedRenderer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
+        <state relative-caret-position="768">
           <caret line="48" column="38" lean-forward="false" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
           <folding />
         </state>
@@ -1022,7 +940,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/headers/rules/CleanupRule.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
+        <state relative-caret-position="96">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
@@ -1030,7 +948,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/Forest.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2070">
+        <state relative-caret-position="1840">
           <caret line="115" column="33" lean-forward="false" selection-start-line="115" selection-start-column="33" selection-end-line="115" selection-end-column="33" />
           <folding />
         </state>
@@ -1038,16 +956,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="43" column="37" lean-forward="false" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
+        <state relative-caret-position="496">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/headers/FireEffect.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subsystems/opengl/source/FireEffect.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/subsystems/opengl/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        <state relative-caret-position="832">
+          <caret line="67" column="47" lean-forward="false" selection-start-line="67" selection-start-column="47" selection-end-line="67" selection-end-column="47" />
           <folding />
         </state>
       </provider>

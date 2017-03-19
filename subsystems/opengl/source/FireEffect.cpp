@@ -2,7 +2,6 @@
 // Created by Guy on 19/03/2017.
 //
 
-
 #include <GL/glew.h>
 #include <FireEffect.h>
 #include <OpenGLRenderer.h>

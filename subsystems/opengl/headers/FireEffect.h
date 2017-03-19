@@ -2,6 +2,7 @@
 // Created by Guy on 19/03/2017.
 //
 
+
 #ifndef FIRESIM_FIREEFFECT_H
 #define FIRESIM_FIREEFFECT_H
 

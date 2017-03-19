@@ -65,6 +65,7 @@ SET(GL_SUBSYSTEM_FILES ${SOIL_SRC}
         ${OPENGL_SUBSYS_ROOT}/source/SpriteRenderer.cpp
         ${OPENGL_SUBSYS_ROOT}/source/EntityTextureRenderer.cpp
         ${OPENGL_SUBSYS_ROOT}/source/Shader.cpp
+        ${OPENGL_SUBSYS_ROOT}/source/FireEffect.cpp
         )
 
 SET(SRC_FILES ${SRC_FILES} ${GL_SUBSYSTEM_FILES})
