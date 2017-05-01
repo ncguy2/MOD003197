@@ -5,8 +5,9 @@
 #ifndef FIRESIM_OPENGLRENDERER_H
 #define FIRESIM_OPENGLRENDERER_H
 
-#include <GL/glew.h>
+#include <lib/glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <memory>
 #include <glm/glm.hpp>
 #include <thread>
 #include <render/BaseRenderer.h>
@@ -39,6 +40,7 @@ public:
     OpenGLRenderer();
 
     void InitWindow(GLuint width, GLuint height, std::string title, glm::vec2 cellSize = glm::vec2(16));
+    void Resize(GLuint width, GLuint height);
     void Render(Forest *forest) override;
     void RenderForest(Forest *forest);
     void RenderTextureAtCell(Texture tex, int x, int y, int layer, glm::vec4 offsets = glm::vec4(0, 0, 1, 1));
@@ -57,10 +59,13 @@ public:
 
     GLfloat SecondTimer();
     void SecondTimer(GLfloat seconds);
+    GLfloat GetInterval();
     bool ThreadAlive();
 
     SpriteRenderer* GetSpriteRenderer();
     EntityRenderer<Texture>* GetEntityRenderer();
+
+    glm::vec2 GetCellSize();
 
 protected:
 
@@ -69,6 +74,7 @@ protected:
     std::map<GLuint, TextureBatch*> batches;
     Forest* forest;
     GLuint width, height;
+    GLuint forestWidth, forestHeight;
     glm::vec2 cellSize;
     glm::mat4 projectionMatrix;
     GLFWwindow* window;
@@ -78,6 +84,9 @@ protected:
     bool threadAlive = false;
     GLfloat secondTimer = 0.f;
     FireRenderEffect* fireEffect;
+    Shader spriteShader;
+    Shader screenShader;
+    bool usingScreenShader = false;
 
     GLuint GenerateAttachmentTexture(GLsizei width, GLsizei height, GLboolean depth = GL_FALSE, GLboolean stencil = GL_FALSE);
 
@@ -86,8 +95,9 @@ protected:
 private:
     long frameCount = 0;
     long timeElapsed = 0;
+    GLfloat interval = .3f;
 };
 
-static OpenGLRenderer* newestOpenGLRendererInstance;
+static std::shared_ptr<OpenGLRenderer> newestOpenGLRendererInstance;
 
 #endif //FIRESIM_OPENGLRENDERER_H

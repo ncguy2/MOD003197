@@ -5,7 +5,7 @@
 #include <Defines.h>
 #include <Utils.h>
 #include <string>
-#if IS_WINDOWS || _WIN32
+#if IS_WINDOWS
 #include <conio.h>
 #endif
 #include <cmath>

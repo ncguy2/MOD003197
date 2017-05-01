@@ -2,23 +2,30 @@
 // Created by Guy on 25/02/2017.
 //
 
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
 #include <OpenGLRenderer.h>
 #include <ResourceManager.h>
 #include <Shaders.h>
 #include <Textures.h>
 #include <sstream>
 
+#ifndef ASFLOAT
+#define ASFLOAT(var) ((float)var)
+#endif
+
+
 void glfwKeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode);
+void glfwResizeCallback(GLFWwindow* window, int width, int height);
 
 OpenGLRenderer::OpenGLRenderer() : BaseRenderer("OpenGLRenderer", new EntityTextureRenderer()), spriteRenderer(nullptr), cellSize(glm::vec2(16)) {
-    newestOpenGLRendererInstance = this;
+    newestOpenGLRendererInstance = std::shared_ptr<OpenGLRenderer>(this);
 }
 
 void OpenGLRenderer::InitWindow(GLuint width, GLuint height, std::string title, glm::vec2 cellSize) {
 
     this->cellSize = cellSize;
+
+    this->forestWidth = width;
+    this->forestHeight = height;
 
     width *= cellSize.x;
     height *= cellSize.y;
@@ -37,7 +44,7 @@ void OpenGLRenderer::InitWindow(GLuint width, GLuint height, std::string title, 
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-    glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
+    glfwWindowHint(GLFW_RESIZABLE, GL_TRUE);
 
     this->window = glfwCreateWindow(width, height, title.c_str(), NULL, NULL);
     if (this->window == nullptr) {
@@ -46,17 +53,11 @@ void OpenGLRenderer::InitWindow(GLuint width, GLuint height, std::string title, 
     }
     glfwMakeContextCurrent(this->window);
 
-    GLenum init = glewInit();
-    if (init != GLEW_OK) {
-        this->Dispose();
-        std::stringstream ss;
-        ss << "GLFW Failed to initialize: ";
-        ss << glewGetErrorString(init);
-        throw ErrorException{ss.str()};
-    }
+    if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress))
+        throw ErrorException{"Failed to initialize OpenGL context"};
     glewInited = true;
-//    glfwSetKeyCallback(window, [](GLFWwindow *window, int key, int scancode, int action, int mode) {});
     glfwSetKeyCallback(window, glfwKeyCallback);
+    glfwSetWindowSizeCallback(window, glfwResizeCallback);
 
     glViewport(0, 0, width, height);
     glEnable(GL_CULL_FACE);
@@ -72,6 +73,7 @@ void OpenGLRenderer::InitWindow(GLuint width, GLuint height, std::string title, 
     projectionMatrix = glm::ortho(0.0f, static_cast<GLfloat>(this->width), static_cast<GLfloat>(this->height), 0.0f, -1.0f, 1.0f);
     spriteShader.Use().SetInteger("image", 0);
     spriteShader.SetMatrix4("projection", projectionMatrix);
+    this->spriteShader = spriteShader;
 
 
     if(OPENGL_RENDERER_USE_FIRE_SHADER) {
@@ -80,10 +82,12 @@ void OpenGLRenderer::InitWindow(GLuint width, GLuint height, std::string title, 
         screenShader.SetInteger("blur", 1);
         screenShader.SetMatrix4("projection", projectionMatrix);
         screenShader.SetFloat("fireScale", OPENGL_RENDERER_FIRE_SHADER_SCALE);
+        this->screenShader = screenShader;
+        this->usingScreenShader = true;
 
         fireEffect = new FireRenderEffect(width, height, this);
 
-        forestFBO = framebuffer::CreateFramebuffer(width, height, 1);
+        forestFBO = new framebuffer::FBO(width, height, 1);
     }
 }
 
@@ -96,6 +100,7 @@ void OpenGLRenderer::Render(Forest *forest) {
     GLfloat fps = -1;
     std::string fpsStr;
     std::string deltaStr;
+    std::string intervalStr;
     threadAlive = true;
     #if OPENGL_USE_THREADS
     std::thread task(ThreadedForestUpdate, forest).detach();
@@ -117,15 +122,16 @@ void OpenGLRenderer::Render(Forest *forest) {
 
         cpTOSTRING(fps, fpsStr)
         cpTOSTRING(deltaTime * 1000, deltaStr)
+        cpTOSTRING(interval * 1000, intervalStr)
 
-        std::string title = "Fire Simulation | FPS: " + fpsStr + " delta: " + deltaStr;
+        std::string title = "Fire Simulation | FPS: " + fpsStr + " delta: " + deltaStr + " interval: " + intervalStr;
         glfwSetWindowTitle(this->window, title.c_str());
 
         if(doTimestep) {
             secondTimer += deltaTime;
         }
 
-        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+        glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
         this->RenderForest(forest);
@@ -140,7 +146,8 @@ void OpenGLRenderer::Render(Forest *forest) {
 }
 
 void OpenGLRenderer::Dispose() {
-    if(OPENGL_RENDERER_USE_FIRE_SHADER) delete fireEffect;
+    if(usingScreenShader) delete fireEffect;
+    delete forestFBO;
     glfwTerminate();
 }
 
@@ -156,6 +163,12 @@ void OpenGLRenderer::KeyPress(int key, int scancode, int mode) {
         doTimestep = !doTimestep;
         return;
     }
+
+    if(key == GLFW_KEY_X && interval < 10.f)
+        interval += .05f;
+    if(key == GLFW_KEY_Z && interval > 0.f)
+        interval -= .05f;
+
     forest->processCommand(key);
     if(!doTimestep)
         forest->Update();
@@ -166,8 +179,8 @@ void OpenGLRenderer::KeyRelease(int key, int scancode, int mode) {
 }
 
 void OpenGLRenderer::RenderForest(Forest *forest) {
-    if(OPENGL_RENDERER_USE_FIRE_SHADER) {
-        glBindFramebuffer(GL_FRAMEBUFFER, forestFBO->handle);
+    if(usingScreenShader) {
+        glBindFramebuffer(GL_FRAMEBUFFER, forestFBO->GetHandle());
         glClearColor(0.f, 1.f, 0.f, 1.f);
         glClear(GL_COLOR_BUFFER_BIT);
     }
@@ -185,17 +198,16 @@ void OpenGLRenderer::RenderForest(Forest *forest) {
         }
     }
     RenderBatches();
-    if(OPENGL_RENDERER_USE_FIRE_SHADER) {
+    if(usingScreenShader) {
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
 
         fireEffect->Extract(forest);
         fireEffect->Blur();
 
-        Shader screenShader = ResourceManager::GetInstance().GetShader(SCREEN_SHADER);
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, fireEffect->GetBlurredMask(1));
-        spriteRenderer->DrawSprite(forestFBO->colourAttachments[0].texHandle, {0, 0}, {width, height}, 0.f,
+        spriteRenderer->DrawSprite(forestFBO->GetColourAttachment(0).texHandle, {0, 0}, {width, height}, 0.f,
                                    {1.f, 1.f, 1.f, 1.f}, &screenShader);
     }
 
@@ -212,7 +224,7 @@ void OpenGLRenderer::RenderTextureAtCell(Texture tex, int x, int y, int layer, g
 }
 
 glm::vec2 OpenGLRenderer::ProjectCellPositionToScreen(int x, int y) {
-    return glm::vec2(x * cellSize.x, y * cellSize.y);
+    return glm::vec2(ASFLOAT(x) * cellSize.x, ASFLOAT(y) * cellSize.y);
 }
 
 glm::mat4 OpenGLRenderer::GetProjectionMatrix() {
@@ -306,6 +318,32 @@ EntityRenderer<Texture>* OpenGLRenderer::GetEntityRenderer() {
     return renderer;
 }
 
+void OpenGLRenderer::Resize(GLuint width, GLuint height) {
+    this->width = width;
+    this->height = height;
+    this->cellSize.x = ASFLOAT(width)  / ASFLOAT(this->forestWidth);
+    this->cellSize.y = ASFLOAT(height) / ASFLOAT(this->forestHeight);
+
+    projectionMatrix = glm::ortho(0.0f, static_cast<GLfloat>(width), static_cast<GLfloat>(height), 0.0f, -1.0f, 1.0f);
+
+    forestFBO->Resize(width, height);
+    fireEffect->Resize(width, height);
+
+    this->spriteShader.Use().SetMatrix4("projection", projectionMatrix);
+    if(usingScreenShader)
+        this->screenShader.Use().SetMatrix4("projection", projectionMatrix);
+    glViewport(0, 0, width, height);
+}
+
+glm::vec2 OpenGLRenderer::GetCellSize() {
+    return cellSize;
+}
+
+GLfloat OpenGLRenderer::GetInterval() {
+    return interval;
+}
+
+
 /*
 
  void MetaballController::GenerateFramebuffer(LightingPass &pass, GLsizei width, GLsizei height, std::string shaderName, int attachments) {
@@ -361,11 +399,16 @@ void ThreadedForestUpdate(Forest *forest) {
     #if OPENGL_USE_THREADS
     while(newestOpenGLRendererInstance->ThreadAlive()) {
     #endif
-        if (newestOpenGLRendererInstance->SecondTimer() >= 0.3) {
+        if (newestOpenGLRendererInstance->SecondTimer() >= newestOpenGLRendererInstance->GetInterval()) {
             newestOpenGLRendererInstance->SecondTimer(0);
             forest->Update();
         }
     #if OPENGL_USE_THREADS
     }
     #endif
+}
+
+void glfwResizeCallback(GLFWwindow* window, int width, int height) {
+    if(newestOpenGLRendererInstance != nullptr)
+        newestOpenGLRendererInstance->Resize(width, height);
 }

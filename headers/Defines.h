@@ -2,20 +2,33 @@
 // Created by Guy on 21/02/2017.
 //
 
+/**
+ * Various definitions and macros for widespread usage
+ */
+
 #ifndef DEFINES_H
 #define DEFINES_H
 
 #include "../external/cpp-properties/include/Properties.h"
 #include "PropertyDefines.h"
 
+/**
+ * Cross platform implementation of std::max
+ */
 #ifndef cpmax
 #define cpmax(a,b)            (((a) > (b)) ? (a) : (b))
 #endif
 
+/**
+ * Cross platform implementation of std::min
+ */
 #ifndef cpmin
 #define cpmin(a,b)            (((a) < (b)) ? (a) : (b))
 #endif
 
+/**
+ * Cross platform implementation of std::to_string
+ */
 #ifndef cpTOSTRING
 #define cpTOSTRING(var, out) {\
 std::stringstream ss; \
@@ -24,6 +37,9 @@ out = ss.str(); \
 }
 #endif
 
+/**
+ * Cross platform implementation of std::to_string, inlined as an anonymous function invokation
+ */
 #ifndef cpTOSTRING_INLINE
 #define cpTOSTRING_INLINE(var) \
 []() -> std::string { \
@@ -42,6 +58,10 @@ out = ss.str(); \
 #endif
 #ifndef _POSIX_C_SOURCE
 #define _POSIX_C_SOURCE true
+#endif
+
+#ifndef DEPRECATED
+#define DEPRECATED(func) [[deprecated]] func
 #endif
 
 

@@ -6,6 +6,9 @@
 #define FIRESIM_CONFIG_H
 
 
+/**
+ * Small configuration manager for properties that can be changed in real-time
+ */
 class Configuration {
 public:
     static Configuration& Instance() {

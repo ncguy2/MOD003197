@@ -8,92 +8,45 @@
 #include <file/FileHandler.h>
 #include "GenerationRule.h"
 
+/**
+ * Initial generation of the trees
+ */
 class TreeGenerationRule : public GenerationRule {
 public:
-    TreeGenerationRule() : GenerationRule("tree_generation") {}
-
-    void Generate(Forest *forest) override {
-        GenerateOriginal();
-        int treeSmoothingIterations = TREE_GENERATION_ITERATIONS;
-        for(int i = 0; i < treeSmoothingIterations; i++)
-            Step();
-        if(!ALLOW_TREE_ISLANDS) RemoveIslands();
-        MapToForest(forest);
-    }
+    TreeGenerationRule();
+    /**
+     * Invokes the generation process
+     * @param forest The forest to generate
+     */
+    void Generate(Forest *forest) override;
 
 private:
-
-//    bool treeMap[WORLD_SIZE_X][WORLD_SIZE_Y];
+    /**
+     * The tree states in map form for rapid lookup
+     */
     std::map<int, std::map<int, bool>> treeMap;
 
-    void GenerateOriginal() {
-        std::vector<int> randomNums;
-        int initialGenChance = INITIAL_TREE_GENERATION_CHANCE;
-//        randomNums.push_back(initialGenChance);
-        for(int x = 0; x < forest->worldSizeX; x++) {
-            for(int y = 0; y < forest->worldSizeY; y++) {
-                int r = utils::rng::fastrand() % 100 + 1;
-//                randomNums.push_back(r);
-                bool t = (r < initialGenChance);
-                treeMap[x][y] = t;
-            }
-        }
-//        files::WriteVectorToFile<int>("TreeGen.txt", randomNums);
-    }
+    /**
+     * Initial generation pass, randomly selects cells to make trees
+     */
+    void GenerateOriginal();
 
-    void Step() {
-        int counter = 0;
-        utils::Point offsets[] = {
-                utils::Point{ 1,  1},
-                utils::Point{-1,  1},
-                utils::Point{-1, -1},
-                utils::Point{ 1, -1},
-                utils::Point{ 0,  0},
-                utils::Point{ 0, -1},
-                utils::Point{ 0,  1},
-                utils::Point{-1,  0},
-                utils::Point{ 1,  0}
-        };
-        for(int x = 1; x < forest->worldSizeX-1; x++) {
-            for(int y = 1; y < forest->worldSizeY-1; y++) {
-                counter = 0;
+    /**
+     * Smooths the gaps between trees, creating larger clusters and removing small islands
+     */
+    void Step();
 
-                for(utils::Point point : offsets)
-                    if (treeMap[x + point.x][y + point.y]) counter++;
+    /**
+     * Converts the treemap to a 2D vector
+     * @return The treemap in 2D vector form
+     */
+    std::vector<std::vector<char>> TreeMapToVector();
 
-                if(counter >= 5)
-                    treeMap[x][y] = true;
-            }
-        }
-    }
-
-    void RemoveIslands() {
-
-    }
-
-    std::vector<std::vector<char>> TreeMapToVector() {
-        std::vector<std::vector<char>> root = std::vector<std::vector<char>>();
-        for(int x = 0; x < forest->worldSizeX; x++) {
-            std::vector<char> current = std::vector<char>();
-            for(int y = 0; y < forest->worldSizeY; y++) {
-                current.push_back(treeMap[x][y] ? '#' : '.');
-            }
-            root.push_back(current);
-        }
-        return root;
-    }
-
-    void MapToForest(Forest* forest) {
-        for(int x = 0; x < forest->worldSizeX; x++) {
-            for(int y = 0; y < forest->worldSizeY; y++) {
-                Cell cell = forest->GetCell(x, y);
-                if(!treeMap[x][y]) {
-                    cell.tree->Kill();
-                    cell.tree->Clear();
-                }
-            }
-        }
-    }
+    /**
+     * Maps the tree states to the cells in the forest
+     * @param forest The forest to map to
+     */
+    void MapToForest(Forest* forest);
 };
 
 #endif //FIRESIM_TREEGENERATIONRULE_H

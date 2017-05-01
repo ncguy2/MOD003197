@@ -4,10 +4,8 @@ INCLUDE_DIRECTORIES("${OPENGL_SUBSYS_ROOT}/headers")
 
 # WINDOWS
 IF(WIN32)
-    SET(GLEW "${OPENGL_SUBSYS_ROOT_ABS}/external/lib/glew32s.lib")
     SET(GLFW "${OPENGL_SUBSYS_ROOT_ABS}/external/lib/mingw/libglfw3dll.a")
 ELSEIF(UNIX)
-    SET(GLEW "${OPENGL_SUBSYS_ROOT_ABS}/external/lib/libGLEW.a")
     SET(GLFW "${OPENGL_SUBSYS_ROOT_ABS}/external/lib/libglfw3.a")
 
     find_package(X11 REQUIRED)
@@ -29,7 +27,6 @@ ENDIF()
 
 
 LINK_LIBRARIES(${GLFW})
-LINK_LIBRARIES(${GLEW})
 #LINK_LIBRARIES(${FREETYPE})
 
 
@@ -40,7 +37,6 @@ if(OPENGL_FOUND)
     MESSAGE("OPENGL: ${OPENGL_LIBRARIES}")
 endif()
 
-ADD_DEFINITIONS(-DGLEW_STATIC)
 ADD_DEFINITIONS(-DWITH_OPENGL)
 
 #FILE(COPY "${CMAKE_SOURCE_DIR}/subsystems/opengl/assets" DESTINATION "${CMAKE_BINARY_DIR}")
@@ -59,6 +55,7 @@ SET(SOIL_SRC
         )
 
 SET(GL_SUBSYSTEM_FILES ${SOIL_SRC}
+        ${OPENGL_SUBSYS_ROOT}/source/lib/glad.c
         ${OPENGL_SUBSYS_ROOT}/source/OpenGLRenderer.cpp
         ${OPENGL_SUBSYS_ROOT}/source/Texture.cpp
         ${OPENGL_SUBSYS_ROOT}/source/ResourceManager.cpp
@@ -66,6 +63,7 @@ SET(GL_SUBSYSTEM_FILES ${SOIL_SRC}
         ${OPENGL_SUBSYS_ROOT}/source/EntityTextureRenderer.cpp
         ${OPENGL_SUBSYS_ROOT}/source/Shader.cpp
         ${OPENGL_SUBSYS_ROOT}/source/FireEffect.cpp
+        ${OPENGL_SUBSYS_ROOT}/source/Framebuffer.cpp
         )
 
 SET(SRC_FILES ${SRC_FILES} ${GL_SUBSYSTEM_FILES})

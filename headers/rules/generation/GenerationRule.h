@@ -7,20 +7,33 @@
 
 #include "rules/Rules.h"
 
+/**
+ * Special rule type modified to execute across the entire forest in 1 pass
+ */
 class GenerationRule : public Rule {
 public:
-    GenerationRule(std::string id) : Rule(id) {}
+    /**
+     * @param id Internal id used to identify each rule during debugging
+     */
+    GenerationRule(std::string id);
 
+    /**
+     * The generation process for this rule
+     * @param forest
+     */
     virtual void Generate(Forest* forest)=0;
 
-    void Execute(Forest *forest, Cell self) override {
-        this->forest = forest;
-        Generate(forest);
-    }
+    /**
+     * Intermediary function to use existing rule functionality for the forest generation
+     * @param forest The forest to generate
+     */
+    void Execute(Forest *forest, Cell) override;
 
-    bool CanExecute(Cell self) override {
-        return true;
-    }
+    /**
+     * Implementation to say that all generation rules should execute
+     * @return true
+     */
+    bool CanExecute(Cell) override;
 
 protected:
     Forest* forest;

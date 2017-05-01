@@ -292,3 +292,11 @@ Cell *Forest::p_GetCell(int x, int y) {
 WindManager Forest::GetWindManager() {
     return this->windManager;
 }
+
+Cell Forest::GetCell(utils::Point point) {
+    return GetCell(point.x, point.y);
+}
+
+Cell* Forest::p_GetCell(utils::Point point) {
+    return p_GetCell(point.x, point.y);
+}

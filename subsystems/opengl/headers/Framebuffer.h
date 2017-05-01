@@ -15,16 +15,21 @@ namespace framebuffer {
         int attachmentOffset;
     };
 
-    struct FBO {
+    class FBO {
+    public:
+        FBO(int width, int height, int attachments);
+        // Experiment, no idea how well this will work
+        void operator=(bool state);
+        void Resize(int width, int height);
+
+        GLuint GetHandle();
+        Attachment GetColourAttachment(int index);
+
+    protected:
         GLuint handle;
         std::vector<Attachment> colourAttachments;
         Attachment renderBuffer;
-
-        // Experiment, no idea how well this will work
-        void operator=(bool state);
     };
-
-    FBO* CreateFramebuffer(int width, int height, int attachments);
 
 }
 

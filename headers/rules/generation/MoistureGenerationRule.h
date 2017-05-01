@@ -9,39 +9,71 @@
 #include "GenerationRule.h"
 #include <Utils.h>
 
-struct LandMass;
-
+/**
+ * Lightweight cell representing the forest cells
+ */
 struct LandCell {
     bool damp;
     int x;
     int y;
 
-    bool operator==(const LandCell& other) {
-        if(this->x != other.x) return false;
-        if(this->y != other.y) return false;
-        if(this->damp != other.damp) return false;
-        return true;
-    }
-
+    bool operator==(const LandCell& other);
 };
 
+/**
+ * Generates either damp or dry cells
+ */
 class MoistureGenerationRule : public GenerationRule {
 public:
-    MoistureGenerationRule(bool dry = false) : GenerationRule(("moisture_generation" + std::string(dry ? ":dry" : ""))), dry(dry) {}
-
+    /**
+     * @param dry Specifies whether to generate damp cells or dry cells
+     */
+    MoistureGenerationRule(bool dry = false);
+    /**
+     * Invokes the generation process
+     * @param forest The forest to generate
+     */
     void Generate(Forest *forest) override;
 
 private:
 
-//    LandCell moistureMap[WORLD_SIZE_X][WORLD_SIZE_Y];
+    /**
+     * Map for quick lookup of current cells
+     */
     std::map<int, std::map<int, LandCell>> moistureMap;
 
+    /**
+     * Pick a single point and expand from it
+     */
     void GenerateOriginal();
+    /**
+     * Expands from the specified point
+     * @param ox The X origin
+     * @param oy The Y origin
+     * @param depth The current depth of generation, will not exceed the "Generation.Moisture.MaxSpawns" property
+     * @param px The parent node X position
+     * @param py The parent node Y position
+     */
     void GenerateFromPoint(int ox, int oy, int depth = 1, int px = -1, int py = -1);
+    /**
+     * Smoothing step to reduce the amount of islands and make the mass more uniform in the center
+     */
     void Step();
+
+    /**
+     * Whether dry cells should be generated instead
+     */
     bool dry;
 
+    /**
+     * Converts the moistureMap to a vector, ready for output to a file
+     * @return The moistureMap in a printable form
+     */
     std::vector<std::vector<char>> MoistureMapToVector();
+    /**
+     * Maps the moistureMap to the forest
+     * @param forest The forest to mutate
+     */
     void MapToForest(Forest* forest);
 };
 

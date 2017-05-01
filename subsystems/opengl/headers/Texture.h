@@ -5,7 +5,7 @@
 #ifndef FIRESIM_TEXTURE_H
 #define FIRESIM_TEXTURE_H
 
-#include <GL/glew.h>
+#include <lib/glad/glad.h>
 
 struct Texture {
 

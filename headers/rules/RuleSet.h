@@ -8,6 +8,9 @@
 #include <vector>
 #include <rules/Rules.h>
 
+/**
+ * Lighweight collection wrapper to control linear iteration over rules
+ */
 class RuleSet {
 public:
     void AddRule(Rule* rule);
@@ -19,6 +22,7 @@ public:
     Rule* Next();
     /**
      * Resets the pointer to the first rule
+     * @return The first rule
      */
     Rule* Reset();
 

@@ -2,7 +2,7 @@
 // Created by Guy on 25/02/2017.
 //
 
-#include <GL/glew.h>
+#include <lib/glad/glad.h>
 #include <Texture.h>
 
 Texture::Texture() : width(0), height(0),

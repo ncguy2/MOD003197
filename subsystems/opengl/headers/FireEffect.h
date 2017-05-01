@@ -23,6 +23,7 @@ public:
 
     void Extract(Forest* forest);
     void Blur();
+    void Resize(int width, int height);
 
     GLuint GetExtractedMask();
     GLuint GetBlurredMask(int index = 0);

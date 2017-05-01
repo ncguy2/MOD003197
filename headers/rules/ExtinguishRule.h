@@ -7,19 +7,15 @@
 
 #include "Rules.h"
 
+/**
+ * Controls whether the fire should be extinguished in damp cells, further slowing the spread of the fire in damp regions
+ */
 class ExtinguishRule : public Rule {
 public:
-    ExtinguishRule() : Rule("extinguish") {}
+    ExtinguishRule();
 
-    void Execute(Forest *forest, Cell self) override {
-        int r = utils::random(0, 100);
-        if(r < DAMP_EXTINGUISH_CHANCE)
-            self.tree->Extinguish();
-    }
-
-    bool CanExecute(Cell self) override {
-        return self.states->damp && (self.tree->IsIgnited() || self.tree->IsBurning());
-    }
+    void Execute(Forest *forest, Cell self) override;
+    bool CanExecute(Cell self) override;
 
 };
 

@@ -7,22 +7,14 @@
 
 #include "Rules.h"
 
+/**
+ * Responsible for controlling the combustion on dry cells, can only execute on a cell that is dry and when it's tree is not already burning
+ */
 class CombustRule : public Rule {
 public:
-    CombustRule() : Rule("combust") {}
-
-    void Execute(Forest *forest, Cell self) override {
-        int combustChance = utils::random(0, 50000);
-        if(combustChance < DRY_COMBUST_CHANCE) {
-            (*self.tree).Ignite();
-            return;
-        }
-    }
-
-    bool CanExecute(Cell self) override {
-        return self.states->dry && (self.tree->IsAlive() && !(self.tree->IsBurning() || self.tree->IsIgnited()));
-    }
-
+    CombustRule();
+    void Execute(Forest *forest, Cell self) override;
+    bool CanExecute(Cell self) override;
 
 };
 

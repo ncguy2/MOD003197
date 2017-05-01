@@ -13,15 +13,8 @@
  */
 class CleanupRule : public Rule {
 public:
-
-    CleanupRule() : Rule("cleanup") {}
-
-    void Execute(Forest *forest, Cell self) override{
-        if(!self.tree->IsAlive()) {
-            self.tree->Clear();
-        }
-    }
-
+    CleanupRule();
+    void Execute(Forest *forest, Cell self) override;
 };
 
 #endif //FIRESIM_CLEANUPRULE_H

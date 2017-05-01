@@ -28,46 +28,7 @@ void TextRenderer::Render(Forest *forest) {
 
 }
 
-int TextRenderer::GetCellForeground(Cell cell) {
-    Tree* t = cell.tree;
-#if USE_COLOURS
-    if(!t->IsAlive()) {
-        if(Configuration::Instance().UseBlockRenderer()) {
-            if(cell.states->wall)
-                return WALL_COLOUR;
-            return DEFAULT_BACKGROUND;
-        }
-    }
-    if(cell.states->wall)
-        return WALL_COLOUR;
 
-    if(t->IsIgnited() && !t->IsBurning())
-        return IGNITED_TREE_COLOUR;
-    if(t->IsBurning())
-        return BURNING_TREE_COLOUR;
-    if(t->IsAlive())
-        return LIVING_TREE_COLOUR;
-#endif
-
-    if(Configuration::Instance().UseBlockRenderer()) {
-        return DEFAULT_BACKGROUND;
-    }
-    return DEFAULT_TEXT_COLOUR;
-}
-
-int TextRenderer::GetCellBackground(Cell cell) {
-#if USE_COLOURS
-    if(cell.states->damp)
-        return DAMP_GROUND_COLOUR;
-    if(cell.states->dry)
-        return DRY_GROUND_COLOUR;
-    if(cell.states->wall)
-        return WALL_COLOUR;
-#endif
-    if(Configuration::Instance().UseBlockRenderer())
-        return DEFAULT_TEXT_COLOUR;
-    return DEFAULT_BACKGROUND;
-}
 
 void TextRenderer::RenderDebug(Forest *forest) {
     for (std::string line : GetDebugLines(forest))

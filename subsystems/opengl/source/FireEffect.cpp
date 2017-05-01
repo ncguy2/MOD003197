@@ -2,16 +2,16 @@
 // Created by Guy on 19/03/2017.
 //
 
-#include <GL/glew.h>
+#include <lib/glad/glad.h>
 #include <FireEffect.h>
 #include <OpenGLRenderer.h>
 #include <ResourceManager.h>
 #include <Shaders.h>
 
 FireRenderEffect::FireRenderEffect(int sWidth, int sHeight, OpenGLRenderer* renderer) : sWidth(sWidth), sHeight(sHeight), renderer(renderer), blurIterations(OPENGL_RENDERER_FIRE_SHADER_BLURS) {
-    extractionFBO = framebuffer::CreateFramebuffer(sWidth, sHeight, 1);
-    blurFBO1 = framebuffer::CreateFramebuffer(sWidth, sHeight, 1);
-    blurFBO2 = framebuffer::CreateFramebuffer(sWidth, sHeight, 1);
+    extractionFBO = new framebuffer::FBO(sWidth, sHeight, 1);
+    blurFBO1 = new framebuffer::FBO(sWidth, sHeight, 1);
+    blurFBO2 = new framebuffer::FBO(sWidth, sHeight, 1);
 
     glm::mat4 proj = renderer->GetProjectionMatrix();
 
@@ -28,7 +28,7 @@ FireRenderEffect::FireRenderEffect(int sWidth, int sHeight, OpenGLRenderer* rend
 
 void FireRenderEffect::Extract(Forest* forest) {
     extractionShader.Use();
-    glBindFramebuffer(GL_FRAMEBUFFER, extractionFBO->handle);
+    glBindFramebuffer(GL_FRAMEBUFFER, extractionFBO->GetHandle());
     glClearColor(1.f, 0.f, 0.f, 1.f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -39,7 +39,7 @@ void FireRenderEffect::Extract(Forest* forest) {
 //                this->renderer->RenderTextureAtCell(this->renderer->GetEntityRenderer()->RenderTree(cell, cell.tree), x, y, 0);
                 this->renderer->GetSpriteRenderer()->DrawSprite(this->renderer->GetEntityRenderer()->RenderTree(cell, cell.tree),
                                                                 this->renderer->ProjectCellPositionToScreen(x, y),
-                                                                {10, 10},
+                                                                this->renderer->GetCellSize(),
                                                                 0.f,
                                                                 glm::vec4(1.f),
                                                                 &extractionShader);
@@ -56,7 +56,7 @@ void FireRenderEffect::Blur() {
     framebuffer::FBO* blurFBOs[2] = {blurFBO1, blurFBO2};
 
     for(int i = 0; i < blurIterations; i++) {
-        glBindFramebuffer(GL_FRAMEBUFFER, blurFBOs[i % 2]->handle);
+        glBindFramebuffer(GL_FRAMEBUFFER, blurFBOs[i % 2]->GetHandle());
         glClearColor(0.f, 0.f, 0.f, 1.f);
         glClear(GL_COLOR_BUFFER_BIT);
         blurShader.SetInteger("horizontal", i % 2 == 0);
@@ -72,17 +72,31 @@ void FireRenderEffect::Blur() {
 }
 
 GLuint FireRenderEffect::GetExtractedMask() {
-    return extractionFBO->colourAttachments[0].texHandle;
+    return extractionFBO->GetColourAttachment(0).texHandle;
 }
 
 GLuint FireRenderEffect::GetBlurredMask(int index) {
     if(index == 0)
-        return blurFBO1->colourAttachments[0].texHandle;
-    return blurFBO2->colourAttachments[0].texHandle;
+        return blurFBO1->GetColourAttachment(0).texHandle;
+    return blurFBO2->GetColourAttachment(0).texHandle;
 }
 
 FireRenderEffect::~FireRenderEffect() {
     delete extractionFBO;
     delete blurFBO1;
     delete blurFBO2;
+}
+
+void FireRenderEffect::Resize(int width, int height) {
+
+    sWidth = width;
+    sHeight = height;
+
+    extractionFBO->Resize(width, height);
+    blurFBO1->Resize(width, height);
+    blurFBO2->Resize(width, height);
+
+    glm::mat4 proj = renderer->GetProjectionMatrix();
+    extractionShader.Use().SetMatrix4("projection", proj);
+    blurShader.Use().SetMatrix4("projection", proj);
 }

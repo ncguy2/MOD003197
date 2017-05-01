@@ -5,11 +5,11 @@ PROJECT(FireSim)
 #ADD_DEFINITIONS(-DWORLD_SIZE_X=71)
 #ADD_DEFINITIONS(-DWORLD_SIZE_Y=31)
 
-SET(USE_OPENGL TRUE)
-SET(IS_WINDOWS FALSE)
-
-SET(CMAKE_CXX_STANDARD 11)
-SET(CMAKE_BUILD_TYPE Release)
+SET(USE_OPENGL TRUEfastrand)
+SET(IS_WINDOWS ${WIN32})
+SET(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
+SET(CMAKE_CXX_STANDARD 14)
+SET(CMAKE_BUILD_TYPE RelWithDebInfo)
 
 INCLUDE_DIRECTORIES(headers)
 
@@ -31,10 +31,14 @@ ELSEIF(WIN32)
     INCLUDE(${WIN32_GCC_SUBSYSTEM_ROOT}/CMakeLists.txt)
 ENDIF()
 
+IF(IS_WINDOWS)
+ELSE()
+    SET(IS_WINDOWS FALSE)
+ENDIF()
 
 SET(SRC_FILES ${SRC_FILES} source/Forest.cpp source/render/TextRenderer.cpp source/rules/RuleSet.cpp source/Entity.cpp source/Utils.cpp
     source/menu/MenuItem.cpp source/menu/MenuHost.cpp source/rules/generation/MoistureGenerationRule.cpp
-    source/file/FileHandler.cpp source/Config.cpp source/WindManager.cpp source/Mains.cpp subsystems/opengl/source/Framebuffer.cpp subsystems/opengl/source/FireEffect.cpp)
+    source/file/FileHandler.cpp source/Config.cpp source/WindManager.cpp source/Mains.cpp source/rules/generation/GenerationRule.cpp source/rules/generation/TreeGenerationRule.cpp source/rules/generation/TreeIslandCleanupRule.cpp source/rules/CleanupRule.cpp source/rules/CombustRule.cpp source/rules/ExtinguishRule.cpp source/rules/GrowthRule.cpp source/rules/IgniteRule.cpp source/rules/Rules.cpp)
 
 SET(HEAD_FILES)
 

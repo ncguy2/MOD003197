@@ -5,6 +5,8 @@
 #include <rules/generation/MoistureGenerationRule.h>
 #include <Forest.h>
 
+MoistureGenerationRule::MoistureGenerationRule(bool dry) : GenerationRule(("moisture_generation" + std::string(dry ? ":dry" : ""))), dry(dry) {}
+
 void MoistureGenerationRule::Generate(Forest *forest) {
     GenerateOriginal();
     for(int i = 0; i < MOISTURE_GENERATION_ITERATIONS; i++)
@@ -79,6 +81,7 @@ void MoistureGenerationRule::Step() {
     }
 }
 
+
 std::vector<std::vector<char>> MoistureGenerationRule::MoistureMapToVector() {
     std::vector<std::vector<char>> root = std::vector<std::vector<char>>();
     for(int x = 0; x < forest->worldSizeX; x++) {
@@ -90,7 +93,6 @@ std::vector<std::vector<char>> MoistureGenerationRule::MoistureMapToVector() {
     }
     return root;
 }
-
 
 void MoistureGenerationRule::MapToForest(Forest *forest) {
 //    files::Write2DVectorToFile("MoistureMap.txt", MoistureMapToVector());
@@ -121,3 +123,9 @@ void MoistureGenerationRule::MapToForest(Forest *forest) {
     }
 }
 
+bool LandCell::operator==(const LandCell& other) {
+    if(this->x != other.x) return false;
+    if(this->y != other.y) return false;
+    if(this->damp != other.damp) return false;
+    return true;
+}
